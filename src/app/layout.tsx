@@ -18,15 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <AppRouterCacheProvider >
-        <ThemeRegistry>
-          <body className={inter.className}>
+    <html lang="en" >
+      <body className={inter.className} suppressHydrationWarning={true}>
+        <AppRouterCacheProvider>
+          <ThemeRegistry>
             <DrawerAppBar />
             {children}
-          </body>
-        </ThemeRegistry>
-      </AppRouterCacheProvider>
+          </ThemeRegistry>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }

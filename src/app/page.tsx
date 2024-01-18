@@ -5,13 +5,14 @@ import { Typography, Box, useTheme, Slide } from "@mui/material";
 import ScrollPageContainer from "../components/ScrollPageContainer";
 import HomePageSlide from "../components/HomePageSlide";
 import AnimatedArrowHead from "../components/animation/AnimatedArrowHead";
+import Test from "../components/animation/Test";
 
 export default function Home() {
   const theme = useTheme();
   return (
     <main className={styles.main}>
-      <ScrollPageContainer>
-        <HomePageSlide>
+      <ScrollPageContainer id={"scrollContainer"}>
+        <HomePageSlide color={'orange'}>
           <Box
             sx={{
               margin: 10,
@@ -36,8 +37,9 @@ export default function Home() {
             </Typography>
           </Box>
           
+          {/* <AnimatedArrowHead scrollContainerId="scrollContainer"/> */}
         </HomePageSlide>
-        <HomePageSlide>
+        <HomePageSlide color={'green'}>
           <Box
             sx={{
               margin: 10,
@@ -61,9 +63,9 @@ export default function Home() {
               Experience
             </Typography>
           </Box>
-          <AnimatedArrowHead />
+          <Test scrollContainerId="scrollContainer"/>
         </HomePageSlide>
-        <HomePageSlide>
+        <HomePageSlide color={'blue'}>
           <Box
             sx={{
               margin: 10,
@@ -89,6 +91,7 @@ export default function Home() {
           </Box>
         </HomePageSlide>
       </ScrollPageContainer>
+      {/* <Box sx={{height:'100vh'}} /> */}
     </main>
   );
 }

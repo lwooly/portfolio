@@ -1,17 +1,29 @@
+import { Height } from "@mui/icons-material";
 import { Box } from "@mui/material";
+import { spec } from "node:test/reporters";
 
-const ScrollPageContainer = ({children}: {children: React.ReactNode}) => {
-
-    return (
-        <Box sx={{
-            width:"100%",
-            height:"100vh",
-            // overflowY:"scroll",
-            // scrollSnapType:"y mandatory"
-             }}>
-            {children}
-        </Box>
-    );
+const ScrollPageContainer = ({
+  id,
+  children,
+}: {
+  id: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <>
+     <Box
+      id={id}
+      sx={{
+        width: "100%",
+        maxHeight: "100vh",
+        overflowY: "scroll",
+        scrollSnapType: "y mandatory",
+      }}
+    >
+      {children}
+    </Box>
+    </>
+  );
 };
 
 export default ScrollPageContainer;
