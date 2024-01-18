@@ -16,9 +16,7 @@ const themeOptions: ThemeOptions = {
         fontSize: 12,
     },
     palette: {
-        background: {
-            default: "orange"
-        },
+        mode: "light",
         secondary: {
             main: "hsla(225, 7%, 79%, 1)",
         }
