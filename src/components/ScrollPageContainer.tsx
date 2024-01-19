@@ -13,12 +13,13 @@ const ScrollPageContainer = ({
 
 const StyledContainer = styled(Box)(({theme}) => ({
     width: "100%",
-    maxHeight: "100vh",
+ 
     overflowY: "scroll",
     scrollSnapType: "y proximity",
     // scroll snapping on sections at md breakpoint
     [theme.breakpoints.up('md')]: {
         scrollSnapType: "y mandatory",
+        maxHeight: "100vh",
       },
 }))
   return (

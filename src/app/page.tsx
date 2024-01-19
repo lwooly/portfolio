@@ -8,6 +8,7 @@ import AnimatedArrowHead from "../components/animation/AnimatedArrowHead";
 import Test from "../components/animation/Test";
 import ProfileImage from "../components/ProfileImage";
 import HeroMain from "../components/HeroMain";
+import StackIconSection from "../components/StackIconSection";
 
 export default function Home() {
   const theme = useTheme();
@@ -16,11 +17,10 @@ export default function Home() {
       <ScrollPageContainer id={"scrollContainer"}>
         <HomePagePanel color="white">
           <HeroMain />
+          <StackIconSection />
         </HomePagePanel>
         <HomePagePanel color="grey">
-          <Typography variant="h1">
-            Stack
-          </Typography>
+          hi
         </HomePagePanel>
       </ScrollPageContainer>
     </main>

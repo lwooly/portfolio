@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 
 const HomePagePanel = ({
   children,
@@ -7,19 +7,22 @@ const HomePagePanel = ({
   children: React.ReactNode;
   color: string;
 }) => {
+   const  theme = useTheme();
   return (
     <Box
       component={"section"}
       sx={{
         width: "100%",
-        height: "100vh",
         scrollSnapAlign: "start",
         background: color,
         padding: "2em 2em 2em 2em",
         // display:'flex',
         // flexDirection:'column',
         // gap: "3rem",
-        textAlign:'center'
+        textAlign:'center',
+        [theme.breakpoints.up('md')]: {
+            height: "100vh",
+          },
       }}
     >
         {children}

@@ -18,13 +18,14 @@ const ProfileImage = () => {
     <Image
       alt="Lloyd Woolacott profile image"
       src={"/profile-image.jpg"}
-      layout="fill"
-      objectFit="cover"
-      objectPosition="center"
       priority
-    />
+      fill
+      sizes="100vw"
+      style={{
+        objectFit: "cover",
+        objectPosition: "center"
+      }} />
   </Box>
-  
   );
 };
 
