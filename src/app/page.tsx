@@ -9,6 +9,7 @@ import Test from "../components/animation/Test";
 import ProfileImage from "../components/ProfileImage";
 import HeroMain from "../components/HeroMain";
 import StackIconSection from "../components/StackIconSection";
+import AboutMe from "../components/AboutMe";
 
 export default function Home() {
   const theme = useTheme();
@@ -20,7 +21,7 @@ export default function Home() {
           <StackIconSection />
         </HomePagePanel>
         <HomePagePanel color="grey">
-          hi
+          <AboutMe />
         </HomePagePanel>
       </ScrollPageContainer>
     </main>

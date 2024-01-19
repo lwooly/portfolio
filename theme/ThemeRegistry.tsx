@@ -11,11 +11,27 @@ const font = Josefin_Sans({
 })
 
 const themeOptions: ThemeOptions = {
-    typography: {
-        fontFamily: font.style.fontFamily,
-        fontSize: 12,
+  typography: {
+    fontFamily: font.style.fontFamily,
+    fontSize: 12,
+},
+  palette:{
+    primary: {
+      main: '#FFF',
     },
+    // secondary: {
+    //   main: '#000',
+    // },
+    background: {
+      default: 'hsl(45deg 0% 97.65%)',
+    },
+    text: {
+      primary: 'hsl(228deg 5.26% 18.63%)',
+      secondary: 'hsl(45deg 0% 0%)',
+    },
+  },
 };
+
 
 let theme = createTheme(themeOptions);
 theme = responsiveFontSizes(theme)
