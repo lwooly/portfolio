@@ -7,7 +7,7 @@ const HomePagePanel = ({
   children: React.ReactNode;
   color: string;
 }) => {
-   const  theme = useTheme();
+  const theme = useTheme();
   return (
     <Box
       component={"section"}
@@ -18,14 +18,14 @@ const HomePagePanel = ({
         // display:'flex',
         // flexDirection:'column',
         // gap: "3rem",
-        textAlign:'center',
-        ":nth-child(2)": {backgroundColor: theme.palette.common.white},
-        [theme.breakpoints.up('md')]: {
-            height: "100vh",
-          },
+        textAlign: "center",
+        ":nth-child(2)": { backgroundColor: theme.palette.common.white },
+        [theme.breakpoints.up("md")]: {
+          height: "100vh",
+        },
       }}
     >
-        {children}
+      {children}
     </Box>
   );
 };

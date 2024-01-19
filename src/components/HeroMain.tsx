@@ -4,16 +4,28 @@ import Box from "@mui/material/Box";
 import ProfileLinks from "./ProfileLinks";
 
 const HeroMain = () => {
-const theme = useTheme()
+  const theme = useTheme();
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: "2em", marginBottom:'4em' }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "2em",
+        marginBottom: "4em",
+      }}
+    >
       <ProfileImage />
       <Box>
-        <Typography variant="h1" my={"0.3em"} fontWeight={'900'}>
+        <Typography variant="h1" my={"0.3em"} fontWeight={"900"}>
           Lloyd Woolacott
         </Typography>
-        <Typography variant="h4" component="p" fontWeight={'bold'} color={theme.palette.text.secondary}>
+        <Typography
+          variant="h4"
+          component="p"
+          fontWeight={"bold"}
+          color={theme.palette.text.secondary}
+        >
           About me Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </Typography>
       </Box>

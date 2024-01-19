@@ -34,13 +34,14 @@ const StackImgList = () => {
       }}
     >
       {techIcons.map((src, index) => (
-        <ListItem component={'li'}
-        key={index}
+        <ListItem
+          component={"li"}
+          key={index}
           sx={{
-            flexBasis: 'calc(100% / 7 - 0.7em)',
+            flexBasis: "calc(100% / 7 - 0.7em)",
             justifyContent: "center",
             // maxWidth: '50px',
-            padding: '0',
+            padding: "0",
             "&:hover": {
               transform: "scale(1.15) translate(0, -10px)",
 
@@ -48,7 +49,7 @@ const StackImgList = () => {
             },
           }}
         >
-          <Image  src={src} alt={src} width={50} height={50} />
+          <Image src={src} alt={src} width={50} height={50} />
         </ListItem>
       ))}
     </List>

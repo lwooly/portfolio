@@ -1,32 +1,40 @@
-"use client"
+"use client";
 import { Box } from "@mui/material";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedArrowHead = ({scrollContainerId} : {scrollContainerId: string}) => {
+const AnimatedArrowHead = ({
+  scrollContainerId,
+}: {
+  scrollContainerId: string;
+}) => {
   const arrowHeadRef = useRef<HTMLInputElement | null>(null);
 
-  console.log(arrowHeadRef.current, 'arrow head ref')
+  console.log(arrowHeadRef.current, "arrow head ref");
 
   useGSAP(() => {
-    console.log('refreshed gsap')
+    console.log("refreshed gsap");
     const el = arrowHeadRef.current;
-    const animation = gsap.fromTo(el, {
-        rotation: 0
-    },
-    {
-        rotation: 180, backgroundColor: 'red', duration: 10, 
+    const animation = gsap.fromTo(
+      el,
+      {
+        rotation: 0,
+      },
+      {
+        rotation: 180,
+        backgroundColor: "red",
+        duration: 10,
         scrollTrigger: {
-            trigger: el,
-            markers: true,
-            scroller: `#${scrollContainerId}`,
-            toggleActions: "restart pause resume pause",
-        }
-    })
-
+          trigger: el,
+          markers: true,
+          scroller: `#${scrollContainerId}`,
+          toggleActions: "restart pause resume pause",
+        },
+      },
+    );
   }, []);
 
   return (
