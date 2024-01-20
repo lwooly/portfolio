@@ -10,8 +10,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'media.graphassets.com',
+        protocol: "https",
+        hostname: "media.graphassets.com",
       },
     ],
   },

@@ -34,25 +34,23 @@ import { fetchProjectsFromHygraph } from "../lib/server/hygraph";
 //   },
 // ];
 
-
-
-
-
 const ProjectsList = async () => {
-
-    const projectsInfoArray = await fetchProjectsFromHygraph();
-    console.log(projectsInfoArray);
+  const projectsInfoArray = await fetchProjectsFromHygraph();
+  console.log(projectsInfoArray);
 
   return (
     <Stack direction={"column"} spacing={10} component={"div"}>
-        {(!projectsInfoArray) ? (<Typography variant="h4" component={"h2"}>Watch this space!</Typography>) :
-        projectsInfoArray.map((projectInfo:(ProjectInfo), index:number) => (
-            <ProjectSummary key={index} projectInfo={projectInfo} />
-          ))
-        }
+      {!projectsInfoArray ? (
+        <Typography variant="h4" component={"h2"}>
+          Watch this space!
+        </Typography>
+      ) : (
+        projectsInfoArray.map((projectInfo: ProjectInfo, index: number) => (
+          <ProjectSummary key={index} projectInfo={projectInfo} />
+        ))
+      )}
     </Stack>
-  )
-
+  );
 };
 
 export default ProjectsList;

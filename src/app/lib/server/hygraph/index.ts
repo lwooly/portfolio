@@ -9,8 +9,7 @@ export const fetchProjectsFromHygraph = async () => {
       method: "POST",
       headers: {
         "Content-Type": 'application/json; charset="UTF8"',
-        Authorization:
-          `Bearer ${HYGRAPH_TOKEN}`,
+        Authorization: `Bearer ${HYGRAPH_TOKEN}`,
       },
       body: JSON.stringify({ query: allProjectsQuery }),
     });

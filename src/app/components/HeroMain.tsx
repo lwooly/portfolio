@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Typography, useTheme } from "@mui/material";
 import ProfileImage from "./ProfileImage";
 import Box from "@mui/material/Box";

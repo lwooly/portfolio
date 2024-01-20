@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
@@ -7,28 +7,29 @@ import Image from "next/image";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 export interface ProjectInfo {
-    projectInfo: {
-        title: string;
-        description: string;
-        gitHubLink: string;
-        liveDemoLink: string;
-        projectImage: {
-            url: string
-        }
-    }
+  projectInfo: {
+    title: string;
+    description: string;
+    gitHubLink: string;
+    liveDemoLink: string;
+    projectImage: {
+      url: string;
+    };
+  };
 }
 
-const ProjectSummary = ({projectInfo}: ProjectInfo) => {
-  const {title,
-  description,
-  gitHubLink,
-  liveDemoLink,
-  projectImage: { url: homePageImageSrc },
-} = projectInfo;
+const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
+  const {
+    title,
+    description,
+    gitHubLink,
+    liveDemoLink,
+    projectImage: { url: homePageImageSrc },
+  } = projectInfo;
 
-console.log(title, `project summary title`)
+  console.log(title, `project summary title`);
   return (
-    <Stack direction={"column"} spacing={1} component={'article'}>
+    <Stack direction={"column"} spacing={1} component={"article"}>
       <Box textAlign={"center"}>
         <Typography variant="h5" component={"h3"}>
           {title}
