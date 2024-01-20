@@ -5,7 +5,7 @@ import AboutMeImage from "@/src/app/components/AboutMeImage";
 const AboutMe = () => {
   return (
     <Stack direction={"column"}>
-     <AboutMeImage />
+      <AboutMeImage />
       <Typography variant="h3" component="h2" sx={{ marginTop: "1em" }}>
         About Me
       </Typography>

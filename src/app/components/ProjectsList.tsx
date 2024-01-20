@@ -2,7 +2,7 @@ import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import React from "react";
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const ProjectsList = () => {
   return (
@@ -42,21 +42,31 @@ const ProjectsList = () => {
           to offer a hassle-free shopping experience for users and streamlined
           management for vendors.
         </Typography>
-        <Stack direction={"row"} justifyContent={'center'}>
-        <a href="https://github.com/lwooly/commerce-app" aria-label="Commerce app source code">
+        <Stack direction={"row"} justifyContent={"center"}>
+          <a
+            href="https://github.com/lwooly/commerce-app"
+            aria-label="Commerce app source code"
+          >
             <Stack direction={"row"} spacing={1}>
-              <Typography variant="h4" component={'span'}>Code</Typography>
-                <IconButton>
-                  <GitHubIcon fontSize="medium" />
-                </IconButton>
+              <Typography variant="h4" component={"span"}>
+                Code
+              </Typography>
+              <IconButton>
+                <GitHubIcon fontSize="medium" />
+              </IconButton>
             </Stack>
           </a>
-          <a href="https://commerce-app-kappa.vercel.app/" aria-label="Commerce app live demo">
+          <a
+            href="https://commerce-app-kappa.vercel.app/"
+            aria-label="Commerce app live demo"
+          >
             <Stack direction={"row"} spacing={1}>
-              <Typography variant="h4" component={'span'}>LiveDemo</Typography>
-                <IconButton>
-                  <OpenInNewIcon fontSize="medium" />
-                </IconButton>
+              <Typography variant="h4" component={"span"}>
+                LiveDemo
+              </Typography>
+              <IconButton>
+                <OpenInNewIcon fontSize="medium" />
+              </IconButton>
             </Stack>
           </a>
         </Stack>

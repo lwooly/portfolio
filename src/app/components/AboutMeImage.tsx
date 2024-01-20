@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutMeImage = () => {
   return (
-    <Box sx={{display:'flex', justifyContent:'center'}}>
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
       <Box
         position={"relative"}
         sx={{
