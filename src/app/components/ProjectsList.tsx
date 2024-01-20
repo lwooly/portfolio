@@ -3,7 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import React from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import ProjectSummary from "./ProjectSummary";
+import ProjectSummary, { ProjectInfo } from "./ProjectSummary";
 import { fetchProjectsFromHygraph } from "../lib/server/hygraph";
 
 // //define project info - this could be stored in a database or hygraph - hardcode for now
@@ -41,14 +41,15 @@ import { fetchProjectsFromHygraph } from "../lib/server/hygraph";
 const ProjectsList = async () => {
 
     const projectsInfoArray = await fetchProjectsFromHygraph();
+    console.log(projectsInfoArray);
 
   return (
     <Stack direction={"column"} spacing={10} component={"div"}>
-    {
-    projectsInfoArray.map((projectInfo, index) => (
-        <ProjectSummary key={index} projectInfo={projectInfo} />
-      ))
-    }
+        {(!projectsInfoArray) ? (<Typography variant="h4" component={"h2"}>Watch this space!</Typography>) :
+        projectsInfoArray.map((projectInfo:(ProjectInfo), index:number) => (
+            <ProjectSummary key={index} projectInfo={projectInfo} />
+          ))
+        }
     </Stack>
   )
 

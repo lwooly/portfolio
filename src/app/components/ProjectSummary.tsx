@@ -1,27 +1,32 @@
+'use client'
+
 import React from "react";
 import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-interface ProjectSummaryProps {
+export interface ProjectInfo {
     projectInfo: {
         title: string;
         description: string;
         gitHubLink: string;
         liveDemoLink: string;
-        homePageImageSrc: string;
+        projectImage: {
+            url: string
+        }
     }
 }
 
-const ProjectSummary = ({projectInfo}: ProjectSummaryProps) => {
+const ProjectSummary = ({projectInfo}: ProjectInfo) => {
   const {title,
   description,
   gitHubLink,
   liveDemoLink,
-  homePageImageSrc,
+  projectImage: { url: homePageImageSrc },
 } = projectInfo;
 
+console.log(title, `project summary title`)
   return (
     <Stack direction={"column"} spacing={1} component={'article'}>
       <Box textAlign={"center"}>

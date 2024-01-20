@@ -1,4 +1,6 @@
+"use client";
 import { Box, useTheme } from "@mui/material";
+import { ReactNode } from "react";
 
 const HomePagePanel = ({ children }: { children: React.ReactNode }) => {
   const theme = useTheme();

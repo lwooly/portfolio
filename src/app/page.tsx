@@ -14,7 +14,7 @@ import Portfolio from "./components/Portfolio";
 export default function Home() {
   return (
     <main>
-      {/* <ScrollPageContainer id={"scrollContainer"}>
+      <ScrollPageContainer id={"scrollContainer"}>
         <HomePagePanel>
           <HeroMain />
           <StackIconSection />
@@ -22,10 +22,10 @@ export default function Home() {
         <HomePagePanel>
           <AboutMe />
         </HomePagePanel>
-        <HomePagePanel> */}
+        <HomePagePanel>
           <Portfolio />
-        {/* </HomePagePanel>
-      </ScrollPageContainer> */}
+        </HomePagePanel>
+      </ScrollPageContainer>
     </main>
   );
 }

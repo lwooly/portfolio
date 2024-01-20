@@ -1,4 +1,4 @@
-
+"use client";
 import { Height } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { spec } from "node:test/reporters";
