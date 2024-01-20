@@ -1,16 +1,10 @@
+
 import { Height } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { spec } from "node:test/reporters";
 import { styled } from "@mui/material";
 
-const ScrollPageContainer = ({
-  id,
-  children,
-}: {
-  id: string;
-  children: React.ReactNode;
-}) => {
-  const StyledContainer = styled(Box)(({ theme }) => ({
+const StyledContainer = styled(Box)(({ theme }) => ({
     width: "100%",
     overflowY: "scroll",
     scrollSnapType: "y proximity",
@@ -20,6 +14,15 @@ const ScrollPageContainer = ({
       maxHeight: "100vh",
     },
   }));
+
+const ScrollPageContainer = ({
+  id,
+  children,
+}: {
+  id: string;
+  children: React.ReactNode;
+}) => {
+  
   return (
     <>
       <StyledContainer id={id}>{children}</StyledContainer>

@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Typography, Box, useTheme, Slide } from "@mui/material";
@@ -13,10 +12,9 @@ import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 
 export default function Home() {
-  const theme = useTheme();
   return (
     <main>
-      <ScrollPageContainer id={"scrollContainer"}>
+      {/* <ScrollPageContainer id={"scrollContainer"}>
         <HomePagePanel>
           <HeroMain />
           <StackIconSection />
@@ -24,10 +22,10 @@ export default function Home() {
         <HomePagePanel>
           <AboutMe />
         </HomePagePanel>
-        <HomePagePanel>
+        <HomePagePanel> */}
           <Portfolio />
-        </HomePagePanel>
-      </ScrollPageContainer>
+        {/* </HomePagePanel>
+      </ScrollPageContainer> */}
     </main>
   );
 }
