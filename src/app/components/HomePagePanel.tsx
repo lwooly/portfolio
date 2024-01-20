@@ -2,10 +2,8 @@ import { Box, useTheme } from "@mui/material";
 
 const HomePagePanel = ({
   children,
-  color,
 }: {
   children: React.ReactNode;
-  color: string;
 }) => {
   const theme = useTheme();
   return (

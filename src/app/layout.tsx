@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
-import DrawerAppBar from "@/src/components/mui/muiComponents/Navigation";
+import DrawerAppBar from "@/src/app/components/mui/muiComponents/Navigation";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 
 const inter = Inter({ subsets: ["latin"] });
