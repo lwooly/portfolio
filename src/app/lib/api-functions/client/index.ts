@@ -20,5 +20,6 @@ export const sendEmail = async (emailVals:EmailValues) => {
 
   } catch (error) {
     console.error("Error fetching data", error);
+    return false;
   }
 }

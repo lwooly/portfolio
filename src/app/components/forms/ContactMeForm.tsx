@@ -1,5 +1,5 @@
 import { Button, Stack, TextField, useTheme } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
@@ -13,6 +13,9 @@ export interface EmailValues {
   }
 
 const ContactMeForm = () => {
+    const [isSent, setIsSent] = React.useState(false);
+    const [ isSending, setIsSending ] = React.useState(false);
+    const [ isSendingError, setIsSendingError ] = React.useState(false);
     const theme = useTheme();
   const schema = yup
     .object({
@@ -31,7 +34,7 @@ const ContactMeForm = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isDirty, isValid, isSubmitting },
+    formState: { errors, isDirty, isValid, isSubmitting, },
     reset,
   } = useForm({
     resolver: yupResolver(schema),
@@ -39,13 +42,26 @@ const ContactMeForm = () => {
     defaultValues: defaults,
   });
 
-
-
-  const submitFn = (formData:EmailValues) => {
+  const submitFn = async (formData:EmailValues) => {
+    setIsSending(true);
     console.log(formData);
-    sendEmail(formData);
-    reset(defaults);
+   const emailIsSent = await sendEmail(formData);
+    if (emailIsSent) {
+         setIsSent(true);
+         reset(defaults);
+    } else { 
+        setIsSendingError(true);
+    }
+    setIsSending(false);
   };
+
+  //Reset sent value if user adds to form again after sending
+  useEffect(() => {
+    if (isDirty) {
+      setIsSent(false);
+    }
+  }, [isDirty]);
+
 
   return (
     <form onSubmit={handleSubmit(submitFn)}>
@@ -110,6 +126,10 @@ const ContactMeForm = () => {
         >
           Submit
         </Button>
+        {(isSending && !isSent && !isSendingError) && <p>Sending...</p>}
+        {(isSent && !isSending && !isSendingError) && <p>Message Sent!</p>}
+        {(!isSent && !isSending && isSendingError) && <p>Message not sent! Please try again!</p>}
+
       </Stack>
     </form>
   );
