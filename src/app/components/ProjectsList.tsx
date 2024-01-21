@@ -36,7 +36,6 @@ import { fetchProjectsFromHygraph } from "../lib/server/hygraph";
 
 const ProjectsList = async () => {
   const projectsInfoArray = await fetchProjectsFromHygraph();
-  console.log(projectsInfoArray);
 
   return (
     <Stack direction={"column"} spacing={10} component={"div"}>

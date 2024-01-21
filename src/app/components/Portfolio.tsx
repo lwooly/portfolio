@@ -4,11 +4,11 @@ import ProjectsList from "./ProjectsList";
 
 const Portfolio = () => {
   return (
-    <Box textAlign={"left"}>
-      <Typography variant="h4" component={"h2"}>
+    <Box>
+      <Typography variant="h3" component={"h2"}>
         Portfolio
       </Typography>
-      <Typography variant="h5" component={"h2"}>
+      <Typography variant="h4">
         Full stack development projects
       </Typography>
       <ProjectsList />

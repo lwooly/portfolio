@@ -7,18 +7,65 @@ import {
   ThemeProvider,
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Josefin_Sans } from "next/font/google";
+import { Josefin_Sans, Poppins, Roboto } from "next/font/google";
+import { text } from "stream/consumers";
 
-const font = Josefin_Sans({
+const font = Poppins({
   weight: ["300", "400", "500", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
+const textColors = {
+  primary: "#3c3c3c",
+  secondary: "#555;",
+  tertiary: "#818181",
+  headingHighlight: "hsl(143.9deg 75.46% 31.96%)"//red
+  // secondary: "hsl(228deg 85.29% 50.31%);",
+};
+
 const themeOptions: ThemeOptions = {
   typography: {
     fontFamily: font.style.fontFamily,
     fontSize: 12,
+    h1: {
+      fontWeight: 700,
+      color: textColors.primary,
+    },
+    h2: {
+      fontWeight: 700,
+      color: textColors.primary,
+    },
+    h3: {
+      fontSize: "1.2rem",
+      fontWeight: 700,
+      color: textColors.headingHighlight,
+      marginTop: "1.2rem"
+    },
+    h4: {
+      fontWeight: 700,
+      color: textColors.primary,
+      marginTop: "1rem"
+    },
+    h5: {
+      fontSize: "1.2rem",
+      fontWeight: 700,
+      color: textColors.secondary,
+      marginTop: "1.2rem"
+    },
+    h6: {
+      fontWeight: 500,
+color: textColors.tertiary,
+    },
+    body1: {
+      fontSize: "1.2rem",
+      color: textColors.secondary,
+    },
+    body2: {
+      fontSize: "1.2rem",
+      color: textColors.tertiary,
+      marginTop: "0.5rem" 
+    },
   },
   palette: {
     primary: {
@@ -28,11 +75,11 @@ const themeOptions: ThemeOptions = {
     //   main: '#000',
     // },
     background: {
-      default: "hsl(45deg 0% 97.65%)",
+      default: "#f5f5f5",
     },
     text: {
-      primary: "hsl(228deg 5.26% 18.63%)",
-      secondary: "hsl(45deg 0% 0%)",
+      primary: textColors.primary,
+      secondary: textColors.secondary,
     },
   },
 };

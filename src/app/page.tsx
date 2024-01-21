@@ -10,6 +10,7 @@ import HeroMain from "./components/HeroMain";
 import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
+import TypographyTest from "./components/TypographyTest";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         </HomePagePanel>
         <HomePagePanel>
           <Portfolio />
+          <TypographyTest />
         </HomePagePanel>
       </ScrollPageContainer>
     </main>

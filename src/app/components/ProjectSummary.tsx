@@ -29,12 +29,12 @@ const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
 
   console.log(title, `project summary title`);
   return (
-    <Stack direction={"column"} spacing={1} component={"article"}>
+    <Stack direction={"column"} spacing={1} component={"article"} sx={{paddingTop:'1rem'}}>
       <Box textAlign={"center"}>
-        <Typography variant="h5" component={"h3"}>
+        <Typography variant="h5">
           {title}
         </Typography>
-        <Typography variant="body1" component="p" sx={{ marginTop: "1em" }}>
+        <Typography variant="body2" sx={{ }}>
           {description}
         </Typography>
         <Stack direction={"row"} justifyContent={"center"}>

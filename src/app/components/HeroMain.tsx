@@ -1,11 +1,9 @@
-"use client";
 import { Typography, useTheme } from "@mui/material";
 import ProfileImage from "./ProfileImage";
 import Box from "@mui/material/Box";
 import ProfileLinks from "./ProfileLinks";
 
 const HeroMain = () => {
-  const theme = useTheme();
 
   return (
     <Box
@@ -18,14 +16,12 @@ const HeroMain = () => {
     >
       <ProfileImage />
       <Box>
-        <Typography variant="h1" my={"0.3em"} fontWeight={"900"}>
+        <Typography variant="h1" my={"0.3em"}>
           Lloyd Woolacott
         </Typography>
         <Typography
-          variant="h4"
-          component="p"
-          fontWeight={"bold"}
-          color={theme.palette.text.secondary}
+          variant="body1"
+          // fontWeight={"bold"}
         >
           About me Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </Typography>

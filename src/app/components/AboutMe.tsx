@@ -6,17 +6,15 @@ const AboutMe = () => {
   return (
     <Stack direction={"column"}>
       <AboutMeImage />
-      <Typography variant="h3" component="h2" sx={{ marginTop: "1em" }}>
+      <Typography variant="h3">
         About Me
       </Typography>
       <Typography
-        variant="body1"
-        component="p"
-        sx={{ marginTop: "1em", justifySelf: "left" }}
+        variant="h4"
       >
         Chartered Engineer & Full-Stack Dev
       </Typography>
-      <Typography variant="body1" component="p" sx={{ marginTop: "1em" }}>
+      <Typography variant="body2" sx={{ marginTop: "1em" }}>
         Hi, I&apos;m Lloyd, a Chartered Structural Engineer venturing into
         full-stack technologies. With a solid foundation in engineering, I am
         now delving into the realms of software development, keen on integrating
