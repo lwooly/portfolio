@@ -3,6 +3,14 @@ import React from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
+import { sendEmail } from "../../lib/api-functions/client";
+import { Email } from "@mui/icons-material";
+
+export interface EmailValues {
+    name: string;
+    email: string;
+    message: string;
+  }
 
 const ContactMeForm = () => {
     const theme = useTheme();
@@ -31,8 +39,11 @@ const ContactMeForm = () => {
     defaultValues: defaults,
   });
 
-  const submitFn = (formData) => {
+
+
+  const submitFn = (formData:EmailValues) => {
     console.log(formData);
+    sendEmail(formData);
     reset(defaults);
   };
 
@@ -90,7 +101,7 @@ const ContactMeForm = () => {
         <Button
           type="submit"
           variant="contained"
-          disabled={isSubmitting || !isDirty || (!isDirty && !isValid)}
+          disabled={isSubmitting || !isDirty || (isDirty && !isValid)}
           sx={{
             maxWidth: "10rem",
             backgroundColor: "hsl(143.9deg 75.46% 31.96%)",
