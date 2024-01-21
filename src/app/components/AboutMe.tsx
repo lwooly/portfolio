@@ -3,6 +3,7 @@ import Image from "next/image";
 import AboutMeImage from "@/src/app/components/AboutMeImage";
 
 const AboutMe = () => {
+
   return (
     <Stack direction={"column"}>
       <AboutMeImage />

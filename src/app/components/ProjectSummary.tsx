@@ -27,39 +27,13 @@ const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
     projectImage: { url: homePageImageSrc },
   } = projectInfo;
 
-  console.log(title, `project summary title`);
   return (
-    <Stack direction={"column"} spacing={1} component={"article"} sx={{paddingTop:'1rem'}}>
-      <Box textAlign={"center"}>
-        <Typography variant="h5">
-          {title}
-        </Typography>
-        <Typography variant="body2" sx={{ }}>
-          {description}
-        </Typography>
-        <Stack direction={"row"} justifyContent={"center"}>
-          <a href={gitHubLink} aria-label={`${title} source code`}>
-            <Stack direction={"row"} spacing={1}>
-              <Typography variant="h4" component={"span"}>
-                Code
-              </Typography>
-              <IconButton>
-                <GitHubIcon fontSize="medium" />
-              </IconButton>
-            </Stack>
-          </a>
-          <a href={liveDemoLink} aria-label={`${title} live demo`}>
-            <Stack direction={"row"} spacing={1}>
-              <Typography variant="h4" component={"span"}>
-                LiveDemo
-              </Typography>
-              <IconButton>
-                <OpenInNewIcon fontSize="medium" />
-              </IconButton>
-            </Stack>
-          </a>
-        </Stack>
-      </Box>
+    <Stack
+      direction={"column"}
+      spacing={3}
+      component={"article"}
+      sx={{ paddingBottom: "1rem" }}
+    >
       {/* Container for project image */}
       <Box
         sx={{
@@ -77,11 +51,62 @@ const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
           src={homePageImageSrc}
           fill
           sizes="100vw"
+          priority
           style={{
             objectFit: "cover",
             objectPosition: "center",
           }}
         />
+      </Box>
+      <Box textAlign={"left"}>
+        <Typography variant="h5">{title}</Typography>
+        <Typography variant="body2" sx={{ mb: "1rem" }}>
+          {description}
+        </Typography>
+        {/* links */}
+        <Stack direction={"row"} gap={2}>
+          <a
+            href={gitHubLink}
+            aria-label={`${title} source code`}
+            style={{ textDecoration: "none" }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
+                Code
+              </Typography> */}
+              <IconButton sx={{ padding: 0 }}>
+                <GitHubIcon fontSize="large" />
+              </IconButton>
+            </Box>
+          </a>
+
+          <a
+            href={liveDemoLink}
+            aria-label={`${title} live demo`}
+            style={{ textDecoration: "none" }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
+                LiveDemo
+              </Typography> */}
+              <IconButton sx={{ padding: 0 }}>
+                <OpenInNewIcon fontSize="large" />
+              </IconButton>
+            </Box>
+          </a>
+        </Stack>
       </Box>
     </Stack>
   );

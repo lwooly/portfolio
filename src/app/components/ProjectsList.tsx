@@ -35,10 +35,17 @@ import { fetchProjectsFromHygraph } from "../lib/server/hygraph";
 // ];
 
 const ProjectsList = async () => {
-  const projectsInfoArray = await fetchProjectsFromHygraph();
+
+  if (typeof window === 'undefined') {
+    console.log('This is server-side rendering a list of projects');
+  } else {
+    console.log('This is client-side rendering a list of projects');
+  }
+  
+  const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
 
   return (
-    <Stack direction={"column"} spacing={10} component={"div"}>
+    <Stack direction={"column"} spacing={6} component={"div"} sx={{paddingY:'2rem'}}>
       {!projectsInfoArray ? (
         <Typography variant="h4" component={"h2"}>
           Watch this space!

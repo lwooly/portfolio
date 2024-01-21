@@ -7,10 +7,10 @@ import {
   ThemeProvider,
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Josefin_Sans, Poppins, Roboto } from "next/font/google";
+import { Josefin_Sans, Poppins, Roboto, Jost, Epilogue } from "next/font/google";
 import { text } from "stream/consumers";
 
-const font = Poppins({
+const font = Epilogue({
   weight: ["300", "400", "500", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
@@ -20,7 +20,7 @@ const textColors = {
   primary: "#3c3c3c",
   secondary: "#555;",
   tertiary: "#818181",
-  headingHighlight: "hsl(143.9deg 75.46% 31.96%)"//red
+  headingHighlight: "hsl(143.9deg 75.46% 31.96%)"
   // secondary: "hsl(228deg 85.29% 50.31%);",
 };
 
@@ -50,30 +50,39 @@ const themeOptions: ThemeOptions = {
     h5: {
       fontSize: "1.2rem",
       fontWeight: 700,
-      color: textColors.secondary,
-      marginTop: "1.2rem"
+      color: textColors.primary,
+      // marginTop: "1.2rem"
     },
     h6: {
       fontWeight: 500,
 color: textColors.tertiary,
     },
     body1: {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       color: textColors.secondary,
     },
     body2: {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       color: textColors.tertiary,
       marginTop: "0.5rem" 
+    },
+    subtitle1: {
+      fontSize: "1.2rem",
+      color: textColors.primary,
     },
   },
   palette: {
     primary: {
       main: "#FFF",
+      light: "#FFF",
+      dark: "#FFF",
+
     },
-    // secondary: {
-    //   main: '#000',
-    // },
+    secondary: {
+      main: "hsl(143.9deg 75.46% 31.96%)",
+      light: "hsl(143.9deg 75.46% 31.96%)",
+      dark: "hsl(143.9deg 75.46% 31.96%)",
+    },
     background: {
       default: "#f5f5f5",
     },

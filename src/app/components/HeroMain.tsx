@@ -26,7 +26,7 @@ const HeroMain = () => {
           About me Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </Typography>
       </Box>
-      <ProfileLinks />
+      <ProfileLinks color=""/>
     </Box>
   );
 };

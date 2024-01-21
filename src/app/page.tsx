@@ -11,8 +11,11 @@ import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 import TypographyTest from "./components/TypographyTest";
+import ContactMe from "./components/ContactMe";
+import { Suspense } from "react";
 
 export default function Home() {
+
   return (
     <main>
       <ScrollPageContainer id={"scrollContainer"}>
@@ -25,6 +28,11 @@ export default function Home() {
         </HomePagePanel>
         <HomePagePanel>
           <Portfolio />
+        </HomePagePanel>
+        <HomePagePanel>
+          <ContactMe />
+        </HomePagePanel>
+        <HomePagePanel>
           <TypographyTest />
         </HomePagePanel>
       </ScrollPageContainer>

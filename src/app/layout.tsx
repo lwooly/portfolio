@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import DrawerAppBar from "@/src/app/components/mui/muiComponents/Navigation";
 import ThemeRegistry from "@/theme/ThemeRegistry";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <ThemeRegistry>
             <DrawerAppBar />
             {children}
+            <Footer />
           </ThemeRegistry>
         </AppRouterCacheProvider>
       </body>

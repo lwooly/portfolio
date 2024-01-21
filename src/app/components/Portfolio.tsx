@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
-import ProjectsList from "./ProjectsList";
+import React, { Suspense } from "react";
+const ProjectsList = React.lazy(() => import('./ProjectsList'));
 
 const Portfolio = () => {
   return (
@@ -11,7 +11,9 @@ const Portfolio = () => {
       <Typography variant="h4">
         Full stack development projects
       </Typography>
-      <ProjectsList />
+      <Suspense fallback={<Box>Loading...</Box>}>
+        <ProjectsList />
+      </Suspense>
     </Box>
   );
 };
