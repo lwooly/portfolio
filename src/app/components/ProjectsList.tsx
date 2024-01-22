@@ -39,6 +39,19 @@ import Carousel from "./Carousel";
 const ProjectsList = async () => {
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
 
+  const projectsSummaryArr = projectsInfoArray.map(
+    (projectInfo: ProjectInfo, index: number) => (
+      //slides at md breakpoint
+      <Box key={index}
+      sx={{
+        minWidth: "100%",
+        flexBasis: "
+      }}>
+        <ProjectSummary projectInfo={projectInfo} />
+      </Box>
+    )
+  );
+
   return (
     <>
       {!projectsInfoArray ? (
@@ -46,11 +59,9 @@ const ProjectsList = async () => {
           Watch this space!
         </Typography>
       ) : (
-        projectsInfoArray.map((projectInfo: ProjectInfo, index: number) => (
-          <ProjectSummary key={index} projectInfo={projectInfo} />
-        ))
+        projectsSummaryArr
       )}
-      </>
+    </>
   );
 };
 
