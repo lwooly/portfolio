@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     html: string;
   }
 
-  const msg:EmailMessage = {
+  const msg: EmailMessage = {
     to: MONITOR_EMAIL,
     from: ADMIN_EMAIL,
     subject: `New message from ${name}`,
@@ -42,15 +42,15 @@ export async function POST(request: NextRequest) {
     return new NextResponse(JSON.stringify({ message: "Email sent" }), {
       status: 200,
     });
-} catch (error) {
+  } catch (error) {
     console.log("Email failed to send");
     console.error(error);
     if ((error as any).response) {
-        console.error((error as any).response.body);
+      console.error((error as any).response.body);
     }
     return new NextResponse(
-        JSON.stringify({ message: "Email failed to send" }),
-        { status: 500 }
+      JSON.stringify({ message: "Email failed to send" }),
+      { status: 500 },
     );
-}
+  }
 }

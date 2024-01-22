@@ -1,4 +1,4 @@
-import 'server-only';
+import "server-only";
 import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
@@ -36,11 +36,15 @@ import { fetchProjectsFromHygraph } from "../lib/api-functions/server/hygraph";
 // ];
 
 const ProjectsList = async () => {
-  
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
 
   return (
-    <Stack direction={"column"} spacing={6} component={"div"} sx={{paddingY:'2rem'}}>
+    <Stack
+      direction={"column"}
+      spacing={6}
+      component={"div"}
+      sx={{ paddingY: "2rem" }}
+    >
       {!projectsInfoArray ? (
         <Typography variant="h4" component={"h2"}>
           Watch this space!

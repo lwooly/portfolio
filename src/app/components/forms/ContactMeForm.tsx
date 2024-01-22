@@ -1,4 +1,11 @@
-import { Box, Button, Stack, TextField, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import React, { useEffect } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,16 +14,16 @@ import { sendEmail } from "../../lib/api-functions/client";
 import { Email } from "@mui/icons-material";
 
 export interface EmailValues {
-    name: string;
-    email: string;
-    message: string;
-  }
+  name: string;
+  email: string;
+  message: string;
+}
 
 const ContactMeForm = () => {
-    const [isSent, setIsSent] = React.useState(false);
-    const [ isSending, setIsSending ] = React.useState(false);
-    const [ isSendingError, setIsSendingError ] = React.useState(false);
-    const theme = useTheme();
+  const [isSent, setIsSent] = React.useState(false);
+  const [isSending, setIsSending] = React.useState(false);
+  const [isSendingError, setIsSendingError] = React.useState(false);
+  const theme = useTheme();
   const schema = yup
     .object({
       name: yup.string().required().max(30),
@@ -34,7 +41,7 @@ const ContactMeForm = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isDirty, isValid, isSubmitting, },
+    formState: { errors, isDirty, isValid, isSubmitting },
     reset,
   } = useForm({
     resolver: yupResolver(schema),
@@ -42,16 +49,16 @@ const ContactMeForm = () => {
     defaultValues: defaults,
   });
 
-  const submitFn = async (formData:EmailValues) => {
+  const submitFn = async (formData: EmailValues) => {
     setIsSendingError(false);
     setIsSending(true);
     console.log(formData);
-   const emailIsSent = await sendEmail(formData);
+    const emailIsSent = await sendEmail(formData);
     if (emailIsSent) {
-         setIsSent(true);
-         reset(defaults);
-    } else { 
-        setIsSendingError(true);
+      setIsSent(true);
+      reset(defaults);
+    } else {
+      setIsSendingError(true);
     }
     setIsSending(false);
   };
@@ -63,9 +70,8 @@ const ContactMeForm = () => {
     }
   }, [isDirty]);
 
-
   return (
-    <form onSubmit={handleSubmit(submitFn)} style={{marginTop:'2rem'}}>
+    <form onSubmit={handleSubmit(submitFn)} style={{ marginTop: "2rem" }}>
       <Stack direction={"column"} gap={"1rem"}>
         <Controller
           name="name"
@@ -115,27 +121,37 @@ const ContactMeForm = () => {
             />
           )}
         />
-        <Stack direction={'column'} sx={{minHeight: '5rem'}} gap={1}>
-        {(!isSending && !isSent) &&  <Button
-          type="submit"
-          variant="contained"
-          disabled={isSubmitting || !isDirty || (isDirty && !isValid)}
-          sx={{
-            maxWidth: "10rem",
-            backgroundColor: "hsl(143.9deg 75.46% 31.96%)",
-            color: theme.palette.common.white,
-            alignSelf: "center",
-            '&:hover': {
-              backgroundColor: "hsl(143.9deg 75.46% 25%)",
-              borderShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)',
-            },
-          }}
-        >
-          Submit
-        </Button>}
-        {(isSending && !isSent && !isSendingError) && <Typography variant="body2">Sending...</Typography>}
-        {(isSent && !isSending && !isSendingError) && <Typography variant="body2">Message Sent!</Typography>}
-        {(!isSent && !isSending && isSendingError) && <Typography variant="body2">Message not sent! Please try again!</Typography>}
+        <Stack direction={"column"} sx={{ minHeight: "5rem" }} gap={1}>
+          {!isSending && !isSent && (
+            <Button
+              type="submit"
+              variant="contained"
+              disabled={isSubmitting || !isDirty || (isDirty && !isValid)}
+              sx={{
+                maxWidth: "10rem",
+                backgroundColor: "hsl(143.9deg 75.46% 31.96%)",
+                color: theme.palette.common.white,
+                alignSelf: "center",
+                "&:hover": {
+                  backgroundColor: "hsl(143.9deg 75.46% 25%)",
+                  borderShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+                },
+              }}
+            >
+              Submit
+            </Button>
+          )}
+          {isSending && !isSent && !isSendingError && (
+            <Typography variant="body2">Sending...</Typography>
+          )}
+          {isSent && !isSending && !isSendingError && (
+            <Typography variant="body2">Message Sent!</Typography>
+          )}
+          {!isSent && !isSending && isSendingError && (
+            <Typography variant="body2">
+              Message not sent! Please try again!
+            </Typography>
+          )}
         </Stack>
       </Stack>
     </form>

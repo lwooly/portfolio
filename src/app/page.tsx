@@ -15,21 +15,20 @@ import ContactMe from "./components/ContactMe";
 import { Suspense } from "react";
 
 export default function Home() {
-
   return (
     <main>
       <ScrollPageContainer id={"scrollContainer"}>
-        <HomePagePanel id={'home'}>
+        <HomePagePanel id={"home"}>
           <HeroMain />
           <StackIconSection />
         </HomePagePanel>
-        <HomePagePanel id={'about'}>
+        <HomePagePanel id={"about"}>
           <AboutMe />
         </HomePagePanel>
-        <HomePagePanel id={'projects'}>
+        <HomePagePanel id={"projects"}>
           <Portfolio />
         </HomePagePanel>
-        <HomePagePanel id={'contact'}>
+        <HomePagePanel id={"contact"}>
           <ContactMe />
         </HomePagePanel>
         {/* <HomePagePanel>

@@ -6,7 +6,7 @@ import DrawerAppBar from "@/src/app/components/mui/muiComponents/Navigation";
 import ThemeRegistry from "@/src/theme";
 import Footer from "./components/Footer";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import theme from '@/src/theme';
+import theme from "@/src/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 

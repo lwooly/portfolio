@@ -7,7 +7,13 @@ import {
   ThemeProvider,
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Josefin_Sans, Poppins, Roboto, Jost, Epilogue } from "next/font/google";
+import {
+  Josefin_Sans,
+  Poppins,
+  Roboto,
+  Jost,
+  Epilogue,
+} from "next/font/google";
 import { text } from "stream/consumers";
 
 const font = Epilogue({
@@ -20,7 +26,7 @@ const textColors = {
   primary: "#3c3c3c",
   secondary: "#555;",
   tertiary: "#818181",
-  headingHighlight: "hsl(143.9deg 75.46% 31.96%)"
+  headingHighlight: "hsl(143.9deg 75.46% 31.96%)",
   // secondary: "hsl(228deg 85.29% 50.31%);",
 };
 
@@ -40,12 +46,12 @@ const themeOptions: ThemeOptions = {
       fontSize: "1.2rem",
       fontWeight: 700,
       color: textColors.headingHighlight,
-      marginTop: "1.2rem"
+      marginTop: "1.2rem",
     },
     h4: {
       fontWeight: 700,
       color: textColors.primary,
-      marginTop: "1rem"
+      marginTop: "1rem",
     },
     h5: {
       fontSize: "1.2rem",
@@ -55,7 +61,7 @@ const themeOptions: ThemeOptions = {
     },
     h6: {
       fontWeight: 500,
-color: textColors.tertiary,
+      color: textColors.tertiary,
     },
     body1: {
       fontSize: "1rem",
@@ -64,7 +70,7 @@ color: textColors.tertiary,
     body2: {
       fontSize: "1rem",
       color: textColors.tertiary,
-      marginTop: "0.5rem" 
+      marginTop: "0.5rem",
     },
     subtitle1: {
       fontSize: "1.2rem",
@@ -76,7 +82,6 @@ color: textColors.tertiary,
       main: "#FFF",
       light: "#FFF",
       dark: "#FFF",
-
     },
     secondary: {
       main: "hsl(143.9deg 75.46% 31.96%)",

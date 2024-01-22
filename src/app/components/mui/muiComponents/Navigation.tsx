@@ -18,7 +18,6 @@ import Button from "@mui/material/Button";
 import Link from "next/link";
 import { capitalizeFirstLetter } from "@/src/app/utils";
 
-
 interface Props {
   window?: () => Window;
 }
@@ -35,17 +34,26 @@ export default function DrawerAppBar(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h3" sx={{ my: 2 }}>
-      lwooly.dev
+        lwooly.dev
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding sx={{ justifyContent: 'center', width:'100%'}}>
+          <ListItem
+            key={item}
+            disablePadding
+            sx={{ justifyContent: "center", width: "100%" }}
+          >
             <Link href={`#${item}`} passHref>
-              <ListItemButton sx={{ justifyContent: 'flex-end', width:'100%'}}>
-                <ListItemText  primary={capitalizeFirstLetter(item)}  sx={{ color: "#3c3c3c", textAlign:'right' }}/>
+              <ListItemButton
+                sx={{ justifyContent: "flex-end", width: "100%" }}
+              >
+                <ListItemText
+                  primary={capitalizeFirstLetter(item)}
+                  sx={{ color: "#3c3c3c", textAlign: "right" }}
+                />
               </ListItemButton>
             </Link>
           </ListItem>
@@ -61,13 +69,13 @@ export default function DrawerAppBar(props: Props) {
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <CssBaseline />
       <AppBar component="nav">
-        <Toolbar sx={{zIndex:2, justifyContent: {xs: 'end', sm: 'none' }}}>
+        <Toolbar sx={{ zIndex: 2, justifyContent: { xs: "end", sm: "none" } }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ mr:{xs: 0, sm: 2}, display: { sm: "none" } }}
+            sx={{ mr: { xs: 0, sm: 2 }, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -85,9 +93,7 @@ export default function DrawerAppBar(props: Props) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Link key={item} href={`#${item}`}>
-                <Button sx={{ color: "#3c3c3c" }}>
-                  {item}
-                </Button>
+                <Button sx={{ color: "#3c3c3c" }}>{item}</Button>
               </Link>
             ))}
           </Box>
@@ -95,7 +101,7 @@ export default function DrawerAppBar(props: Props) {
       </AppBar>
       <nav>
         <Drawer
-        anchor="top"
+          anchor="top"
           container={container}
           variant="temporary"
           open={mobileOpen}

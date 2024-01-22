@@ -6,18 +6,10 @@ import { use } from "react";
 import ContactMeForm from "./forms/ContactMeForm";
 
 const ContactMe = () => {
-
-
   return (
     <Stack direction={"column"}>
-      <Typography variant="h3">
-        Contact Me
-      </Typography>
-      <Typography
-        variant="h4"
-      >
-        Get In Touch
-      </Typography>
+      <Typography variant="h3">Contact Me</Typography>
+      <Typography variant="h4">Get In Touch</Typography>
       <ContactMeForm />
     </Stack>
   );

@@ -1,6 +1,6 @@
 import { EmailValues } from "@/src/app/components/forms/ContactMeForm";
 
-export const sendEmail = async (emailVals:EmailValues) => {
+export const sendEmail = async (emailVals: EmailValues) => {
   try {
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -15,11 +15,10 @@ export const sendEmail = async (emailVals:EmailValues) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    console.log('Email sent');
+    console.log("Email sent");
     return true;
-
   } catch (error) {
     console.error("Error fetching data", error);
     return false;
   }
-}
+};
