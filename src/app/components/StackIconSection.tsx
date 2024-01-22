@@ -24,7 +24,7 @@ const StackIconSection = () => {
   return (
     <Stack
       component={"article"}
-      direction="column"
+      direction={{xs: "column", md: "row"}}
       spacing={1}
       divider={<Divider orientation="horizontal" flexItem />}
     >

@@ -9,7 +9,7 @@ const HeroMain = () => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: {xs: "column", md: "row"},
         gap: "2em",
         paddingTop: {xs: "1em", sm: "2em", md: "3em", lg: "4em"},
         marginBottom: "4em",
@@ -17,7 +17,7 @@ const HeroMain = () => {
     >
       <ProfileImage />
       <Box>
-        <Typography variant="h1" my={"0.3em"}>
+        <Typography variant="h1" my={"0.3em"} sx={{fontSize: {md: '3.5rem'}}}>
           Lloyd Woolacott
         </Typography>
         <Typography
@@ -26,8 +26,9 @@ const HeroMain = () => {
         >
           About me Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </Typography>
+        <ProfileLinks color=""/>
       </Box>
-      <ProfileLinks color=""/>
+
     </Box>
   );
 };

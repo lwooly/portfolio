@@ -11,6 +11,7 @@ const HomePagePanel = ({ children, id }: { children: React.ReactNode, id:string 
       sx={{
         width: "100%",
         scrollSnapAlign: "start",
+        height: {md: "100vh"},
         padding: "2em 2em 6em 2em",
         // display:'flex',
         // flexDirection:'column',

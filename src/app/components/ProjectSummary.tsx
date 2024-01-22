@@ -32,7 +32,7 @@ const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
       direction={"column"}
       spacing={3}
       component={"article"}
-      sx={{ paddingBottom: "1rem" }}
+      sx={{ paddingBottom: "1rem", alignItems: "center" }}
     >
       {/* Container for project image */}
       <Box

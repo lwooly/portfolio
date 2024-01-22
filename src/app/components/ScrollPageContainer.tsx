@@ -16,11 +16,12 @@ const ScrollPageContainer = ({
     <>
       <Box
       sx={{width: "100%",
-      marginTop: "-64px", // height of navbar
-      paddingTop: "64px", // height of navbar
+      marginTop: "-70px", // height of navbar
+      paddingTop: "70px", // height of navbar
+      overflowY: "scroll",
 
       // scroll snapping on sections at md breakpoint
-      overflowY: {md: "scroll"},
+     
       scrollSnapType: {xs:"y proximity", md: "y mandatory"},
       maxHeight: {md: "100vh"},
       

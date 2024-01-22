@@ -36,12 +36,6 @@ import { fetchProjectsFromHygraph } from "../lib/api-functions/server/hygraph";
 // ];
 
 const ProjectsList = async () => {
-
-  if (typeof window === 'undefined') {
-    console.log('This is server-side rendering a list of projects');
-  } else {
-    console.log('This is client-side rendering a list of projects');
-  }
   
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
 
