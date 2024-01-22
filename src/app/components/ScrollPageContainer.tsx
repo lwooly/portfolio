@@ -19,16 +19,15 @@ const ScrollPageContainer = ({
     <>
       <Box
       sx={{width: "100%",
-      marginTop: "-70px", // height of navbar
-      paddingTop: "70px", // height of navbar
-      // scrollPaddingTop: "-140px", // height of navbar
-      overflowY: "scroll",
-      scrollSnapType: "y proximity",
+      marginTop: "-64px", // height of navbar
+      paddingTop: "64px", // height of navbar
+
       // scroll snapping on sections at md breakpoint
-      [theme.breakpoints.up("md")]: {
-        scrollSnapType: "y mandatory",
-        maxHeight: "100vh",
-      },}}
+      overflowY: {md: "scroll"},
+      scrollSnapType: {xs:"y proximity", md: "y mandatory"},
+      maxHeight: {md: "100vh"},
+      
+}}
        id={id}>{children}</Box>
     </>
   );

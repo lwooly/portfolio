@@ -96,15 +96,4 @@ color: textColors.tertiary,
 let theme = createTheme(themeOptions);
 theme = responsiveFontSizes(theme);
 
-export default function ThemeRegistry({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
-  );
-}
+export default theme;
