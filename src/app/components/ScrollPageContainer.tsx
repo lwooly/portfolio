@@ -1,4 +1,3 @@
-"use client";
 import { Height } from "@mui/icons-material";
 import { Box, useTheme } from "@mui/material";
 import { spec } from "node:test/reporters";
@@ -12,8 +11,6 @@ const ScrollPageContainer = ({
   id: string;
   children: React.ReactNode[];
 }) => {
-
-  const theme = useTheme();
 
   return (
     <>
