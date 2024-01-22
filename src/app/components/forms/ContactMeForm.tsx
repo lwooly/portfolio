@@ -1,4 +1,4 @@
-import { Button, Stack, TextField, useTheme } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography, useTheme } from "@mui/material";
 import React, { useEffect } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -43,6 +43,7 @@ const ContactMeForm = () => {
   });
 
   const submitFn = async (formData:EmailValues) => {
+    setIsSendingError(false);
     setIsSending(true);
     console.log(formData);
    const emailIsSent = await sendEmail(formData);
@@ -64,7 +65,7 @@ const ContactMeForm = () => {
 
 
   return (
-    <form onSubmit={handleSubmit(submitFn)}>
+    <form onSubmit={handleSubmit(submitFn)} style={{marginTop:'2rem'}}>
       <Stack direction={"column"} gap={"1rem"}>
         <Controller
           name="name"
@@ -114,7 +115,8 @@ const ContactMeForm = () => {
             />
           )}
         />
-        <Button
+        <Stack direction={'column'} sx={{minHeight: '5rem'}} gap={1}>
+        {(!isSending && !isSent) &&  <Button
           type="submit"
           variant="contained"
           disabled={isSubmitting || !isDirty || (isDirty && !isValid)}
@@ -122,14 +124,19 @@ const ContactMeForm = () => {
             maxWidth: "10rem",
             backgroundColor: "hsl(143.9deg 75.46% 31.96%)",
             color: theme.palette.common.white,
+            alignSelf: "center",
+            '&:hover': {
+              backgroundColor: "hsl(143.9deg 75.46% 25%)",
+              borderShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)',
+            },
           }}
         >
           Submit
-        </Button>
-        {(isSending && !isSent && !isSendingError) && <p>Sending...</p>}
-        {(isSent && !isSending && !isSendingError) && <p>Message Sent!</p>}
-        {(!isSent && !isSending && isSendingError) && <p>Message not sent! Please try again!</p>}
-
+        </Button>}
+        {(isSending && !isSent && !isSendingError) && <Typography variant="body2">Sending...</Typography>}
+        {(isSent && !isSending && !isSendingError) && <Typography variant="body2">Message Sent!</Typography>}
+        {(!isSent && !isSending && isSendingError) && <Typography variant="body2">Message not sent! Please try again!</Typography>}
+        </Stack>
       </Stack>
     </form>
   );
