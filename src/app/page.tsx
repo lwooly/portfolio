@@ -19,22 +19,22 @@ export default function Home() {
   return (
     <main>
       <ScrollPageContainer id={"scrollContainer"}>
-        <HomePagePanel>
+        <HomePagePanel id={'home'}>
           <HeroMain />
           <StackIconSection />
         </HomePagePanel>
-        <HomePagePanel>
+        <HomePagePanel id={'about'}>
           <AboutMe />
         </HomePagePanel>
-        <HomePagePanel>
+        <HomePagePanel id={'projects'}>
           <Portfolio />
         </HomePagePanel>
-        <HomePagePanel>
+        <HomePagePanel id={'contact'}>
           <ContactMe />
         </HomePagePanel>
-        <HomePagePanel>
+        {/* <HomePagePanel>
           <TypographyTest />
-        </HomePagePanel>
+        </HomePagePanel> */}
       </ScrollPageContainer>
     </main>
   );

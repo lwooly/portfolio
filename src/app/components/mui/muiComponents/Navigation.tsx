@@ -15,17 +15,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Link from "next/link";
+import { capitalizeFirstLetter } from "@/src/app/utils";
+
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
-const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const drawerWidth = "100%";
+const navItems = ["home", "about", "projects", "contact"];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -36,17 +35,19 @@ export default function DrawerAppBar(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
+      <Typography variant="h3" sx={{ my: 2 }}>
+      lwooly.dev
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+          <ListItem key={item} disablePadding sx={{ justifyContent: 'center', width:'100%'}}>
+            <Link href={`#${item}`} passHref>
+              <ListItemButton sx={{ justifyContent: 'flex-end', width:'100%'}}>
+                <ListItemText  primary={capitalizeFirstLetter(item)}  sx={{ color: "#3c3c3c", textAlign:'right' }}/>
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -57,37 +58,44 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
       <CssBaseline />
       <AppBar component="nav">
-        <Toolbar>
+        <Toolbar sx={{zIndex:2, justifyContent: {xs: 'end', sm: 'none' }}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            edge="start"
+            edge="end"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr:{xs: 0, sm: 2}, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h3"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block" },
+              margin: 0,
+            }}
           >
-            MUI
+            lwooly.dev
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
+              <Link key={item} href={`#${item}`}>
+                <Button sx={{ color: "#3c3c3c" }}>
+                  {item}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
       <nav>
         <Drawer
+        anchor="top"
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -97,6 +105,7 @@ export default function DrawerAppBar(props: Props) {
           }}
           sx={{
             display: { xs: "block", sm: "none" },
+            zIndex: 1,
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
