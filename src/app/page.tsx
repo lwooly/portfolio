@@ -9,7 +9,6 @@ import ProfileImage from "./components/ProfileImage";
 import HeroMain from "./components/HeroMain";
 import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
-import Portfolio from "./components/Portfolio";
 import TypographyTest from "./components/TypographyTest";
 import ContactMe from "./components/ContactMe";
 import PortfolioSlides from "./components/PortfolioSlides";

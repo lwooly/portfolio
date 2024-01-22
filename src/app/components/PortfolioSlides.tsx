@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import React, { Suspense } from "react";
-import Carousel from "./Carousel";
+import Carousel from "./HorizontalScroll";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import ProjectsDisplay from "./ProjectsDisplay";
 const ProjectsList = React.lazy(() => import("./ProjectsList"));
 
 const PortfolioSlides = () => {
@@ -12,7 +13,7 @@ const PortfolioSlides = () => {
         Portfolio
       </Typography>
       <Typography variant="h4">Full stack development projects</Typography>
-      <Carousel component={<ProjectsList/>} />
+      <ProjectsDisplay component={<ProjectsList/>} />
     </Box>
   );
 };

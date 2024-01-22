@@ -1,11 +1,16 @@
 "use client";
-import React, { Component, Suspense } from "react";
+import React, { Component, Suspense, useState, useEffect, useRef } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Box, Stack, useTheme } from "@mui/material";
+import { Box, Stack, styled, useTheme } from "@mui/material";
 import PortfolioSlides from "./PortfolioSlides";
 import { ErrorBoundary } from 'react-error-boundary';
+import { BoxProps } from '@mui/material';
+import Carousel from "./HorizontalScroll";
+import { HorizontalRule } from "@mui/icons-material";
+import HorizontalScroll from "./HorizontalScroll";
 
-const Carousel = ({ component }:{ component:React.ReactNode }) => {
+
+const ProjectsDisplay = ({ component }:{ component:React.ReactNode }) => {
   const theme = useTheme();
   const matches: boolean = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -24,21 +29,11 @@ const Carousel = ({ component }:{ component:React.ReactNode }) => {
     );
   }
 
-  //else return carousel
+  //else return horizontal scroll viewport
   return (
-    <Stack
-      direction={"row"}
-      sx={{
-        border: "10px solid red",
-        width: "80%",
-        overflowX: "scroll",
-        scrollSnapType: "x mandatory",
-        maxWidth: "100vw",
-      }}
-    >
-     {componentBoundary}
-    </Stack>
+    <HorizontalScroll component={component} />
   );
+   
 };
 
-export default Carousel;
+export default ProjectsDisplay;
