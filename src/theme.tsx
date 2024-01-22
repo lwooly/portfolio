@@ -96,6 +96,7 @@ const themeOptions: ThemeOptions = {
       secondary: textColors.secondary,
     },
   },
+
 };
 
 let theme = createTheme(themeOptions);

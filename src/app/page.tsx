@@ -12,7 +12,7 @@ import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 import TypographyTest from "./components/TypographyTest";
 import ContactMe from "./components/ContactMe";
-import { Suspense } from "react";
+import PortfolioSlides from "./components/PortfolioSlides";
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
           <AboutMe />
         </HomePagePanel>
         <HomePagePanel id={"projects"}>
-          <Portfolio />
+          <PortfolioSlides />
         </HomePagePanel>
         <HomePagePanel id={"contact"}>
           <ContactMe />

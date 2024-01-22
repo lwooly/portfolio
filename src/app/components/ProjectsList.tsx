@@ -6,6 +6,7 @@ import React from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import ProjectSummary, { ProjectInfo } from "./ProjectSummary";
 import { fetchProjectsFromHygraph } from "../lib/api-functions/server/hygraph";
+import Carousel from "./Carousel";
 
 // //define project info - this could be stored in a database or hygraph - hardcode for now
 // const projectsInfoArray = [
@@ -39,12 +40,7 @@ const ProjectsList = async () => {
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
 
   return (
-    <Stack
-      direction={"column"}
-      spacing={6}
-      component={"div"}
-      sx={{ paddingY: "2rem" }}
-    >
+    <>
       {!projectsInfoArray ? (
         <Typography variant="h4" component={"h2"}>
           Watch this space!
@@ -54,7 +50,7 @@ const ProjectsList = async () => {
           <ProjectSummary key={index} projectInfo={projectInfo} />
         ))
       )}
-    </Stack>
+      </>
   );
 };
 
