@@ -13,7 +13,7 @@ const ProfileLinks = ({color = 'rgba(0, 0, 0, 0.54)'}:{color?:string}) => {
   };
 
   return (
-    <Box sx={{ display: "flex", gap: "1em", justifyContent: "center" }}>
+    <Box sx={{ display: "flex", gap: "1em", justifyContent: {xs:'center', md:'start'} }}>
       <a href="https://github.com/lwooly" aria-label="Github profile">
         <IconButton sx={styles}>
           <GitHubIcon fontSize="large" />

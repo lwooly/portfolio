@@ -24,9 +24,10 @@ const StackIconSection = () => {
   return (
     <Stack
       component={"article"}
-      direction={{xs: "column", md: "row"}}
+      direction={"column"}
       spacing={1}
       divider={<Divider orientation="horizontal" flexItem />}
+      sx={{  maxWidth: "650px", marginX:"auto", padding:"0 1em"}}
     >
       <Typography variant="body2" component={"h3"} sx={{fontWeight:500}}>
         Tech Stack

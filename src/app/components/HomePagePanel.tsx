@@ -12,15 +12,16 @@ const HomePagePanel = ({ children, id }: { children: React.ReactNode, id:string 
         width: "100%",
         scrollSnapAlign: "start",
         height: {md: "100vh"},
-        padding: "2em 2em 6em 2em",
-        // display:'flex',
-        // flexDirection:'column',
-        // gap: "3rem",
+        padding: {xs:"2em 2em 6em 2em", md: "2em 5em 6em 5em"},
         textAlign: "center",
         scrollMarginTop: '60px',
         ":nth-child(2n)": { backgroundColor:  'white'},
-        ":first-child": {   paddingTop: '70px', /* use the height of your navbar */
+        ":first-child": {   paddingTop: '70px', /* height of navbar */
         marginTop: '-70px', /* negative margin to offset the padding */
+
+        display: {md:'flex'},
+        flexDirection: {md:'column'},
+        justifyContent: {md:'space-around'},
       },
       }}
     >
