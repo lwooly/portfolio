@@ -1,5 +1,5 @@
 import React, { RefObject, useEffect, useRef } from "react";
-import { Box, Button,  Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { BoxProps } from "@mui/material";
 import { set } from "react-hook-form";
 import ProjectsTitle from "./ProjectsTitle";
@@ -18,7 +18,7 @@ const TallOuterContainer: React.FC<OuterContainerProps> = ({
     sx={{
       position: "relative",
       width: "100%",
-    //   border: "3px solid red",
+      //   border: "3px solid red",
       height: dynamicHeight,
     }}
   >
@@ -33,10 +33,14 @@ const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
       {...boxProps}
       sx={{
         position: "sticky",
-        top: '190px',
-        height: "100vh",
+        top: "75px", //need to make this dynamic
+        height: " calc(100vh - 75px)",
         width: "100%",
+        overflowY: "hidden",
         overflowX: "hidden",
+        // border: "solid blue",
+        display: 'flex',
+        flexDirection:'column'
       }}
     >
       {children}
@@ -61,7 +65,7 @@ const HorizontalTranslateContainer = React.forwardRef<
       height: "100%",
       willChange: "transform",
       transform: `translateX(${translateX}px)`,
-      scrollBehavior: 'smooth'
+      scrollBehavior: "smooth",
     }}
   >
     {children}
@@ -72,7 +76,7 @@ HorizontalTranslateContainer.displayName = "HorizontalTranslateContainer";
 const calcHeight = (objectWidth: number) => {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
-  const height = objectWidth - vw + vh + 100;
+  const height = objectWidth - vw + vh - 50;
   return height;
 };
 
@@ -81,13 +85,13 @@ const handleDynamicHeight = (
   setDynamicHeight: Function
 ) => {
   if (!objectRef?.current) {
-    console.log('no object ref')
+    console.log("no object ref");
     return;
   }
   const objectWidth = objectRef.current.scrollWidth;
-  console.log(objectWidth)
+  console.log(objectWidth);
   const dynamicHeight = calcHeight(objectWidth);
-  console.log(dynamicHeight)
+  console.log(dynamicHeight);
   setDynamicHeight(dynamicHeight);
 };
 
@@ -109,7 +113,6 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
   const [translateX, setTranslateX] = React.useState(0);
 
   const objectRef = useRef(null);
-  console.log(objectRef.current)
   const containerRef = useRef(null);
 
   const resizeHandler = () => {
@@ -120,24 +123,45 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
     handleDynamicHeight(objectRef, setDynamicHeight);
     applyScrollListener(containerRef, setTranslateX);
     window.addEventListener("resize", resizeHandler);
-  }, [objectRef, containerRef]);
 
-  
+    return () => {
+        window.removeEventListener('resize', resizeHandler)
+    }
+    
+  }, []);
 
   return (
     <>
-    <Box sx={{position:'sticky', top:'125px'}}>
-    <ProjectsTitle />
-    </Box>
-    <TallOuterContainer id={'Tall'} dynamicHeight={dynamicHeight}>
-      {/* sticky inner div to allow for horizontal scroll */}
-      <StickyInnerContainer ref={containerRef}>
-        {/* horizontal translate div to allow for horizontal scroll */}
-        <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
-          <Box id={'cardcontainer'} sx={{display:'flex', direction:'row', flexWrap:'noWrap', height:'100%', alignItems:'center'}}>{children}</Box>
-        </HorizontalTranslateContainer>
-      </StickyInnerContainer>
-    </TallOuterContainer>
+      <TallOuterContainer id={"Tall"} dynamicHeight={dynamicHeight}>
+        <StickyInnerContainer ref={containerRef}>
+          {/* horizontal translate div to allow for horizontal scroll */}
+          <Box
+            sx={{
+              position: "sticky",
+              left: "0px",
+            //   border: "solid orange 4px",
+              display: "inline-block",
+            }}
+          >
+            <ProjectsTitle />
+          </Box>
+          <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
+            <Box
+              id={"cardcontainer"}
+              sx={{
+                display: "flex",
+                direction: "row",
+                flexWrap: "noWrap",
+                height: "100%",
+                alignItems: "center",
+                marginLeft:'50px'
+              }}
+            >
+              {children}
+            </Box>
+          </HorizontalTranslateContainer>
+        </StickyInnerContainer>
+      </TallOuterContainer>
     </>
   );
 };

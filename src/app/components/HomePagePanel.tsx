@@ -17,7 +17,7 @@ const HomePagePanel = ({
         width: "100%",
         scrollSnapAlign: "start",
         height: { md: "100vh" },
-        padding: { xs: "2em 2em 6em 2em", sm:'2em, 4rem 6em, 4rem', md: "2em 5em 6em 5em" }, //md: "2em 5em 6em 5em" },
+        padding: { xs: "2em 2em 6em 2em", sm:'2em, 4rem 6em, 4rem', md: "2em 5em 2em 5em" }, //md: "2em 5em 6em 5em" },
         textAlign: "center",
         scrollMarginTop: "60px",
         ":nth-child(2n)": { backgroundColor: "white" },
