@@ -1,9 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { Suspense } from "react";
-import Carousel from "./HorizontalScroll";
-import { ErrorBoundary } from "next/dist/client/components/error-boundary";
-import ProjectsDisplay from "./ProjectsDisplay";
 const ProjectsList = React.lazy(() => import("./ProjectsList"));
+import ProjectsDisplay from "./ProjectsDisplay";
 
 const PortfolioSlides = () => {
 

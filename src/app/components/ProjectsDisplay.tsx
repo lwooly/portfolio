@@ -5,8 +5,6 @@ import { Box, Stack, styled, useTheme } from "@mui/material";
 import PortfolioSlides from "./PortfolioSlides";
 import { ErrorBoundary } from 'react-error-boundary';
 import { BoxProps } from '@mui/material';
-import Carousel from "./HorizontalScroll";
-import { HorizontalRule } from "@mui/icons-material";
 import HorizontalScroll from "./HorizontalScroll";
 
 
@@ -31,9 +29,10 @@ const ProjectsDisplay = ({ component }:{ component:React.ReactNode }) => {
 
   //else return horizontal scroll viewport
   return (
-    <HorizontalScroll component={component} />
+    <HorizontalScroll>
+        {componentBoundary}
+    </HorizontalScroll>
   );
-   
 };
 
 export default ProjectsDisplay;

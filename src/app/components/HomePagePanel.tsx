@@ -15,8 +15,8 @@ const HomePagePanel = ({
       component={"section"}
       sx={{
         width: "100%",
-        scrollSnapAlign: "start",
-        height: { md: "100vh" },
+        // scrollSnapAlign: "start",
+        // height: { md: "100vh" },
         padding: { xs: "2em 2em 6em 2em", md: "2em 5em 6em 5em" }, //md: "2em 5em 6em 5em" },
         textAlign: "center",
         scrollMarginTop: "60px",
