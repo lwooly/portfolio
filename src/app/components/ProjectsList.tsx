@@ -4,9 +4,9 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import React from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import ProjectSummary, { ProjectInfo } from "./ProjectSummary";
+import ProjectSummary from "./ProjectSummary";
 import { fetchProjectsFromHygraph } from "../lib/api-functions/server/hygraph";
-import Carousel from "./Carousel";
+import Carousel from "./HorizontalScroll";
 
 // //define project info - this could be stored in a database or hygraph - hardcode for now
 // const projectsInfoArray = [
@@ -35,6 +35,16 @@ import Carousel from "./Carousel";
 //     homePageImageSrc: "/bikes.jpeg",
 //   },
 // ];
+export interface ProjectInfo {
+    title: string;
+    description: string;
+    gitHubLink: string;
+    liveDemoLink: string;
+    projectImage: {
+      url: string;
+  };
+}
+
 
 const ProjectsList = async () => {
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
@@ -42,11 +52,13 @@ const ProjectsList = async () => {
   const projectsSummaryArr = projectsInfoArray.map(
     (projectInfo: ProjectInfo, index: number) => (
       //slides at md breakpoint
-      <Box key={index}
-      sx={{
-        minWidth: "100%",
-        flexBasis: "
-      }}>
+      <Box
+        key={index}
+        sx={{
+          minWidth: "80vw", 
+          marginX: {md: '5rem'},
+        }}
+      >
         <ProjectSummary projectInfo={projectInfo} />
       </Box>
     )

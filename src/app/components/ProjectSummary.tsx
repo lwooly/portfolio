@@ -5,20 +5,14 @@ import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { ProjectInfo } from "./ProjectsList";
 
-export interface ProjectInfo {
-  projectInfo: {
-    title: string;
-    description: string;
-    gitHubLink: string;
-    liveDemoLink: string;
-    projectImage: {
-      url: string;
-    };
-  };
+
+interface ProjectSummaryProps {
+  projectInfo: ProjectInfo;
 }
 
-const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
+const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
   const {
     title,
     description,
@@ -29,20 +23,20 @@ const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
 
   return (
     <Stack
-      direction={"column"}
-      spacing={3}
       component={"article"}
-      sx={{ paddingBottom: "1rem", alignItems: "center" }}
+      sx={{ paddingBottom: "1rem", alignItems: "center", flexDirection: {xs: 'column', md: 'row'}, gap: '2rem'}}
     >
       {/* Container for project image */}
       <Box
         sx={{
           width: "100%", // Make width responsive
-          maxWidth: "400px", // Limit the maximum size
+          maxWidth: {xs:'400px', md:'50%'}, // Limit the maximum size
           position: "relative",
           paddingBottom: "min(400px, 100%)", // Equal to width for a square aspect ratio
           borderRadius: "12.5%",
           overflow: "hidden",
+          // flexGrow: 1,
+          minWidth: { md:'40vw'},
           //   border: '3px solid #000',
         }}
       >
@@ -58,7 +52,7 @@ const ProjectSummary = ({ projectInfo }: ProjectInfo) => {
           }}
         />
       </Box>
-      <Box textAlign={"left"}>
+      <Box textAlign={"left"} sx={{display: {md: 'flex'}, flexDirection:{md: 'column'}, minHeight:'400px' }}>
         <Typography variant="h5">{title}</Typography>
         <Typography variant="body2" sx={{ mb: "1rem" }}>
           {description}
