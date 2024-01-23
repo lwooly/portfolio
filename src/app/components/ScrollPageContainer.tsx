@@ -21,7 +21,7 @@ const ScrollPageContainer = ({
 
           // scroll snapping on sections at md breakpoint
 
-          // scrollSnapType: { xs: "y proximity", md: "y mandatory" },
+          scrollSnapType: { xs: "y proximity", md: "y mandatory" },
           // maxHeight: { md: "100vh" },
         }}
         id={id}

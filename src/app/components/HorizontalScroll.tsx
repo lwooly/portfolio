@@ -1,7 +1,8 @@
 import React, { RefObject, useEffect, useRef } from "react";
-import { Box, Button,  Stack } from "@mui/material";
+import { Box, Button,  Stack, Typography } from "@mui/material";
 import { BoxProps } from "@mui/material";
 import { set } from "react-hook-form";
+import ProjectsTitle from "./ProjectsTitle";
 
 interface OuterContainerProps extends BoxProps {
   dynamicHeight: number | null;
@@ -17,7 +18,7 @@ const TallOuterContainer: React.FC<OuterContainerProps> = ({
     sx={{
       position: "relative",
       width: "100%",
-      border: "3px solid red",
+    //   border: "3px solid red",
       height: dynamicHeight,
     }}
   >
@@ -32,7 +33,7 @@ const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
       {...boxProps}
       sx={{
         position: "sticky",
-        top: 0,
+        top: '190px',
         height: "100vh",
         width: "100%",
         overflowX: "hidden",
@@ -60,6 +61,7 @@ const HorizontalTranslateContainer = React.forwardRef<
       height: "100%",
       willChange: "transform",
       transform: `translateX(${translateX}px)`,
+      scrollBehavior: 'smooth'
     }}
   >
     {children}
@@ -71,15 +73,21 @@ const calcHeight = (objectWidth: number) => {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const height = objectWidth - vw + vh + 100;
+  return height;
 };
 
 const handleDynamicHeight = (
   objectRef: RefObject<HTMLDivElement>,
   setDynamicHeight: Function
 ) => {
-  if (!objectRef?.current) return;
+  if (!objectRef?.current) {
+    console.log('no object ref')
+    return;
+  }
   const objectWidth = objectRef.current.scrollWidth;
+  console.log(objectWidth)
   const dynamicHeight = calcHeight(objectWidth);
+  console.log(dynamicHeight)
   setDynamicHeight(dynamicHeight);
 };
 
@@ -101,6 +109,7 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
   const [translateX, setTranslateX] = React.useState(0);
 
   const objectRef = useRef(null);
+  console.log(objectRef.current)
   const containerRef = useRef(null);
 
   const resizeHandler = () => {
@@ -111,19 +120,25 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
     handleDynamicHeight(objectRef, setDynamicHeight);
     applyScrollListener(containerRef, setTranslateX);
     window.addEventListener("resize", resizeHandler);
-  }, [objectRef]);
+  }, [objectRef, containerRef]);
+
+  
 
   return (
-    // tall outer div to allow for space for horizontal scroll
+    <>
+    <Box sx={{position:'sticky', top:'125px'}}>
+    <ProjectsTitle />
+    </Box>
     <TallOuterContainer id={'Tall'} dynamicHeight={dynamicHeight}>
       {/* sticky inner div to allow for horizontal scroll */}
       <StickyInnerContainer ref={containerRef}>
         {/* horizontal translate div to allow for horizontal scroll */}
         <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
-          <Box id={'cardcontainer'} sx={{display:'flex', direction:'row', flexWrap:'noWrap', height:'100%', alignItems:'center', border:'solid 10px green'}}>{children}</Box>
+          <Box id={'cardcontainer'} sx={{display:'flex', direction:'row', flexWrap:'noWrap', height:'100%', alignItems:'center'}}>{children}</Box>
         </HorizontalTranslateContainer>
       </StickyInnerContainer>
     </TallOuterContainer>
+    </>
   );
 };
 
