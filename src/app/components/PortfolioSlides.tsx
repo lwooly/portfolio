@@ -5,10 +5,7 @@ import ProjectsDisplay from "./ProjectsDisplay";
 
 //componenet to load lazy react component
 const PortfolioSlides = () => {
-
-  return (
-      <ProjectsDisplay component={<ProjectsList/>} />
-  );
+  return <ProjectsDisplay component={<ProjectsList />} />;
 };
 
 export default PortfolioSlides;

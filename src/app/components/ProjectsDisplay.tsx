@@ -22,7 +22,7 @@ const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
   if (!matches) {
     return (
       <>
-      <ProjectsTitle />
+        <ProjectsTitle />
         {componentBoundary}
       </>
     );
@@ -30,11 +30,7 @@ const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
 
   //else return horizontal scroll viewport
 
-  return (
-  
-  <HorizontalScroll>{componentBoundary}</HorizontalScroll>
-
-  )
+  return <HorizontalScroll>{componentBoundary}</HorizontalScroll>;
 };
 
 export default ProjectsDisplay;

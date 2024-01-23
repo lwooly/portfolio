@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useRef } from "react";
+import React, { RefObject, useEffect, useRef, UIEvent } from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { BoxProps } from "@mui/material";
 import { set } from "react-hook-form";
@@ -46,7 +46,7 @@ const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
     >
       {children}
     </Box>
-  )
+  ),
 );
 StickyInnerContainer.displayName = "StickyInnerContainer";
 
@@ -84,7 +84,7 @@ const calcHeight = (objectWidth: number) => {
 
 const handleDynamicHeight = (
   objectRef: RefObject<HTMLDivElement>,
-  setDynamicHeight: Function
+  setDynamicHeight: Function,
 ) => {
   if (!objectRef?.current) {
     console.log("no object ref");
@@ -97,28 +97,61 @@ const handleDynamicHeight = (
   setDynamicHeight(dynamicHeight);
 };
 
-const applyScrollListener = (
-  stickyContainerRef: RefObject<HTMLDivElement>,
-  tallContainerRef: RefObject<HTMLDivElement>,
-  setTranslateX: Function
-) => {
-  //check refs are valid
-  if (!stickyContainerRef.current) return;
-  if (!tallContainerRef.current) return;
+// const applyScrollListener = (
+//   stickyContainerRef: RefObject<HTMLDivElement>,
+//   tallContainerRef: RefObject<HTMLDivElement>,
+//   setTranslateX: Function
+// ) => {
+//   //check refs are valid
+//   if (!stickyContainerRef?.current) {
+//     console.log(" no sticky containerref");
+//     return;
+//   } else {
+//     console.log('test sticky')
+//   }
+//   if (!tallContainerRef?.current) {
+//     console.log("no tallcontainer ref");
+//     return;
+//   } else {
+//     console.log('test ')
+//   }
 
-  //apply scroll listener to check offset of scroll from top of tall container
-tallContainerRef.current.addEventListener("scroll", () => scrollHandler(stickyContainerRef, tallContainerRef, setTranslateX));
+//   const tallContainer =   tallContainerRef.current
+//   //apply scroll listener to check offset of scroll from top of tall container
+//   tallContainer.addEventListener("scroll", () =>
+//     scrollHandler(stickyContainerRef, setTranslateX)
+//   );
+// };
+
+// const applyScrollListener = (
+//       stickyContainerRef: RefObject<HTMLDivElement>,
+//       setTranslateX: Function
+//     ) => {
+//         console.log(document.body.scrollTop)
+// //     scrollHandler(stickyContainerRef, setTranslateX)
+//     }
+
+// const scrollHandler = (
+//   stickyContainerRef: RefObject<HTMLDivElement>,
+//   setTranslateX: Function
+// ) => {
+//   const offsetTop = stickyContainerRef.current
+//     ? -stickyContainerRef.current.offsetTop
+//     : 0;
+//   setTranslateX(offsetTop);
+// };
+
+const applyScrollListener = (setTranslateX) => {
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY; // Get vertical scroll position
+    setTranslateX(scrollPosition);
+  });
 };
 
-const scrollHandler = (
-  stickyContainerRef: RefObject<HTMLDivElement>,
-  tallContainerRef: RefObject<HTMLDivElement>,
-  setTranslateX: Function
-) => {
-  const offsetTop = stickyContainerRef.current
-    ? -stickyContainerRef.current.offsetTop
-    : 0;
-  setTranslateX(offsetTop);
+const handleScroll = (event: UIEvent<HTMLDivElement>) => {
+  const scrollPosition = (event.target as HTMLDivElement).scrollTop;
+
+  console.log("scroll", scrollPosition);
 };
 
 const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
@@ -127,11 +160,9 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
 
   console.log(translateX);
 
+  const tallContainerRef = useRef(null);
   const objectRef = useRef(null);
   const stickyContainerRef = useRef(null);
-  const tallContainerRef = useRef(null);
-
-  console.log(tallContainerRef);
 
   const resizeHandler = () => {
     handleDynamicHeight(objectRef, setDynamicHeight);
@@ -139,12 +170,12 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     handleDynamicHeight(objectRef, setDynamicHeight);
-    applyScrollListener(stickyContainerRef, tallContainerRef, setTranslateX);
+    applyScrollListener(stickyContainerRef, setTranslateX);
     window.addEventListener("resize", resizeHandler);
 
     return () => {
       window.removeEventListener("resize", resizeHandler);
-    //   tallContainerRef.current.removeEventListener("scroll", () => scrollHandler);
+      // tallContainerRef.current.removeEventListener("scroll", () => scrollHandler);
     };
   }, [objectRef, tallContainerRef, stickyContainerRef]);
 
@@ -153,7 +184,8 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
       <TallOuterContainer
         id={"Tall"}
         dynamicHeight={dynamicHeight}
-        ref={tallContainerRef}
+        onScroll={() => handleScroll("tall")}
+        sx={{ border: "red 2px solid", width: "50px", zIndex: 10 }}
       >
         <StickyInnerContainer ref={stickyContainerRef}>
           <Box

@@ -1,17 +1,12 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { Typography, Box, useTheme, Slide } from "@mui/material";
 import ScrollPageContainer from "./components/ScrollPageContainer";
 import HomePagePanel from "./components/HomePagePanel";
-import AnimatedArrowHead from "./components/animation/AnimatedArrowHead";
-import Test from "./components/animation/Test";
-import ProfileImage from "./components/ProfileImage";
 import HeroMain from "./components/HeroMain";
 import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
 import TypographyTest from "./components/TypographyTest";
 import ContactMe from "./components/ContactMe";
 import PortfolioSlides from "./components/PortfolioSlides";
+import ScrollableBox from "./components/Scrolltest";
 
 export default function Home() {
   return (
@@ -33,6 +28,7 @@ export default function Home() {
         {/* <HomePagePanel>
           <TypographyTest />
         </HomePagePanel> */}
+        {/* <ScrollableBox /> */}
       </ScrollPageContainer>
     </main>
   );

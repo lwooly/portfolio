@@ -36,15 +36,14 @@ import Carousel from "./HorizontalScroll";
 //   },
 // ];
 export interface ProjectInfo {
-    title: string;
-    description: string;
-    gitHubLink: string;
-    liveDemoLink: string;
-    projectImage: {
-      url: string;
+  title: string;
+  description: string;
+  gitHubLink: string;
+  liveDemoLink: string;
+  projectImage: {
+    url: string;
   };
 }
-
 
 const ProjectsList = async () => {
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
@@ -55,13 +54,13 @@ const ProjectsList = async () => {
       <Box
         key={index}
         sx={{
-          minWidth: "80vw", 
-          marginX: {md: '5rem'},
+          minWidth: "80vw",
+          marginX: { md: "5rem" },
         }}
       >
         <ProjectSummary projectInfo={projectInfo} />
       </Box>
-    )
+    ),
   );
 
   return (
