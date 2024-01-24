@@ -71,7 +71,7 @@ const ContactMeForm = () => {
   }, [isDirty]);
 
   return (
-    <form onSubmit={handleSubmit(submitFn)} style={{ marginTop: "2rem" }}>
+    <form onSubmit={handleSubmit(submitFn)} style={{ marginTop: "2rem", maxWidth:'550px', width:'100%', margin:'auto' }}>
       <Stack direction={"column"} gap={"1rem"}>
         <Controller
           name="name"

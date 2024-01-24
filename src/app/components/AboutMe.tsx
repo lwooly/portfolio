@@ -8,7 +8,7 @@ const AboutMe = () => {
       <AboutMeImage />
       <Typography variant="h3">About Me</Typography>
       <Typography variant="h4">Chartered Engineer & Full-Stack Dev</Typography>
-      <Typography variant="body2" sx={{ marginTop: "1em" }}>
+      <Typography variant="body2">
         Hi, I&apos;m Lloyd, a Chartered Structural Engineer venturing into
         full-stack technologies. With a solid foundation in engineering, I am
         now delving into the realms of software development, keen on integrating

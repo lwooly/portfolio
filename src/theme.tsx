@@ -51,12 +51,14 @@ const themeOptions: ThemeOptions = {
     h4: {
       fontWeight: 700,
       color: textColors.primary,
-      marginTop: "1rem",
+      marginTop: "0.7rem",
+      marginBottom:'1rem'
     },
     h5: {
       fontSize: "1.2rem",
       fontWeight: 700,
       color: textColors.primary,
+      marginBottom:'0.7rem'
       // marginTop: "1.2rem"
     },
     h6: {
@@ -70,7 +72,6 @@ const themeOptions: ThemeOptions = {
     body2: {
       fontSize: "1rem",
       color: textColors.tertiary,
-      marginTop: "0.5rem",
     },
     subtitle1: {
       fontSize: "1.2rem",
