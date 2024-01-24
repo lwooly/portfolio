@@ -29,9 +29,12 @@ const HomePagePanel = ({
           justifyContent: { md: "space-around" },
         },
         //set 0 x padding for scroll container
+        ":nth-child(n+2)": {
+          height: { md: "auto" },
+        },
         ":nth-child(3)": {
           paddingX: { md: "0" },
-          height: { md: "auto" },
+     
         },
       }}
     >

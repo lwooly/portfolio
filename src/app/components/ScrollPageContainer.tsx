@@ -17,10 +17,8 @@ const ScrollPageContainer = ({
           width: "100%",
           marginTop: "-70px", // height of navbar
           paddingTop: "70px", // height of navbar
-          // overflowY: "scroll",
-
+          // overflowY: "scroll", - set to implement slide feature.
           // scroll snapping on sections at md breakpoint
-
           scrollSnapType: { xs: "y proximity", md: "y mandatory" },
           // maxHeight: { md: "100vh" },
         }}
