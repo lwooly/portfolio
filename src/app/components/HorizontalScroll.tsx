@@ -1,8 +1,11 @@
-import React, { RefObject, useEffect, useRef } from "react";
+import React, { RefObject, useEffect, useRef, useContext } from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { BoxProps } from "@mui/material";
 import { set } from "react-hook-form";
 import ProjectsTitle from "./ProjectsTitle";
+import { ScrollContext } from "./context/Scroll.context";
+import ScrollPageContainer from "./ScrollPageContainer";
+
 
 interface OuterContainerProps extends BoxProps {
   dynamicHeight: number | null;
@@ -97,16 +100,24 @@ const handleDynamicHeight = (
 
 const applyScrollListener = (
   containerRef: RefObject<HTMLDivElement>,
+  scrollContainerRef:HTMLDivElement,
   setTranslateX: Function
 ) => {
   if (!containerRef.current) return;
-  window.addEventListener("scroll", () => {
+  if (!scrollContainerRef) return;
+  console.log(scrollContainerRef)
+  scrollContainerRef.addEventListener("scroll", () => {
     const offsetTop = containerRef.current
       ? -containerRef.current.offsetTop
       : 0;
     setTranslateX(offsetTop);
   });
 };
+
+const scrollHandler = (event, name) => {
+    console.log(event.target.scrollTop)
+    console.log(name)
+}
 
 const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
   const [dynamicHeight, setDynamicHeight] = React.useState(null);
@@ -115,13 +126,25 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
   const objectRef = useRef(null);
   const containerRef = useRef(null);
 
+  //get ref to scroll container which wraps full page.
+  const scrollContainerRef = useContext(ScrollContext)
+  const scrollContainer = scrollContainerRef.current
+
+
+  console.log(scrollContainerRef)
+
   const resizeHandler = () => {
     handleDynamicHeight(objectRef, setDynamicHeight);
   };
 
+//   const testScrollContainer = document.getElementById('scrollContainer')
+//   console.log(testScrollContainer)
+
+applyScrollListener(containerRef, scrollContainer, setTranslateX);
+
   useEffect(() => {
     handleDynamicHeight(objectRef, setDynamicHeight);
-    applyScrollListener(containerRef, setTranslateX);
+    applyScrollListener(containerRef, scrollContainer, setTranslateX);
     window.addEventListener("resize", resizeHandler);
 
     return () => {
@@ -132,7 +155,7 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <TallOuterContainer id={"Tall"} dynamicHeight={dynamicHeight}>
+      <TallOuterContainer id={"Tall"} dynamicHeight={dynamicHeight} >
         <StickyInnerContainer ref={containerRef}>
           {/* horizontal translate div to allow for horizontal scroll */}
           <Box
