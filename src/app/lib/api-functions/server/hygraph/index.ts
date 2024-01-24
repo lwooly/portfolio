@@ -12,13 +12,14 @@ export const fetchProjectsFromHygraph = async () => {
         Authorization: `Bearer ${HYGRAPH_TOKEN}`,
       },
       body: JSON.stringify({ query: allProjectsQuery }),
-    });
+    },);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
+    console.log('project data fetched from hygraph');
     return data.data.projects;
   } catch (error) {
     console.error("Error fetching data", error);

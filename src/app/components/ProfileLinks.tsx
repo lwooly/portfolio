@@ -24,7 +24,7 @@ const ProfileLinks = ({
         justifyContent: { xs: "center", md: "start" },
       }}
     >
-      <a href="https://github.com/lwooly" aria-label="Github profile">
+      <a href="https://github.com/lwooly" rel="noopener noreferrer" target="_blank" aria-label="Github profile">
         <IconButton sx={styles}>
           <GitHubIcon fontSize="large" />
         </IconButton>
@@ -32,6 +32,7 @@ const ProfileLinks = ({
       <a
         href="https://www.linkedin.com/in/lloyd-woolacott-ceng-mice-aa8245117/"
         aria-label="LinkedIn profile"
+        rel="noopener noreferrer" target="_blank"
       >
         <IconButton sx={styles}>
           <LinkedInIcon fontSize="large" />

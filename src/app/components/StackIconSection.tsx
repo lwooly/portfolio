@@ -25,7 +25,7 @@ const StackIconSection = () => {
       direction={"column"}
       spacing={1}
       divider={<Divider orientation="horizontal" flexItem />}
-      sx={{ maxWidth: "650px", marginX: "auto", padding: "0 1em" }}
+      sx={{ maxWidth: "800px", marginX: "auto", padding: "0 1em" }}
     >
       <Typography
         variant="body2"

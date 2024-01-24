@@ -40,7 +40,7 @@ const AboutMeImage = () => {
             alt="Pylon"
             src={"/pylon.jpg"}
             fill
-            sizes="100vw"
+            sizes="50%"
             style={{
               objectFit: "cover",
               objectPosition: "center",

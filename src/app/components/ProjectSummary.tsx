@@ -48,7 +48,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
           alt={`${title} page image`}
           src={homePageImageSrc}
           fill
-          sizes="100vw"
+          sizes="80%"
           priority
           style={{
             objectFit: "cover",
@@ -72,6 +72,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
         <Stack direction={"row"} gap={2}>
           <a
             href={gitHubLink}
+            rel="noopener noreferrer" target="_blank"
             aria-label={`${title} source code`}
             style={{ textDecoration: "none" }}
           >
@@ -93,6 +94,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
 
           <a
             href={liveDemoLink}
+            rel="noopener noreferrer" target="_blank"
             aria-label={`${title} live demo`}
             style={{ textDecoration: "none" }}
           >

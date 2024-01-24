@@ -20,7 +20,7 @@ const ProfileImage = () => {
         src={"/profile-image.jpg"}
         priority
         fill
-        sizes="100vw"
+        sizes="50%"
         style={{
           objectFit: "cover",
           objectPosition: "center",

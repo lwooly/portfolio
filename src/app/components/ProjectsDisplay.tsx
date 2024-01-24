@@ -9,8 +9,11 @@ import HorizontalScroll from "./HorizontalScroll";
 import ProjectsTitle from "./ProjectsTitle";
 
 const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
+
   const theme = useTheme();
-  const matches: boolean = useMediaQuery(theme.breakpoints.up("md"));
+  const isBreakpointMd: boolean = useMediaQuery(theme.breakpoints.up("md"));
+
+
 
   const componentBoundary = (
     <ErrorBoundary fallback={<p>Something went wrong</p>}>
@@ -18,18 +21,17 @@ const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
     </ErrorBoundary>
   );
 
-  //if screensize is small, return component only - no carousel
-  if (!matches) {
+  // if screensize is small, return component only - no horizontal scroll
+  if (!isBreakpointMd) {
     return (
       <>
         <ProjectsTitle />
         {componentBoundary}
       </>
     );
-  }
+  } 
 
   //else return horizontal scroll viewport
-
   return <HorizontalScroll>{componentBoundary}</HorizontalScroll>;
 };
 

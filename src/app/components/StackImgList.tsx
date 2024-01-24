@@ -54,7 +54,7 @@ const StackImgList = () => {
             },
           }}
         >
-          <Image src={src} alt={src} width={45} height={45} />
+          <Image src={src} alt={src} width={40} height={40} />
         </ListItem>
       ))}
     </List>
