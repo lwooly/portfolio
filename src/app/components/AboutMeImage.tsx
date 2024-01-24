@@ -4,27 +4,35 @@ import Image from "next/image";
 
 const AboutMeImage = () => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center" }}>
+    <Box
+      sx={{ display: "flex", justifyContent: "center", flex: 2, flexShrink: 2 }}
+    >
+      {/* container for images */}
       <Box
-        position={"relative"}
         sx={{
-          flexGrow: 1,
-          width: "100%",
-          marginTop: "2em",
-          maxWidth: "400px",
           display: "flex",
-          justifyContent: "center",
+          alignItems: "center",
+          // marginBottom: 'auto',
+          width: "100%",
+          // maxWidth: "400px",
+          position: "relative",
+          maxWidth: { xs: "300px", md: "50vh" },
+          height: "auto",
         }}
       >
         {/* Container for pylon image */}
         <Box
           sx={{
             width: "100%", // Make width responsive
-            maxWidth: "400px", // Limit the maximum size
+            height: 0,
+            // Limit the maximum size
             position: "relative",
-            paddingBottom: "min(400px, 100%)", // Equal to width for a square aspect ratio
+            paddingBottom: "min(300px, 100%)",
+            // Equal to width for a square aspect ratio
             borderRadius: "12.5%",
             overflow: "hidden",
+            // flexGrow: 1,
+            // minWidth: { md: "30vw" },
             //   border: '3px solid #000',
           }}
         >
@@ -43,13 +51,13 @@ const AboutMeImage = () => {
         <Box
           sx={{
             width: "60%", // Make width responsive
-            paddingBottom: "min(60%, 200px)", // Equal to width for a square aspect ratio
-            maxWidth: "200px", // Limit the maximum size
+            paddingBottom: "min(60%, 150px)", // Equal to width for a square aspect ratio
+            maxWidth: "150px", // Limit the maximum size
             borderRadius: "12.5%",
             overflow: "hidden",
             position: "absolute",
-            bottom: "-7%",
-            right: "-7%",
+            bottom: "-6%",
+            right: "-6%",
           }}
         >
           <Image

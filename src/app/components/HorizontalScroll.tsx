@@ -40,8 +40,8 @@ const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
       {...boxProps}
       sx={{
         position: "sticky",
-        top: "75px", //need to make this dynamic
-        height: " calc(100vh - 75px)",
+        top: "114px", //need to make this dynamic
+        height: " calc(100vh - 100px)",
         width: "100%",
         overflowY: "hidden",
         overflowX: "hidden",
