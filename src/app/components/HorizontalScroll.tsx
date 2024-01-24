@@ -4,6 +4,11 @@ import { BoxProps } from "@mui/material";
 import { set } from "react-hook-form";
 import ProjectsTitle from "./ProjectsTitle";
 
+
+//create containers for horizontal scrolling
+
+//tall container to create vertical height for scroll
+//dynamic height calculated based on width of horizontal object to scroll
 interface OuterContainerProps extends BoxProps {
   dynamicHeight: number | null;
 }
@@ -26,6 +31,8 @@ const TallOuterContainer: React.FC<OuterContainerProps> = ({
   </Box>
 );
 
+//sticky container to hold horizontal content
+//this div is sticky so stays locked to viewport as the tall div is scrolled
 const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
   ({ children, ...boxProps }, ref) => (
     <Box
@@ -49,6 +56,10 @@ const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
 );
 StickyInnerContainer.displayName = "StickyInnerContainer";
 
+
+//horizontal container which contains the project slides.
+//this is moved/scrolled by the value transferX
+///transfer x is calculated based on the scroll position
 interface TranslateContainerProps extends BoxProps {
   translateX: number;
 }
@@ -73,12 +84,18 @@ const HorizontalTranslateContainer = React.forwardRef<
 ));
 HorizontalTranslateContainer.displayName = "HorizontalTranslateContainer";
 
+//functions to caculate inputs for horizontal scroll
+
+//calc the height of the tall outer div based on the width of the content (horizontal translate div)
+
 const calcHeight = (objectWidth: number) => {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const height = objectWidth - vw + vh - 50;
   return height;
 };
+
+//sets the dynamic height - the height at which the tall div is set and saves this to state
 
 const handleDynamicHeight = (
   objectRef: RefObject<HTMLDivElement>,
@@ -89,11 +106,11 @@ const handleDynamicHeight = (
     return;
   }
   const objectWidth = objectRef.current.scrollWidth;
-  console.log(objectWidth);
   const dynamicHeight = calcHeight(objectWidth);
-  console.log(dynamicHeight);
   setDynamicHeight(dynamicHeight);
 };
+
+//apply a scroll listener to the sticky container to track how far it has moved.
 
 const applyScrollListener = (
   containerRef: RefObject<HTMLDivElement>,
@@ -104,6 +121,7 @@ const applyScrollListener = (
     const offsetTop = containerRef.current
       ? -containerRef.current.offsetTop
       : 0;
+      //set translateX to be the distance the sticky container has moved down the tall div
     setTranslateX(offsetTop);
   });
 };
