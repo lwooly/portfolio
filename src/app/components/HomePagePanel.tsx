@@ -17,13 +17,17 @@ const HomePagePanel = ({
         width: "100%",
         scrollSnapAlign: "start",
         height: { md: "100vh" },
-        padding: { xs: "2em 2em 6em 2em", sm:'2em, 4rem 6em, 4rem', md: "2em 5em 2em 5em" }, //md: "2em 5em 6em 5em" },
+        padding: {
+          xs: "2em 2em 6em 2em",
+          sm: "2em, 4rem 6em, 4rem",
+          md: "2em 5em 2em 5em",
+        }, //md: "2em 5em 6em 5em" },
         textAlign: "center",
         scrollMarginTop: "60px",
         ":nth-child(2n)": { backgroundColor: "white" },
         ":first-child": {
           paddingTop: "70px" /* height of navbar */,
-          marginTop: "-70px", /* negative margin to offset the padding */
+          marginTop: "-70px" /* negative margin to offset the padding */,
           display: { md: "flex" },
           flexDirection: { md: "column" },
           justifyContent: { md: "space-around" },
@@ -34,7 +38,6 @@ const HomePagePanel = ({
         },
         ":nth-child(3)": {
           paddingX: { md: "0" },
-     
         },
       }}
     >

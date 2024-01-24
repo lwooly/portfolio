@@ -4,12 +4,10 @@ const ProjectsList = React.lazy(() => import("./ProjectsList"));
 import ProjectsDisplay from "./ProjectsDisplay";
 
 const PortfolioSlides = () => {
-
   return (
     <>
-      <ProjectsDisplay component={<ProjectsList/>} />
+      <ProjectsDisplay component={<ProjectsList />} />
     </>
-
   );
 };
 

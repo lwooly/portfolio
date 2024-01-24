@@ -39,13 +39,13 @@ const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
         overflowY: "hidden",
         overflowX: "hidden",
         // border: "solid blue",
-        display: 'flex',
-        flexDirection:'column'
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       {children}
     </Box>
-  )
+  ),
 );
 StickyInnerContainer.displayName = "StickyInnerContainer";
 
@@ -82,7 +82,7 @@ const calcHeight = (objectWidth: number) => {
 
 const handleDynamicHeight = (
   objectRef: RefObject<HTMLDivElement>,
-  setDynamicHeight: Function
+  setDynamicHeight: Function,
 ) => {
   if (!objectRef?.current) {
     console.log("no object ref");
@@ -97,7 +97,7 @@ const handleDynamicHeight = (
 
 const applyScrollListener = (
   containerRef: RefObject<HTMLDivElement>,
-  setTranslateX: Function
+  setTranslateX: Function,
 ) => {
   if (!containerRef.current) return;
   window.addEventListener("scroll", () => {
@@ -125,9 +125,8 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
     window.addEventListener("resize", resizeHandler);
 
     return () => {
-        window.removeEventListener('resize', resizeHandler)
-    }
-    
+      window.removeEventListener("resize", resizeHandler);
+    };
   }, []);
 
   return (
@@ -139,7 +138,7 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
             sx={{
               position: "sticky",
               left: "0px",
-            //   border: "solid orange 4px",
+              //   border: "solid orange 4px",
               display: "inline-block",
             }}
           >
@@ -154,7 +153,7 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
                 flexWrap: "noWrap",
                 height: "100%",
                 alignItems: "center",
-                marginLeft:'50px'
+                marginLeft: "50px",
               }}
             >
               {children}
