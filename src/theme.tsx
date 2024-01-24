@@ -46,19 +46,19 @@ const themeOptions: ThemeOptions = {
       fontSize: "1.2rem",
       fontWeight: 700,
       color: textColors.headingHighlight,
-      marginTop: "1.2rem",
+      // marginTop: "1.2rem",
     },
     h4: {
       fontWeight: 700,
       color: textColors.primary,
       marginTop: "0.7rem",
-      marginBottom:'1rem'
+      marginBottom: "1rem",
     },
     h5: {
       fontSize: "1.2rem",
       fontWeight: 700,
       color: textColors.primary,
-      marginBottom:'0.7rem'
+      marginBottom: "0.7rem",
       // marginTop: "1.2rem"
     },
     h6: {
@@ -72,12 +72,12 @@ const themeOptions: ThemeOptions = {
     body2: {
       fontSize: "1rem",
       color: textColors.tertiary,
-      textAlign:'justify'
+      textAlign: "justify",
     },
     subtitle1: {
       fontSize: "1.2rem",
       color: textColors.primary,
-      textAlign:'justify'
+      textAlign: "justify",
     },
   },
   palette: {
