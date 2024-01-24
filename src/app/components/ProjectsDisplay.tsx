@@ -22,14 +22,14 @@ const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
   );
 
   // if screensize is small, return component only - no horizontal scroll
-  if (!isBreakpointMd) {
-    return (
-      <>
-        <ProjectsTitle />
-        {componentBoundary}
-      </>
-    );
-  } 
+  // if (!isBreakpointMd) {
+  //   return (
+  //     <>
+  //       <ProjectsTitle />
+  //       {componentBoundary}
+  //     </>
+  //   );
+  // } 
 
   //else return horizontal scroll viewport
   return <HorizontalScroll>{componentBoundary}</HorizontalScroll>;
