@@ -72,10 +72,12 @@ const themeOptions: ThemeOptions = {
     body2: {
       fontSize: "1rem",
       color: textColors.tertiary,
+      textAlign:'justify'
     },
     subtitle1: {
       fontSize: "1.2rem",
       color: textColors.primary,
+      textAlign:'justify'
     },
   },
   palette: {

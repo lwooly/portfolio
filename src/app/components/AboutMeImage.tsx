@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutMeImage = () => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center" }}>
+    <Box sx={{ display: "flex", justifyContent: "center", flex:1, flexShrink:2,  }}>
       <Box
         position={"relative"}
         sx={{
@@ -14,10 +14,11 @@ const AboutMeImage = () => {
           maxWidth: "400px",
           display: "flex",
           justifyContent: "center",
+          flexShrink:1,
         }}
       >
         {/* Container for pylon image */}
-        <Box
+        {/* <Box
           sx={{
             width: "100%", // Make width responsive
             maxWidth: "400px", // Limit the maximum size
@@ -27,6 +28,20 @@ const AboutMeImage = () => {
             overflow: "hidden",
             //   border: '3px solid #000',
           }}
+        > */}
+        <Box
+        sx={{
+          width: "100%", // Make width responsive
+          height:0,
+          maxWidth: { xs: "400px", md: "50vh" }, // Limit the maximum size
+          position: "relative",
+          paddingBottom: "min(400px, 100%)", // Equal to width for a square aspect ratio
+          borderRadius: "12.5%",
+          overflow: "hidden",
+          // flexGrow: 1,
+          // minWidth: { md: "30vw" },
+          //   border: '3px solid #000',
+        }}
         >
           <Image
             alt="Pylon"
