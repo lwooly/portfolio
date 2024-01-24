@@ -1,35 +1,37 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { Typography, Box, useTheme, Slide } from "@mui/material";
 import ScrollPageContainer from "./components/ScrollPageContainer";
 import HomePagePanel from "./components/HomePagePanel";
-import AnimatedArrowHead from "./components/animation/AnimatedArrowHead";
-import Test from "./components/animation/Test";
-import ProfileImage from "./components/ProfileImage";
 import HeroMain from "./components/HeroMain";
 import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
-import TypographyTest from "./components/TypographyTest";
 import ContactMe from "./components/ContactMe";
 import PortfolioSlides from "./components/PortfolioSlides";
+import LargeBPMargin from "./components/LargeBPMargin";
+// import TypographyTest from "./components/TypographyTest";
 
 export default function Home() {
   return (
     <main>
       <ScrollPageContainer id={"scrollContainer"}>
         <HomePagePanel id={"home"}>
-          <HeroMain />
-          <StackIconSection />
+          <LargeBPMargin>
+            <HeroMain />
+            <StackIconSection />
+          </LargeBPMargin>
         </HomePagePanel>
         <HomePagePanel id={"about"}>
-          <AboutMe />
+          <LargeBPMargin>
+            <AboutMe />
+          </LargeBPMargin>
         </HomePagePanel>
         <HomePagePanel id={"projects"}>
           <PortfolioSlides />
         </HomePagePanel>
         <HomePagePanel id={"contact"}>
-          <ContactMe />
+          <LargeBPMargin>
+            <ContactMe />
+          </LargeBPMargin>
         </HomePagePanel>
+
         {/* <HomePagePanel>
           <TypographyTest />
         </HomePagePanel> */}

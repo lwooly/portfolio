@@ -4,7 +4,7 @@ import AboutMeImage from "@/src/app/components/AboutMeImage";
 
 const AboutMe = () => {
   return (
-    <>
+    <Box>
       <Typography variant="h3">About Me</Typography>
       <Typography variant="h4">Chartered Engineer & Full-Stack Dev</Typography>
       <Box
@@ -39,7 +39,7 @@ const AboutMe = () => {
           </Typography>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

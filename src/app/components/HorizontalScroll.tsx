@@ -4,7 +4,6 @@ import { BoxProps } from "@mui/material";
 import { set } from "react-hook-form";
 import ProjectsTitle from "./ProjectsTitle";
 
-
 //create containers for horizontal scrolling
 
 //tall container to create vertical height for scroll
@@ -55,7 +54,6 @@ const StickyInnerContainer = React.forwardRef<HTMLDivElement, BoxProps>(
   ),
 );
 StickyInnerContainer.displayName = "StickyInnerContainer";
-
 
 //horizontal container which contains the project slides.
 //this is moved/scrolled by the value transferX
@@ -121,7 +119,7 @@ const applyScrollListener = (
     const offsetTop = containerRef.current
       ? -containerRef.current.offsetTop
       : 0;
-      //set translateX to be the distance the sticky container has moved down the tall div
+    //set translateX to be the distance the sticky container has moved down the tall div
     setTranslateX(offsetTop);
   });
 };

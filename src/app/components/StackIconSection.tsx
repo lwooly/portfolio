@@ -27,7 +27,11 @@ const StackIconSection = () => {
       divider={<Divider orientation="horizontal" flexItem />}
       sx={{ maxWidth: "650px", marginX: "auto", padding: "0 1em" }}
     >
-      <Typography variant="body2" component={"h3"} sx={{ fontWeight: 500 }}>
+      <Typography
+        variant="body2"
+        component={"h3"}
+        sx={{ fontWeight: 500, textAlign: "center" }}
+      >
         Tech Stack
       </Typography>
       <StackImgList />
