@@ -47,7 +47,7 @@ export interface ProjectInfo {
 }
 
 const ProjectsList = async () => {
-  
+
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
 
   const projectsSummaryArr = projectsInfoArray.map(
@@ -57,6 +57,7 @@ const ProjectsList = async () => {
         key={index}
         sx={{
           minWidth: "80vw",
+          maxWidth: "100%",
           marginX: { md: "5rem" },
         }}
       >

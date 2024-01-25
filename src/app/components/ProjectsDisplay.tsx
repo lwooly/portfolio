@@ -10,8 +10,6 @@ import ProjectsTitle from "./ProjectsTitle";
 
 const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
 
-  const theme = useTheme();
-  const isBreakpointMd: boolean = useMediaQuery(theme.breakpoints.up("md"));
 
 
 

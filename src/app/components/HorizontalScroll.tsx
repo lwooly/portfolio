@@ -1,11 +1,10 @@
+"use client"
 import React, { RefObject, useEffect, useRef } from "react";
 import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { BoxProps } from "@mui/material";
-import { set } from "react-hook-form";
-import ProjectsTitle from "./ProjectsTitle";
 
 
-//create containers for horizontal scrolling
+//create containers for horizontal scrolling at breakpoint md up
 
 //tall container to create vertical height for scroll
 //dynamic height calculated based on width of horizontal object to scroll
@@ -13,6 +12,7 @@ interface OuterContainerProps extends BoxProps {
   dynamicHeight: number | null;
 }
 
+//refs forwarded to divs to allow for scroll listener
 const TallOuterContainer: React.FC<OuterContainerProps> = ({
   dynamicHeight,
   children,
@@ -139,7 +139,7 @@ const applyScrollListener = (
   });
 };
 
-const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
+const HorizontalScroll = ({ title, children }: {title: React.ReactNode,  children: React.ReactNode }) => {
   const [dynamicHeight, setDynamicHeight] = React.useState(null);
   const [translateX, setTranslateX] = React.useState(0);
 
@@ -170,7 +170,7 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
     <>
       <TallOuterContainer id={"Tall"} dynamicHeight={dynamicHeight}>
         <StickyInnerContainer ref={containerRef}>
-          {/* horizontal translate div to allow for horizontal scroll */}
+         {/* ensure title remains visible while div scrolls horizontally. */}
           <Box
             sx={(theme) => ({
               [theme.breakpoints.up("md")]: {
@@ -181,12 +181,19 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
               },
             })}
           >
-            <ProjectsTitle />
+            {title}
           </Box>
+           {/* horizontal translate div to allow for horizontal scroll */}
           <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
+            {/* flex container for cards */}
             <Box
               id={"cardcontainer"}
               sx={(theme) => ({
+                [theme.breakpoints.down("md")]:{
+                display: "flex",
+                flexDirection: "column",
+                gap:"4rem",
+                },
                 [theme.breakpoints.up("md")]: {
                   display: "flex",
                   direction: "row",
@@ -194,6 +201,7 @@ const HorizontalScroll = ({ children }: { children: React.ReactNode }) => {
                   height: "100%",
                   alignItems: "center",
                   marginLeft: "50px",
+                  gap:"10rem",
                 },
               })}
             >
