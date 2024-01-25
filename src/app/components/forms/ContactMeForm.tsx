@@ -136,7 +136,8 @@ const ContactMeForm = () => {
               variant="contained"
               disabled={isSubmitting || !isDirty || (isDirty && !isValid)}
               sx={{
-                maxWidth: "10rem",
+                maxWidth: "15rem",
+                height: "2.5rem",
                 backgroundColor: "hsl(143.9deg 75.46% 31.96%)",
                 color: theme.palette.common.white,
                 alignSelf: "center",
@@ -150,13 +151,13 @@ const ContactMeForm = () => {
             </Button>
           )}
           {isSending && !isSent && !isSendingError && (
-            <Typography variant="body2">Sending...</Typography>
+            <Typography variant="body2" sx={{textAlign:'center'}}>Sending...</Typography>
           )}
           {isSent && !isSending && !isSendingError && (
-            <Typography variant="body2">Message Sent!</Typography>
+            <Typography variant="body2" sx={{textAlign:'center'}}>Message Sent!</Typography>
           )}
           {!isSent && !isSending && isSendingError && (
-            <Typography variant="body2">
+            <Typography variant="body2" sx={{textAlign:'center'}}>
               Message not sent! Please try again!
             </Typography>
           )}

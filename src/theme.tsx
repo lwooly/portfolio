@@ -81,10 +81,11 @@ const themeOptions: ThemeOptions = {
     },
   },
   palette: {
+    mode: "dark",
     primary: {
       main: "#FFF",
       light: "#FFF",
-      dark: "#FFF",
+      dark: "#000",
     },
     secondary: {
       main: "hsl(143.9deg 75.46% 31.96%)",

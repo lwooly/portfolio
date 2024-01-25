@@ -10,8 +10,6 @@ import ProjectsTitle from "./ProjectsTitle";
 
 const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
 
-  const theme = useTheme();
-  const isBreakpointMd: boolean = useMediaQuery(theme.breakpoints.up("md"));
 
 
 
@@ -22,14 +20,14 @@ const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
   );
 
   // if screensize is small, return component only - no horizontal scroll
-  if (!isBreakpointMd) {
-    return (
-      <>
-        <ProjectsTitle />
-        {componentBoundary}
-      </>
-    );
-  } 
+  // if (!isBreakpointMd) {
+  //   return (
+  //     <>
+  //       <ProjectsTitle />
+  //       {componentBoundary}
+  //     </>
+  //   );
+  // } 
 
   //else return horizontal scroll viewport
   return <HorizontalScroll>{componentBoundary}</HorizontalScroll>;

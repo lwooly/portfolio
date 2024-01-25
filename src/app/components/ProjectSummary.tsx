@@ -27,6 +27,8 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
         paddingBottom: "1rem",
         alignItems: "center",
         flexDirection: { xs: "column", md: "row" },
+        maxWidth: {xs: '40rem', md:'100%'} ,
+        margin: "auto",
         gap: "2rem",
       }}
     >
@@ -61,7 +63,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
         sx={{
           display: { md: "flex" },
           flexDirection: { md: "column" },
-          minHeight: "400px",
+          // minHeight: "400px",
         }}
       >
         <Typography variant="h5">{title}</Typography>
