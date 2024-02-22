@@ -1,5 +1,4 @@
-
-import "server-only"; 
+import "server-only";
 import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
@@ -47,7 +46,6 @@ export interface ProjectInfo {
 }
 
 const ProjectsList = async () => {
-
   const projectsInfoArray: ProjectInfo[] = await fetchProjectsFromHygraph();
 
   const projectsSummaryArr = projectsInfoArray.map(

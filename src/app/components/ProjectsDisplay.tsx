@@ -9,10 +9,6 @@ import HorizontalScroll from "./HorizontalScroll";
 import ProjectsTitle from "./ProjectsTitle";
 
 const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
-
-
-
-
   const componentBoundary = (
     <ErrorBoundary fallback={<p>Something went wrong</p>}>
       <Suspense fallback={<div>Loading...</div>}>{component}</Suspense>
@@ -27,7 +23,7 @@ const ProjectsDisplay = ({ component }: { component: React.ReactNode }) => {
   //       {componentBoundary}
   //     </>
   //   );
-  // } 
+  // }
 
   //else return horizontal scroll viewport
   return <HorizontalScroll>{componentBoundary}</HorizontalScroll>;

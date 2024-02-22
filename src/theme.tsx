@@ -81,7 +81,7 @@ const themeOptions: ThemeOptions = {
     },
   },
   palette: {
-    mode: "dark",
+    // mode: "dark",
     primary: {
       main: "#FFF",
       light: "#FFF",

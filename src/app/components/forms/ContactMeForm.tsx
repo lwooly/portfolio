@@ -151,13 +151,17 @@ const ContactMeForm = () => {
             </Button>
           )}
           {isSending && !isSent && !isSendingError && (
-            <Typography variant="body2" sx={{textAlign:'center'}}>Sending...</Typography>
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
+              Sending...
+            </Typography>
           )}
           {isSent && !isSending && !isSendingError && (
-            <Typography variant="body2" sx={{textAlign:'center'}}>Message Sent!</Typography>
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
+              Message Sent!
+            </Typography>
           )}
           {!isSent && !isSending && isSendingError && (
-            <Typography variant="body2" sx={{textAlign:'center'}}>
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
               Message not sent! Please try again!
             </Typography>
           )}
