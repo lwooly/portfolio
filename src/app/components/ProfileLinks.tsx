@@ -9,6 +9,7 @@ const ProfileLinks = ({
 }) => {
   const styles = {
     color: color,
+    fontSize: "40px",
     "&:hover": {
       transform: "scale(1.2) translate(0, -2px)",
 
@@ -31,7 +32,7 @@ const ProfileLinks = ({
         aria-label="Github profile"
       >
         <IconButton sx={styles}>
-          <GitHubIcon fontSize="large" />
+          <GitHubIcon fontSize="inherit" />
         </IconButton>
       </a>
       <a
@@ -41,7 +42,7 @@ const ProfileLinks = ({
         target="_blank"
       >
         <IconButton sx={styles}>
-          <LinkedInIcon fontSize="large" />
+          <LinkedInIcon fontSize="inherit" />
         </IconButton>
       </a>
     </Box>

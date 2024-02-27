@@ -13,7 +13,7 @@ import {
   Roboto,
   Jost,
   Epilogue,
-  Inter
+  Inter,
 } from "next/font/google";
 import { text } from "stream/consumers";
 

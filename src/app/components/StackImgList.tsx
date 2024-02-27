@@ -15,12 +15,6 @@ const StackImgList = () => {
     "redux.svg",
     "NodeJS-Dark.svg",
     "nextjs.svg",
-    // "python.svg",
-    // "django.svg",
-    // "sass.svg",
-    // "bootstrap.svg",
-    // "mongodb.svg",
-    // "PostgreSQL-Dark.svg",
   ];
 
   const techIcons = imgSrcs.map((src) => {

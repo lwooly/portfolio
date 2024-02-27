@@ -64,7 +64,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
           priority
           style={{
             objectFit: "cover",
-            objectPosition: "center",
+            objectPosition: "25% 50%",
           }}
         />
       </Box>

@@ -39,6 +39,7 @@ const AboutMeImage = () => {
           <Image
             alt="Pylon"
             src={"/pylon.jpg"}
+            loading="eager"
             fill
             sizes="50%"
             style={{

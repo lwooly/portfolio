@@ -39,7 +39,8 @@ const HeroMain = () => {
             variant="body1"
             // fontWeight={"bold"}
           >
-            About me Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Full Stack Developer (TypeScript, React, Redux, & Next.js) |
+            Structural Engineering & Computational Analysis background
           </Typography>
           <Box sx={{ marginTop: { md: "auto" } }}>
             <ProfileLinks color="" />
