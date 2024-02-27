@@ -20,7 +20,6 @@ interface ProjectSummaryProps {
 }
 
 const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
-  console.log(projectInfo);
   const {
     title,
     description,
@@ -29,7 +28,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
     liveDemoLink,
     projectImage: { url: homePageImageSrc },
   } = projectInfo;
-  console.log(techStack);
+
   return (
     <Stack
       component={"article"}

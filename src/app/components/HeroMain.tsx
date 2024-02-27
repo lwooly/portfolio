@@ -11,7 +11,7 @@ const HeroMain = () => {
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
-          gap: "3em",
+          gap: "2em",
           paddingTop: { xs: "1em", sm: "2em", md: "3em", lg: "4em" },
           marginBottom: "4em",
           height: "100%",
