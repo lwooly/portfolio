@@ -2,6 +2,7 @@
 
 TheFull Stack Portfolio Website serves as a platform to showcase a range of projects and skills. It offers insights into some of my work, elaborates on various projects, and provides a direct communication channel via an integrated contact form.
 
+Link: [Portfolio](https://portfolio-chi-seven-84.vercel.app/)
 ## Tech Stack
 - Next.js
 - React
