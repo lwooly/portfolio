@@ -1,4 +1,4 @@
-#Portfolio Website
+##Portfolio Website
 
 TheFull Stack Portfolio Website serves as a platform to showcase a range of projects and skills. It offers insights into some of my work, elaborates on various projects, and provides a direct communication channel via an integrated contact form.
 
