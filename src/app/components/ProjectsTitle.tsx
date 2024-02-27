@@ -7,7 +7,7 @@ const ProjectsTitle = () => {
       <Typography variant="h3" component={"h2"}>
         Portfolio
       </Typography>
-      <Typography variant="h4">Full stack development projects</Typography>
+      <Typography variant="h4">Development projects</Typography>
     </>
   );
 };

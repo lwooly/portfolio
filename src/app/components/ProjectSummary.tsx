@@ -1,25 +1,35 @@
 "use client";
 
 import React from "react";
-import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  IconButton,
+  Stack,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { ProjectInfo } from "./ProjectsList";
+import TooltipOffset from "./TooltipOffset";
 
 interface ProjectSummaryProps {
   projectInfo: ProjectInfo;
 }
 
 const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
+  console.log(projectInfo);
   const {
     title,
     description,
+    techStack,
     gitHubLink,
     liveDemoLink,
     projectImage: { url: homePageImageSrc },
   } = projectInfo;
-
+  console.log(techStack);
   return (
     <Stack
       component={"article"}
@@ -70,53 +80,74 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
         <Typography variant="body2" sx={{ mb: "1rem" }}>
           {description}
         </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "start",
+          }}
+        >
+          {techStack.map((software) => (
+            <Typography
+              key={software}
+              variant="body1"
+              component="p"
+              sx={{ mb: 1, mx: 0.5, fontWeight: "bold" }}
+            >
+              {software}
+            </Typography>
+          ))}
+        </Box>
         {/* links */}
         <Stack direction={"row"} gap={2}>
-          <a
-            href={gitHubLink}
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label={`${title} source code`}
-            style={{ textDecoration: "none" }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
+          <TooltipOffset title="Code">
+            <a
+              href={gitHubLink}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label={`${title} source code`}
+              style={{ textDecoration: "none", marginRight: "3rem" }}
             >
-              {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
                 Code
               </Typography> */}
-              <IconButton sx={{ padding: 0 }}>
-                <GitHubIcon fontSize="large" />
-              </IconButton>
-            </Box>
-          </a>
-
-          <a
-            href={liveDemoLink}
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label={`${title} live demo`}
-            style={{ textDecoration: "none" }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
+                <IconButton sx={{ padding: 0, fontSize: "40px" }}>
+                  <GitHubIcon fontSize="inherit" />
+                </IconButton>
+              </Box>
+            </a>
+          </TooltipOffset>
+          <TooltipOffset title="Live demo">
+            <a
+              href={liveDemoLink}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label={`${title} live demo`}
+              style={{ textDecoration: "none" }}
             >
-              {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
                 LiveDemo
               </Typography> */}
-              <IconButton sx={{ padding: 0 }}>
-                <OpenInNewIcon fontSize="large" />
-              </IconButton>
-            </Box>
-          </a>
+                <IconButton sx={{ padding: 0, fontSize: "40px" }}>
+                  <OpenInNewIcon fontSize="inherit" />
+                </IconButton>
+              </Box>
+            </a>
+          </TooltipOffset>
         </Stack>
       </Box>
     </Stack>

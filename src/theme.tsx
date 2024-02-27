@@ -13,12 +13,13 @@ import {
   Roboto,
   Jost,
   Epilogue,
+  Inter
 } from "next/font/google";
 import { text } from "stream/consumers";
 
-const font = Epilogue({
+const font = Inter({
   weight: ["300", "400", "500", "700"],
-  style: ["normal", "italic"],
+  style: ["normal"],
   subsets: ["latin"],
 });
 

@@ -40,6 +40,7 @@ export interface ProjectInfo {
   description: string;
   gitHubLink: string;
   liveDemoLink: string;
+  techStack: string[];
   projectImage: {
     url: string;
   };

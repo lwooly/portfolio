@@ -5,6 +5,7 @@ query Projects {
       gitHubLink
       id
       liveDemoLink
+      techStack
       title
       projectImage {
         url
