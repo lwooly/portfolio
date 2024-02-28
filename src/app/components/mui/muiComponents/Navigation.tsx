@@ -79,7 +79,7 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
+          <Link href='/' style={{marginRight:'auto', textDecoration:'none'}}><Typography
             variant="h3"
             component="div"
             sx={{
@@ -89,7 +89,8 @@ export default function DrawerAppBar(props: Props) {
             }}
           >
             lwooly.dev
-          </Typography>
+          </Typography></Link>
+          
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Link key={item} href={`#${item}`}>

@@ -29,19 +29,18 @@ const ProfileLinks = ({
         href="https://github.com/lwooly"
         rel="noopener noreferrer"
         target="_blank"
-        aria-label="Github profile"
+        
       >
-        <IconButton sx={styles}>
+        <IconButton sx={styles} aria-label="Github profile">
           <GitHubIcon fontSize="inherit" />
         </IconButton>
       </a>
       <a
         href="https://www.linkedin.com/in/lloyd-woolacott-ceng-mice-aa8245117/"
-        aria-label="LinkedIn profile"
         rel="noopener noreferrer"
         target="_blank"
       >
-        <IconButton sx={styles}>
+        <IconButton sx={styles} aria-label="LinkedIn profile">
           <LinkedInIcon fontSize="inherit" />
         </IconButton>
       </a>

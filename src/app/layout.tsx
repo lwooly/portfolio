@@ -5,7 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import DrawerAppBar from "@/src/app/components/mui/muiComponents/Navigation";
 import ThemeRegistry from "@/src/theme";
 import Footer from "./components/Footer";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "@/src/theme";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,13 +22,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{overscrollBehavior:'none'}}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <DrawerAppBar />
-            {children}
-            <Footer />
+            <Box sx={{ flexDirection: "column", display: "flex" }}>
+              <DrawerAppBar />
+              {children}
+              <Footer />
+            </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

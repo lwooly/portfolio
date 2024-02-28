@@ -9,9 +9,12 @@ const Footer = () => {
       sx={{
         backgroundColor: "#3c3c3c",
         height: "8rem",
+        maxHeight: "8rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        marginTop:'auto',
+        overflowY: 'visible'
       }}
     >
       <ProfileLinks color={"#FFF"} />

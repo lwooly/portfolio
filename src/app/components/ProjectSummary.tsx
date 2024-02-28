@@ -117,7 +117,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
                 {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
                 Code
               </Typography> */}
-                <IconButton sx={{ padding: 0, fontSize: "40px" }}>
+                <IconButton aria-label="Github repo" sx={{ padding: 0, fontSize: "40px" }}>
                   <GitHubIcon fontSize="inherit" />
                 </IconButton>
               </Box>
@@ -141,7 +141,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
                 {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
                 LiveDemo
               </Typography> */}
-                <IconButton sx={{ padding: 0, fontSize: "40px" }}>
+                <IconButton aria-label="Project live demo" sx={{ padding: 0, fontSize: "40px" }}>
                   <OpenInNewIcon fontSize="inherit" />
                 </IconButton>
               </Box>
