@@ -15,23 +15,20 @@ const AboutMeImage = () => {
     >
       {/* container for images */}
       <Box
-        className={"imagediv"}
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent:'left',
           position: "relative",
-          maxWidth: { xs: "300px", md: "50vh" },
-          height: "auto",
+          width: { xs: "250px", md: "300px" , lg:'400px'},
+          height: { xs: "250px", md: "300px", lg:'400px' },
         }}
       >
         {/* Container for pylon image */}
         <Box
           sx={{
             width: { xs: "250px", md: "300px" , lg:'400px'},
-            minWidth: { xs: "250px", md: "300px", lg:'400px' },
             height: { xs: "250px", md: "300px" , lg:'400px'},
-            minHeight: { xs: "250px", md: "300px", lg:'400px' },
             position: "relative",
 
             // Equal to width for a square aspect ratio
