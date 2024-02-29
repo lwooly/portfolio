@@ -39,6 +39,7 @@ const HeroMain = () => {
           </Typography>
           <Typography
             variant="body1"
+            sx={{width:{sm: '80%', md:'100%'}, margin:{sm: 'auto', md:'none'}}}
             // fontWeight={"bold"}
           >
             Full Stack Developer (<span style={{fontWeight:'bold'}}>TypeScript, React, Redux, & Next.js</span>) |
