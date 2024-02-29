@@ -19,9 +19,9 @@ const HomePagePanel = ({
         height: { md: "100vh" },
         padding: {
           xs: "3em 2em 6em 2em",
-          sm: "3em, 4rem 6em, 4rem",
-          md: "3em 8rem 2em 8rem",
-          lg: "3em 12rem 2em 12rem",
+          sm: "5em 6rem 5em 6rem",
+          md: "5em 8rem 5em 8rem",
+          lg: "5em 12rem 5em 12rem",
         },
         textAlign: "center",
       

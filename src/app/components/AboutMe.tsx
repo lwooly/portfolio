@@ -13,38 +13,46 @@ const AboutMe = () => {
           flexDirection: {
             xs: "column",
             md: "row",
-            gap: "2rem",
-            marginTop: "3rem",
-            marginBottom: "8rem",
           },
+          gap: "3rem",
+          marginTop: "3rem",
+          marginBottom: "8rem",
+          alignItems:'center'
         }}
       >
         <AboutMeImage />
-        <Box sx={{ flex: 3, display: "flex", alignItems: "center" }}>
-          <List>
-            <ListItem>
+        <Box sx={{ textAlign: "left" }}>
+          <Typography variant="h5" component={"h5"}>
+            Hi, I&apos;m Lloyd,
+          </Typography>
+          <Typography variant="body1" component={"p"}>
+            A Chartered Structural Engineer specialising in full-stack
+            development.
+          </Typography>
+          <List sx={{ listStyle: "disc", paddingLeft: "1em" }}>
+            <ListItem sx={{ display: "list-item", paddingRight: 0 }}>
               <Typography variant="body1" sx={{ textAlign: "justify" }}>
-                Proven track record trong engineering background by leading and
-                sucessfully delivering significant and complex engineering
-                projects in the UK Civil Nuclear sector.
+                <span style={{ fontWeight: "bold" }}>Background: </span>Proven
+                track record leading and sucessfully delivering significant and
+                complex engineering projects in the UK Civil Nuclear sector.
               </Typography>
             </ListItem>
-            <ListItem>
+            <ListItem sx={{ display: "list-item", paddingRight: 0 }}>
               <Typography variant="body1" sx={{ textAlign: "justify" }}>
-                Expanded my skill set to include full-stack software
-                development, integrating engineering problem-solving with
-                technology.
+                <span style={{ fontWeight: "bold" }}>Skills: </span>Full-stack
+                software development, integrated with my engineering
+                problem-solving and mathematical ability.
               </Typography>
             </ListItem>
-            <ListItem>
+            <ListItem sx={{ display: "list-item", paddingRight: 0 }}>
               <Typography variant="body1" sx={{ textAlign: "justify" }}>
-                Focused on creating innovative solutions that bridge the gap
-                between engineering theory and user-centric applications,
-                leveraging modern tech stacks.
+                <span style={{ fontWeight: "bold" }}>Focus: </span>I am focused
+                on creating innovative tech solutions that bridge the gap
+                between engineering theory and user-centric applications.
               </Typography>
             </ListItem>
           </List>
-          </Box>
+        </Box>
       </Box>
     </Box>
   );

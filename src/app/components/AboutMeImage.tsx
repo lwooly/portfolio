@@ -1,6 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const AboutMeImage = () => {
   return (
@@ -47,23 +50,38 @@ const AboutMeImage = () => {
               objectPosition: "center",
             }}
           />
-        </Box>
+        </Box >
         {/* Container for spinning text */}
         <Box
           sx={{
-            width: "60%", // Make width responsive
-            paddingBottom: "min(60%, 150px)", // Equal to width for a square aspect ratio
-            maxWidth: "150px", // Limit the maximum size
+            width: "50%", // Make width responsive
+            paddingBottom: "min(50%, 200px)", // Equal to width for a square aspect ratio
+            maxWidth: "200px", // Limit the maximum size
             borderRadius: "12.5%",
-            overflow: "hidden",
+            overflow: "visible",
             position: "absolute", 
             bottom: "-6%",
             right: "-6%",
             flexShrink: 1,
           }}
         >
+            <Box sx={{color: '#149031', position:'absolute', zIndex:4, top:'50%', left: '50%', transform: 'translate(-55%, -50%)', fontSize:'2em', width:'40%', height:'40%'}}>
+            <Image
+            src={"/testing.png"}
+            alt={"laptop icon"}
+            fill
+            sizes="100vw"
+            style={{
+              zIndex: 2,
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
+              </Box>        
+
+
           <Image
-            src={"/circular-text.svg"}
+            src={"/circular.svg"}
             alt={"Full stack developer - chartered engineer"}
             fill
             sizes="100vw"
@@ -74,6 +92,7 @@ const AboutMeImage = () => {
               objectPosition: "center",
             }}
           />
+          
         </Box>
       </Box>
     </Box>
