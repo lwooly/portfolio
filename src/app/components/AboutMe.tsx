@@ -46,8 +46,7 @@ const AboutMe = () => {
             </ListItem>
             <ListItem sx={{ display: "list-item", paddingRight: 0 }}>
               <Typography variant="body1" sx={{ textAlign: "justify" }}>
-                <span style={{ fontWeight: "bold" }}>Focus: </span>I am focused
-                on creating innovative tech solutions that bridge the gap
+                <span style={{ fontWeight: "bold" }}>Focus: </span>Creating innovative tech solutions that bridge the gap
                 between engineering theory and user-centric applications.
               </Typography>
             </ListItem>

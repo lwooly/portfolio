@@ -1,9 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import EngineeringIcon from '@mui/icons-material/Engineering';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const AboutMeImage = () => {
   return (
