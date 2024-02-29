@@ -5,10 +5,11 @@ import Image from "next/image";
 const AboutMeImage = () => {
   return (
     <Box
-      sx={{ display: "flex", justifyContent: "center", flex: 2, flexShrink: 2 }}
+      sx={{ display: "flex", justifyContent: "center", flexDirection:{xs:'row', lg:'column'}, flex: 2, flexShrink: 2 }}
     >
       {/* container for images */}
       <Box
+      className={'imagediv'}
         sx={{
           display: "flex",
           alignItems: "center",
@@ -59,6 +60,7 @@ const AboutMeImage = () => {
             position: "absolute",
             bottom: "-6%",
             right: "-6%",
+            flexShrink: 1
           }}
         >
           <Image

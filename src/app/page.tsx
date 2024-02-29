@@ -13,23 +13,17 @@ export default function Home() {
     <main>
       <ScrollPageContainer id={"scrollContainer"}>
         <HomePagePanel id={"home"}>
-          <LargeBPMargin>
             <HeroMain />
             <StackIconSection />
-          </LargeBPMargin>
         </HomePagePanel>
         <HomePagePanel id={"about"}>
-          <LargeBPMargin>
             <AboutMe />
-          </LargeBPMargin>
         </HomePagePanel>
         <HomePagePanel id={"projects"}>
           <PortfolioSlides />
         </HomePagePanel>
         <HomePagePanel id={"contact"}>
-          <LargeBPMargin>
             <ContactMe />
-          </LargeBPMargin>
         </HomePagePanel>
 
         {/* <HomePagePanel>

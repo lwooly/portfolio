@@ -2,23 +2,32 @@
 import React from "react";
 import Image from "next/image";
 import { Box, ListItem, List, useTheme } from "@mui/material";
+import TooltipOffset from "./TooltipOffset";
 
 const StackImgList = () => {
   const theme = useTheme();
 
-  const imgSrcs: string[] = [
-    "html.svg",
-    "css.svg",
-    "js.svg",
-    "ts.svg",
-    "react.svg",
-    "redux.svg",
-    "NodeJS-Dark.svg",
-    "nextjs.svg",
+  interface ImageSrc {
+    title: string;
+    src: string;
+  }
+
+  const techIcons: ImageSrc[] = [
+    { title: "HTML", src: "html.svg" },
+    { title: "CSS", src: "css.svg" },
+    { title: "JavaScript", src: "js.svg" },
+    { title: "TypeScript", src: "ts.svg" },
+    { title: "React", src: "react.svg" },
+    { title: "Redux", src: "redux.svg" },
+    { title: "Node.js", src: "NodeJS-Dark.svg" },
+    { title: "Next.js", src: "nextjs.svg" },
   ];
 
-  const techIcons = imgSrcs.map((src) => {
-    return `/techIcons/joined/${src}`;
+  // map icon src to directory location
+
+  techIcons.map((imageSrc) => {
+    imageSrc.src = `/techIcons/joined/${imageSrc.src}`;
+    console.log(imageSrc.src);
   });
 
   return (
@@ -33,7 +42,7 @@ const StackImgList = () => {
         },
       }}
     >
-      {techIcons.map((src, index) => (
+      {techIcons.map(({ title, src }, index) => (
         <ListItem
           component={"li"}
           key={index}
@@ -42,13 +51,15 @@ const StackImgList = () => {
             padding: "0.5em",
             [theme.breakpoints.up("sm")]: {
               "&:hover": {
-                transform: "scale(1.15) translate(0, -10px)",
+                transform: "scale(1.15)",
                 transition: "transform 0.5s ease-in-out",
               },
             },
           }}
         >
-          <Image src={src} alt={src} width={40} height={40} />
+          <TooltipOffset title={title} placement={"bottom"}>
+            <Image src={src} alt={title} width={40} height={40} />
+          </TooltipOffset>
         </ListItem>
       ))}
     </List>

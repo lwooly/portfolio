@@ -99,7 +99,7 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
         </Box>
         {/* links */}
         <Stack direction={"row"} gap={2}>
-          <TooltipOffset title="Code">
+          
             <a
               href={gitHubLink}
               rel="noopener noreferrer"
@@ -117,13 +117,15 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
                 {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
                 Code
               </Typography> */}
+              <TooltipOffset title="Code" placement="right" offset={[0,-10]}>
                 <IconButton aria-label="Github repo" sx={{ padding: 0, fontSize: "40px" }}>
                   <GitHubIcon fontSize="inherit" />
                 </IconButton>
+                </TooltipOffset>
               </Box>
             </a>
-          </TooltipOffset>
-          <TooltipOffset title="Live demo">
+          
+          
             <a
               href={liveDemoLink}
               rel="noopener noreferrer"
@@ -141,12 +143,14 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
                 {/* <Typography variant="subtitle1" fontWeight={500} component={"span"}>
                 LiveDemo
               </Typography> */}
+              <TooltipOffset title="Live demo" placement="right" offset={[0,-10]}>
                 <IconButton aria-label="Project live demo" sx={{ padding: 0, fontSize: "40px" }}>
                   <OpenInNewIcon fontSize="inherit" />
                 </IconButton>
+                </TooltipOffset>
               </Box>
             </a>
-          </TooltipOffset>
+          
         </Stack>
       </Box>
     </Stack>

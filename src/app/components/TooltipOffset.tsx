@@ -6,14 +6,31 @@ import { Typography } from "@mui/material";
 export default function TooltipOffset({
   children,
   title,
+  placement,
+  offset = [0,0],
 }: {
   children: React.ReactElement;
   title: string;
+  placement:
+    | "top"
+    | "right"
+    | "bottom"
+    | "left"
+    | "bottom-end"
+    | "bottom-start"
+    | "left-end"
+    | "left-start"
+    | "right-end"
+    | "right-start"
+    | "top-end"
+    | "top-start"
+    | undefined;
+    offset?: [number, number]
 }) {
   return (
     <Tooltip
       arrow
-      placement="right"
+      placement={placement}
       title={
         <>
           <Typography variant="body1" component="p" sx={{ color: "white" }}>
@@ -27,7 +44,7 @@ export default function TooltipOffset({
             {
               name: "offset",
               options: {
-                offset: [0, -10],
+                offset,
               },
             },
           ],

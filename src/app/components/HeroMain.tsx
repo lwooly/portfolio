@@ -15,6 +15,8 @@ const HeroMain = () => {
           paddingTop: { xs: "1em", sm: "2em", md: "3em", lg: "4em" },
           marginBottom: "4em",
           height: "100%",
+          maxWidth:{lg:'65%'},
+          marginX: "auto"
         }}
       >
         <ProfileImage />
@@ -39,9 +41,10 @@ const HeroMain = () => {
             variant="body1"
             // fontWeight={"bold"}
           >
-            Full Stack Developer (TypeScript, React, Redux, & Next.js) |
+            Full Stack Developer (<span style={{fontWeight:'bold'}}>TypeScript, React, Redux, & Next.js</span>) |
             Structural Engineering & Computational Analysis background
           </Typography>
+          
           <Box sx={{ marginTop: { md: "auto" } }}>
             <ProfileLinks color="" />
           </Box>
