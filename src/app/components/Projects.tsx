@@ -1,7 +1,5 @@
-import { Box, Typography } from "@mui/material";
 import React, { Suspense } from "react";
 const ProjectsList = React.lazy(() => import("./ProjectsList"));
-import ProjectsDisplay from "./ProjectsDisplay";
 import { ErrorBoundary } from "react-error-boundary";
 import HorizontalScroll from "./HorizontalScroll";
 import ProjectsTitle from "./ProjectsTitle";
@@ -11,14 +9,14 @@ import ProjectsTitle from "./ProjectsTitle";
 const Projects = () => {
   return (
     <>
-      {/* <HorizontalScroll title={<ProjectsTitle />}> */}
-      <ProjectsTitle />
+      <HorizontalScroll title={<ProjectsTitle />}>
+        {/* <ProjectsTitle /> */}
         <ErrorBoundary fallback={<p>Something went wrong</p>}>
           <Suspense fallback={<div>Loading...</div>}>
             <ProjectsList />
           </Suspense>
         </ErrorBoundary>
-      {/* </HorizontalScroll> */}
+      </HorizontalScroll>
     </>
   );
 };

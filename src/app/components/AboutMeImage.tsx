@@ -5,17 +5,21 @@ import Image from "next/image";
 const AboutMeImage = () => {
   return (
     <Box
-      sx={{ display: "flex", justifyContent: "center", flexDirection:{xs:'row', lg:'column'}, flex: 2, flexShrink: 2 }}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: { xs: "row", lg: "column" },
+        flex: 2,
+        flexShrink: 2,
+      }}
     >
       {/* container for images */}
       <Box
-      className={'imagediv'}
+        className={"imagediv"}
         sx={{
           display: "flex",
           alignItems: "center",
-          // marginBottom: 'auto',
-          width: "100%",
-          // maxWidth: "400px",
+          justifyContent:'left',
           position: "relative",
           maxWidth: { xs: "300px", md: "50vh" },
           height: "auto",
@@ -24,23 +28,21 @@ const AboutMeImage = () => {
         {/* Container for pylon image */}
         <Box
           sx={{
-            width: "100%", // Make width responsive
-            height: 0,
-            // Limit the maximum size
+            width: { xs: "250px", md: "300px" , lg:'400px'},
+            minWidth: { xs: "250px", md: "300px", lg:'400px' },
+            height: { xs: "250px", md: "300px" , lg:'400px'},
+            minHeight: { xs: "250px", md: "300px", lg:'400px' },
             position: "relative",
-            paddingBottom: "min(300px, 100%)",
+
             // Equal to width for a square aspect ratio
             borderRadius: "12.5%",
             overflow: "hidden",
-            // flexGrow: 1,
-            // minWidth: { md: "30vw" },
-            //   border: '3px solid #000',
           }}
         >
           <Image
             alt="Pylon"
             src={"/pylon.jpg"}
-            loading="eager"
+            priority
             fill
             sizes="50%"
             style={{
@@ -57,10 +59,10 @@ const AboutMeImage = () => {
             maxWidth: "150px", // Limit the maximum size
             borderRadius: "12.5%",
             overflow: "hidden",
-            position: "absolute",
+            position: "absolute", 
             bottom: "-6%",
             right: "-6%",
-            flexShrink: 1
+            flexShrink: 1,
           }}
         >
           <Image

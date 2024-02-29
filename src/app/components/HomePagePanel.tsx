@@ -21,21 +21,17 @@ const HomePagePanel = ({
           xs: "3em 2em 6em 2em",
           sm: "3em, 4rem 6em, 4rem",
           md: "3em 8rem 2em 8rem",
-        }, //md: "2em 5em 6em 5em" },
-        textAlign: "center",
-        scrollMarginTop: "60px",
-        ":nth-child(2n)": { backgroundColor: "white" },
-        ":first-child": {
-          paddingTop: "70px" /* height of navbar */,
-          marginTop: "-70px" /* negative margin to offset the padding */,
-          display: { md: "flex" },
-          flexDirection: { md: "column" },
-          justifyContent: { md: "space-around" },
+          lg: "3em 12rem 2em 12rem",
         },
+        textAlign: "center",
+      
+
+        ":nth-child(2n)": { backgroundColor: "white" },
         //set 0 x padding for scroll container
         ":nth-child(n+2)": {
           height: { md: "auto" },
         },
+        // scroll container to have
         ":nth-child(3)": {
           paddingX: { md: "0" },
         },
