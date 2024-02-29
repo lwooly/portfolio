@@ -27,7 +27,6 @@ const StackImgList = () => {
 
   techIcons.map((imageSrc) => {
     imageSrc.src = `/techIcons/joined/${imageSrc.src}`;
-    console.log(imageSrc.src);
   });
 
   return (
