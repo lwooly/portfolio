@@ -4,6 +4,7 @@ import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import Projects from "./components/Projects";
+import UpdatedAboutMe from "./components/UpdatedAboutMe";
 // import TypographyTest from "./components/TypographyTest";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
         <StackIconSection />
       </HomePagePanel>
       <HomePagePanel id={"about"}>
-        <AboutMe />
+        <UpdatedAboutMe />
       </HomePagePanel>
       <HomePagePanel id={"projects"}>
         <Projects />

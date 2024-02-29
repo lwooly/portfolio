@@ -24,9 +24,9 @@ const font = Inter({
 });
 
 const textColors = {
-  primary: "#3c3c3c",
-  secondary: "#555;",
-  tertiary: "#818181",
+  primary: "#121619",
+  secondary: "#000000;",
+  tertiary: "#121619",
   headingHighlight: "hsl(143.9deg 75.46% 31.96%)",
   // secondary: "hsl(228deg 85.29% 50.31%);",
 };
@@ -36,10 +36,12 @@ const themeOptions: ThemeOptions = {
     fontFamily: font.style.fontFamily,
     fontSize: 12,
     h1: {
+      fontSize: '56px',
       fontWeight: 700,
       color: textColors.primary,
     },
     h2: {
+      fontSize: '46px',
       fontWeight: 700,
       color: textColors.primary,
     },
@@ -47,16 +49,17 @@ const themeOptions: ThemeOptions = {
       fontSize: "1.2rem",
       fontWeight: 700,
       color: textColors.headingHighlight,
+      textAlign:'center',
       // marginTop: "1.2rem",
     },
     h4: {
       fontWeight: 700,
       color: textColors.primary,
-      marginTop: "0.7rem",
+      marginTop: "0.7rem",  
       marginBottom: "1rem",
     },
     h5: {
-      fontSize: "1.2rem",
+      fontSize: "1.57rem",
       fontWeight: 700,
       color: textColors.primary,
       marginBottom: "0.7rem",

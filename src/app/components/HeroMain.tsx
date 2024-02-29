@@ -15,7 +15,7 @@ const HeroMain = () => {
           paddingTop: { xs: "1em", sm: "2em", md: "2em", lg: "4em" },
           marginBottom: "4em",
           height: "100%",
-          maxWidth:{lg:'65%'},
+          maxWidth:{lg:'80%'},
           marginX: "auto"
         }}
       >
@@ -39,10 +39,10 @@ const HeroMain = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{width:{sm: '80%', md:'100%'}, margin:{sm: 'auto', md:'none'}}}
+            sx={{width:{sm: '80%', md:'100%'}, marginx:{sm: 'auto', md:'none'}, fontSize:'18px',}}
             // fontWeight={"bold"}
           >
-            Full Stack Developer (<span style={{fontWeight:'bold'}}>TypeScript, React, Redux, & Next.js</span>) |
+            Full Stack Developer<br/> (<span style={{fontWeight:'bold'}}>TypeScript, React, Redux, & Next.js</span>)  <br/>
             Structural Engineering & Computational Analysis background
           </Typography>
           

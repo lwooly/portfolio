@@ -23,7 +23,7 @@ const HomePagePanel = ({
           md: "5em 8rem 5em 8rem",
           lg: "5em 12rem 5em 12rem",
         },
-        textAlign: "center",
+        // textAlign: "center",
       
 
         ":nth-child(2n)": { backgroundColor: "white" },
