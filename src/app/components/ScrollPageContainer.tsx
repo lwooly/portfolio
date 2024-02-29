@@ -1,7 +1,6 @@
-import { Height } from "@mui/icons-material";
-import { Box, useTheme } from "@mui/material";
-import { spec } from "node:test/reporters";
-import { styled } from "@mui/material";
+import { Box } from "@mui/material";
+
+// Not used
 
 const ScrollPageContainer = ({
   id,
@@ -17,10 +16,11 @@ const ScrollPageContainer = ({
           width: "100%",
           marginTop: "-70px", // height of navbar
           paddingTop: "70px", // height of navbar
-          // overflowY: "scroll", - set to implement slide feature.
+          overflowY: "scroll", //- set to implement slide feature.
+          scrollBehavior: "smooth",
           // scroll snapping on sections at md breakpoint
           scrollSnapType: { xs: "y proximity", md: "y mandatory" },
-          // maxHeight: { md: "100vh" },
+          height: { md: "100vh" },
         }}
         id={id}
       >

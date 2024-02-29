@@ -2,7 +2,7 @@
 import React, { Component, Suspense, useState, useEffect, useRef } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Box, Stack, styled, useTheme } from "@mui/material";
-import PortfolioSlides from "./PortfolioSlides";
+import PortfolioSlides from "./Projects";
 import { ErrorBoundary } from "react-error-boundary";
 import { BoxProps } from "@mui/material";
 import HorizontalScroll from "./HorizontalScroll";

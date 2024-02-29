@@ -8,18 +8,19 @@ import ProjectsTitle from "./ProjectsTitle";
 
 //component to lazy load ProjectsList
 
-const PortfolioSlides = () => {
+const Projects = () => {
   return (
     <>
-      <HorizontalScroll title={<ProjectsTitle />}>
+      {/* <HorizontalScroll title={<ProjectsTitle />}> */}
+      <ProjectsTitle />
         <ErrorBoundary fallback={<p>Something went wrong</p>}>
           <Suspense fallback={<div>Loading...</div>}>
             <ProjectsList />
           </Suspense>
         </ErrorBoundary>
-      </HorizontalScroll>
+      {/* </HorizontalScroll> */}
     </>
   );
 };
 
-export default PortfolioSlides;
+export default Projects;

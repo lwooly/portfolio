@@ -4,14 +4,14 @@ import HeroMain from "./components/HeroMain";
 import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
-import PortfolioSlides from "./components/PortfolioSlides";
+import PortfolioSlides from "./components/Projects";
 import LargeBPMargin from "./components/LargeBPMargin";
+import Projects from "./components/Projects";
 // import TypographyTest from "./components/TypographyTest";
 
 export default function Home() {
   return (
     <main>
-      <ScrollPageContainer id={"scrollContainer"}>
         <HomePagePanel id={"home"}>
             <HeroMain />
             <StackIconSection />
@@ -20,7 +20,7 @@ export default function Home() {
             <AboutMe />
         </HomePagePanel>
         <HomePagePanel id={"projects"}>
-          <PortfolioSlides />
+          <Projects />
         </HomePagePanel>
         <HomePagePanel id={"contact"}>
             <ContactMe />
@@ -29,7 +29,6 @@ export default function Home() {
         {/* <HomePagePanel>
           <TypographyTest />
         </HomePagePanel> */}
-      </ScrollPageContainer>
     </main>
   );
 }
