@@ -1,5 +1,5 @@
 import "server-only";
-import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
+import { Box, Divider, IconButton, List, Stack, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import React from "react";
@@ -25,16 +25,7 @@ const ProjectsList = async () => {
   const projectsSummaryArr = projectsInfoArray.map(
     (projectInfo: ProjectInfo, index: number) => (
       //slides at md breakpoint
-      <Box
-        key={index}
-        sx={{
-          minWidth: "80vw",
-          maxWidth: "100%",
-          marginX: { md: "5rem" },
-        }}
-      >
-        <ProjectSummary projectInfo={projectInfo} />
-      </Box>
+        <ProjectSummary key={index} projectInfo={projectInfo} />
     ),
   );
 
@@ -45,7 +36,10 @@ const ProjectsList = async () => {
           Watch this space!
         </Typography>
       ) : (
-        projectsSummaryArr
+        <List>
+          {projectsSummaryArr}
+        </List>
+        
       )}
     </>
   );

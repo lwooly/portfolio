@@ -2,6 +2,9 @@ import { Typography, useTheme } from "@mui/material";
 import ProfileImage from "./ProfileImage";
 import Box from "@mui/material/Box";
 import ProfileLinks from "./ProfileLinks";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { createProfileLinks } from "../utils/links";
 
 const HeroMain = () => {
   return (
@@ -62,7 +65,7 @@ const HeroMain = () => {
           </Typography>
 
           <Box sx={{ marginTop: "auto" }}>
-            <ProfileLinks />
+            <ProfileLinks links={createProfileLinks({isFooter:false})} />
           </Box>
         </Box>
       </Box>

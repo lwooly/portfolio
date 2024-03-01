@@ -10,34 +10,25 @@ const HomePagePanel = ({
   id: string;
 }) => {
   return (
-    <Box
+    <Box // sets width, section ids, and alternating background colour
       id={id}
       component={"section"}
       sx={{
         width: "100%",
-        scrollSnapAlign: "start",
-        height: { md: "100vh" },
-        padding: {
-          xs: "3em 2em 6em 2em",
-          sm: "5em 6rem 5em 6rem",
-          md: "5em 8rem 5em 8rem",
-          lg: "5em 12rem 5em 12rem",
-        },
-        // textAlign: "center",
-      
-
         ":nth-child(2n)": { backgroundColor: "#f5f5f5" },
-        //set 0 x padding for scroll container
-        ":nth-child(n+2)": {
-          height: { md: "auto" },
-        },
-        // scroll container to have
-        ":nth-child(3)": {
-          paddingX: { md: "0" },
-        },
       }}
     >
-      {children}
+      <Box
+        sx={{
+
+            maxWidth: "67.3125rem",
+            width: "90%",
+            margin: "auto",
+            paddingY: "7.5rem",
+          }}
+        >
+        {children}
+      </Box>
     </Box>
   );
 };

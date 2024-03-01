@@ -1,28 +1,21 @@
 "use client";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TooltipOffset from "./TooltipOffset";
 import ArrowButton from "./ArrowButton";
- 
 
-const ProfileLinks = ({ isFooter }: { isFooter?: boolean }) => {
+interface Link {
+  link: string;
+  title: string;
+  icon?: JSX.Element;
+}
+
+const ProfileLinks = ({
+  isFooter,
+  links,
+}: {
+  isFooter?: boolean;
+  links: Link[];
+}) => {
   const theme = useTheme();
-
-  const iconSize = isFooter ? 'inherit': 'medium'
-
-  const links = [
-    {
-      link: "https://github.com/lwooly",
-      title: "GitHub",
-      icon: <GitHubIcon fontSize={iconSize}/>,
-    },
-    {
-      link: "https://www.linkedin.com/in/lloyd-woolacott-ceng-mice",
-      title: "LinkedIn",
-      icon: <LinkedInIcon fontSize={iconSize}/>,
-    },
-  ];
 
   return (
     <Box
@@ -43,9 +36,9 @@ const ProfileLinks = ({ isFooter }: { isFooter?: boolean }) => {
           {isFooter ? (
             <IconButton
               sx={{
-                color: 'white',
+                color: "white",
                 fontSize: "40px",
-              
+
                 "&:hover": {
                   transform: "scale(1.2) translate(0, -2px)",
 
@@ -54,13 +47,11 @@ const ProfileLinks = ({ isFooter }: { isFooter?: boolean }) => {
               }}
               aria-label="LinkedIn profile"
             >
-             <Box fontSize={'40px'}>
-              {icon}
-              </Box>
+              <Box fontSize={"40px"}>{icon}</Box>
             </IconButton>
           ) : (
             <ArrowButton backgroundColor={theme.palette.primary.main}>
-              {icon}
+              {icon && icon}
               <Typography fontSize={"14px"} fontWeight={500}>
                 {title}
               </Typography>

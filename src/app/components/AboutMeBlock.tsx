@@ -20,7 +20,7 @@ const AboutMeBlock = ({ statement }: { statement: Statement }) => {
       }}
     >
       <Box>
-        <Typography variant="h5" component={"h5"}>
+        <Typography variant="h5" component={"h5"} color={'black'}>
           {title}
         </Typography>
         <Typography variant="body1">{text}</Typography>

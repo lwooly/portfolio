@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import React from "react";
 import ProfileLinks from "./ProfileLinks";
+import { createProfileLinks } from "../utils/links";
+
 
 const Footer = () => {
   return (
@@ -17,7 +19,7 @@ const Footer = () => {
         overflowY: 'visible'
       }}
     >
-      <ProfileLinks isFooter />
+      <ProfileLinks isFooter links={createProfileLinks({isFooter:true})}/>
     </Box>
   );
 };

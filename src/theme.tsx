@@ -4,15 +4,8 @@ import {
   createTheme,
   responsiveFontSizes,
   ThemeOptions,
-  ThemeProvider,
 } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import {
-  Josefin_Sans,
-  Poppins,
-  Roboto,
-  Jost,
-  Epilogue,
   Inter,
 } from "next/font/google";
 import { text } from "stream/consumers";
@@ -50,6 +43,7 @@ const themeOptions: ThemeOptions = {
       fontWeight: 700,
       color: textColors.headingHighlight,
       textAlign: "center",
+      marginBottom:'2em'
       // marginTop: "1.2rem",
     },
     h4: {
@@ -67,7 +61,7 @@ const themeOptions: ThemeOptions = {
     },
     h6: {
       fontWeight: 500,
-      color: textColors.tertiary,
+      color: textColors.primary,
     },
     body1: {
       fontSize: "1rem",
@@ -114,7 +108,7 @@ const themeOptions: ThemeOptions = {
           fontSize: "14px",
           textTransform: "none",
           color: "white",
-          padding: "3px 6px 3px 12px",
+          padding: "6px 6px 6px 12px",
           minHeight:'30px',
         },
       },

@@ -97,7 +97,6 @@ const UpdatedAboutMe = () => {
                     "linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%)",
                   transition: "0.5s",
                   backgroundSize: "200% auto",
-                  color: "white",
                   boxShadow: " 0 0 20px #eee",
 
                   "&:hover": {
