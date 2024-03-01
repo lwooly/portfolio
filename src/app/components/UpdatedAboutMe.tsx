@@ -111,7 +111,7 @@ const UpdatedAboutMe = () => {
                 <Typography
                   variant="h6"
                   component="p"
-                  sx={{ marginLeft: "1em" }}
+                  sx={{ marginLeft: "0.5em" }}
                 >
                   {skill.title}
                 </Typography>

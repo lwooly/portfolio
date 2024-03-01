@@ -10,17 +10,17 @@ import UpdatedAboutMe from "./components/UpdatedAboutMe";
 export default function Home() {
   return (
     <main>
-      <HomePagePanel id={"home"}>
+      <HomePagePanel id={"Home"}>
         <HeroMain />
         <StackIconSection />
       </HomePagePanel>
-      <HomePagePanel id={"about"}>
+      <HomePagePanel id={"About"}>
         <UpdatedAboutMe />
       </HomePagePanel>
-      <HomePagePanel id={"projects"}>
+      <HomePagePanel id={"Projects"}>
         <Projects />
       </HomePagePanel>
-      <HomePagePanel id={"contact"}>
+      <HomePagePanel id={"Contact me"}>
         <ContactMe />
       </HomePagePanel>
 

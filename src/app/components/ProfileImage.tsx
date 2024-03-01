@@ -20,7 +20,7 @@ const ProfileImage = () => {
           "&:hover": {
             scaleY: "90%",
             backgroundImage:
-            "linear-gradient(128deg, rgba(191,233,255,0.5676864495798319) 35%, rgba(255,110,127,0.13631390056022408) 92%)",
+            "linear-gradient(128deg, rgba(191,233,255,0.5676864495798319) 35%, rgba(20,143,69,0.444437149859944) 92%)",
             transition: '0.35s',
             height: { xs: "240px", md: "290px" },
           },

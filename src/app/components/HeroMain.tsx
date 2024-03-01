@@ -17,7 +17,7 @@ const HeroMain = () => {
           height: "100%",
           maxWidth: { lg: "80%" },
           marginX: "auto",
-          textAlign: {xs:'center', md: 'left'},
+          textAlign: { xs: "center", md: "left" },
         }}
       >
         <ProfileImage />
@@ -25,29 +25,29 @@ const HeroMain = () => {
           sx={{
             display: { md: "flex" },
             flexDirection: { md: "column" },
-            justifyContent: 'center',
+            justifyContent: "center",
             height: { md: "300px" },
           }}
         >
           <Typography
             variant="h1"
             component="h1"
-            my={"0.75em"}
+            mt={"0.75em"}
+            mb={"0.5em"}
             // sx={{ fontSize: { md: "3.5rem" } }}
           >
             Lloyd Woolacott
           </Typography>
           <Typography
-            variant="body1"
+            variant="h5"
             sx={{
               width: { sm: "80%", md: "100%" },
               // marginx: { sm: "auto", md: "none" },
               fontSize: "18px",
-
             }}
             fontWeight={"bold"}
           >
-            Full Stack Developer | Chartered Structural Engineer
+            Full Stack Developer | Chartered Engineer
           </Typography>
           <Typography
             variant="body1"
@@ -57,12 +57,13 @@ const HeroMain = () => {
               fontSize: "18px",
             }}
             // fontWeight={"bold"}
-          >(TypeScript, React, Redux, Next.js, MongoDB, SQL)
+          >
+            (TypeScript, React, Redux, Next.js, MongoDB, SQL)
           </Typography>
 
-          <Box sx={{marginTop:'auto'}}>
-            <ProfileLinks color="" />
-          </Box>  
+          <Box sx={{ marginTop: "auto" }}>
+            <ProfileLinks />
+          </Box>
         </Box>
       </Box>
     </div>

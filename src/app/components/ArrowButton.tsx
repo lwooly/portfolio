@@ -14,31 +14,20 @@ interface ArrowButtonProps extends ButtonProps {
 function ArrowButton({
   children,
   backgroundColor = "hsl(143.9deg, 75.46% 31.96%)",
+
   ...props
 }: ArrowButtonProps) {
   const [isHover, setIsHover] = useState(false);
 
   // Apply the backgroundColor dynamically and spread the rest of the props
   const buttonStyle = {
-    borderRadius: "1.5em",
-    display: "flex",
-    alignItems: 'center',
-    gap:'3px',
-    boxShadow: "none",
-    fontSize: "14px",
-    textTransform: "none",
-    textDecoration: "none",
+
     backgroundColor: backgroundColor,
-    color: "white",
-    padding: '3px 6px 3px 12px',
-    '& *': {
-        color:'white !important',
-        fontWeight: 'bold !important'
+    "& *": {
+      color: "white !important",
     },
-    ...(props.sx as object),
-    '&:hover':{
-        boxShadow: 'none'
-    }
+
+    ...(props.sx as object), // allow independant styling
   };
 
   return (
@@ -50,7 +39,11 @@ function ArrowButton({
       {...props} // Spread remaining props here
     >
       {children}
-      {isHover ? <EastIcon sx={{marginLeft:'5px'}} /> : <ChevronRightIcon sx={{marginRight:'5px'}}/>}
+      {isHover ? (
+        <EastIcon sx={{ marginLeft: "5px" }} />
+      ) : (
+        <ChevronRightIcon sx={{ marginRight: "5px" }} />
+      )}
     </Button>
   );
 }

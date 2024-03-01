@@ -12,8 +12,11 @@ const AboutMeBlock = ({ statement }: { statement: Statement }) => {
         display: "flex",
         width: "80%",
         padding: "1.5em",
-        ...blockStyles
-        
+        ...blockStyles,
+        '&:hover':
+        {
+          border: 'solid black 1px'
+        }
       }}
     >
       <Box>

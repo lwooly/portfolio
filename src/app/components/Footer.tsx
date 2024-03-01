@@ -17,7 +17,7 @@ const Footer = () => {
         overflowY: 'visible'
       }}
     >
-      <ProfileLinks color={"#FFF"} />
+      <ProfileLinks isFooter />
     </Box>
   );
 };

@@ -17,13 +17,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import { capitalizeFirstLetter } from "@/src/app/utils";
+import ArrowButton from "../../ArrowButton";
 
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = "100%";
-const navItems = ["Home", "About", "Projects", "Contact"];
+const navItems = ["Home", "About", "Projects", "Contact me"];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -74,7 +75,7 @@ export default function DrawerAppBar(props: Props) {
           boxShadow: "none",
           borderBottom: "1px solid #dde1e6",
           position: "static",
-          backgroundColor:'white'
+          backgroundColor: "white",
         }}
       >
         <Toolbar sx={{ zIndex: 2, justifyContent: { xs: "end", sm: "none" } }}>
@@ -105,13 +106,30 @@ export default function DrawerAppBar(props: Props) {
           </Link>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Link key={item} href={`#${item}`}>
-                <Button sx={{ color: "#3c3c3c", textTransform: "none", marginLeft:'3em' }}>
-                  <Typography variant="body1" sx={{fontSize:'14px'}}>{item}</Typography>
-                </Button>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              if (item === "Contact me") {
+                return (
+                  <Link key={item} href={`#${item}`}>
+                    <ArrowButton sx={{ marginLeft: "3em" }}>{item}</ArrowButton>
+                  </Link>
+                );
+              }
+              return (
+                <Link key={item} href={`#${item}`}>
+                  <Button
+                    sx={{
+                      color: "#3c3c3c",
+                      textTransform: "none",
+                      marginLeft: "3em",
+                    }}
+                  >
+                    <Typography variant="body1" sx={{ fontSize: "14px" }}>
+                      {item}
+                    </Typography>
+                  </Button>
+                </Link>
+              );
+            })}
           </Box>
         </Toolbar>
       </AppBar>
