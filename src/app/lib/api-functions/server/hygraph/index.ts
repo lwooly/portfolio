@@ -19,7 +19,6 @@ export const fetchProjectsFromHygraph = async () => {
     }
 
     const data = await response.json();
-    console.log("project data fetched from hygraph");
     return data.data.projects;
   } catch (error) {
     console.error("Error fetching data", error);

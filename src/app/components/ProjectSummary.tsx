@@ -16,82 +16,56 @@ import TooltipOffset from "./TooltipOffset";
 import { blockStyles } from "../styles/styles";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ProfileLinks from "./ProfileLinks";
+import ProjectImages from "./ProjectImage";
+import TextBlock from "./TextBlock";
+import { useTheme } from "@mui/material";
 
-
-interface ProjectSummaryProps {
+export interface ProjectSummaryProps {
   projectInfo: ProjectInfo;
 }
 
 const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
-  const {
-    title,
-    description,
-    techStack,
-    gitHubLink,
-    liveDemoLink,
-    projectImage: { url: homePageImageSrc },
-  } = projectInfo;
+  const theme = useTheme();
+  const { title, description, techStack, gitHubLink, liveDemoLink } =
+    projectInfo;
 
-  const projectLinks = []
+  console.log(title);
+
+  const projectLinks = [];
   if (gitHubLink) {
-    projectLinks.push({title: 'GitHub', link: gitHubLink, icon: <GitHubIcon fontSize='medium' /> })
+    projectLinks.push({
+      title: "GitHub",
+      link: gitHubLink,
+      icon: <GitHubIcon fontSize="medium" />,
+    });
   }
   if (liveDemoLink) {
-    projectLinks.push({title: 'Live Demo', link: liveDemoLink })
+    projectLinks.push({ title: "Live Demo", link: liveDemoLink });
   }
 
   return (
     <ListItem
       component={"article"}
       sx={{
-        paddingBottom: "1rem",
+        ...blockStyles,
+        paddingBottom: "2rem",
+        paddingTop: "1rem",
+        marginBottom: "10rem",
         alignItems: "center",
         flexDirection: { xs: "column", md: "row" },
         gap: "2rem",
-        ...blockStyles,
+        "&:hover": {
+          backgroundColor: "#ecf3ff",
+        },
       }}
     >
-      {/* Container for project image */}
-      <Box  
-        sx={{
-          minWidth: "45%", // Make width responsive
-          flex: 2,
-          position: "relative",
-          paddingBottom: "min(400px, 100%)", // Equal to width for a square aspect ratio
-          ...blockStyles,
-        }}
-      >
-        <Image
-          alt={`${title} page image`}
-          src={homePageImageSrc}
-          fill
-          sizes="80%"
-          priority
-          style={{
-            objectFit: "cover",
-            objectPosition: "25% 50%",  
-          }}
-        />
-      </Box>
-      <Box
-        textAlign={"left"}
-        sx={{
-          flex: 3,
-          display: { md: "flex" },
-          flexDirection: { md: "column" },
-        }}
-      >
-             <Typography variant="h1" component="h3" sx={{}}>
-             {title}
-          </Typography>
-        <Typography variant="body2" sx={{ mb: "1rem" }}>
-          {description}
-        </Typography>
+      <Box sx={{ flex: 2, minWidth: "60%", position: "relative" }}>
+        <ProjectImages projectInfo={projectInfo} />
         <Box
           sx={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "start",
+            justifyContent: "center",
           }}
         >
           {techStack.map((software) => (
@@ -99,13 +73,43 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
               key={software}
               variant="body1"
               component="p"
-              sx={{ mb: 1, mx: 0.5, fontWeight: "bold" }}
+              sx={{
+                mb: 1,
+                mx: 0.5,
+                fontWeight: "bold",
+                borderRadius: "1em",
+                padding: "0.5em 0.75em",
+                lineHeight: "1em ",
+                backgroundColor: "black", //theme.palette.primary.light,
+                color: "white",
+                boxShadow: " 0 0 20px lightgrey",
+                margin: "3px, 3px",
+                transition:'0.3s',
+              }}
             >
               {software}
             </Typography>
           ))}
         </Box>
-        <ProfileLinks links={projectLinks} />
+      </Box>
+      {/* </Box> */}
+      <Box
+        sx={{
+          flex: 3,
+        }}
+      >
+        <Typography variant="h1" component="h3" sx={{ mb: "0.6em" }}>
+          {title}
+        </Typography>
+        <Box sx={{ mb: "1.5em" }}>
+          <Typography variant="h5" component={"h5"} color={"black"}>
+            Details:
+          </Typography>
+          <Typography variant="body1" component={"p"}>
+            {description}
+          </Typography>
+        </Box>
+        <ProfileLinks links={projectLinks} largeButtons={true} />
       </Box>
     </ListItem>
   );

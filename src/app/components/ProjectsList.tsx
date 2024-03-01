@@ -36,7 +36,9 @@ const ProjectsList = async () => {
           Watch this space!
         </Typography>
       ) : (
-        <List>
+        <List sx={{'> :nth-child(2n)': {
+          flexDirection:'row-reverse'
+        } }}>
           {projectsSummaryArr}
         </List>
         

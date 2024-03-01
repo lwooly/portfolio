@@ -1,6 +1,4 @@
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
-import Image from "next/image";
-import AboutMeImage from "@/src/app/components/AboutMeImage";
 import { Statement } from "./UpdatedAboutMe";
 import { blockStyles } from "../styles/styles";
 

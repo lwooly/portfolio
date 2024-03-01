@@ -46,7 +46,7 @@ const HeroMain = () => {
             sx={{
               width: { sm: "80%", md: "100%" },
               // marginx: { sm: "auto", md: "none" },
-              fontSize: "18px",
+              fontSize: "18px", color: 'black',
             }}
             fontWeight={"bold"}
           >

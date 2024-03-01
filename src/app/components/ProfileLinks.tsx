@@ -11,8 +11,10 @@ interface Link {
 const ProfileLinks = ({
   isFooter,
   links,
+  largeButtons = false,
 }: {
   isFooter?: boolean;
+  largeButtons?: boolean;
   links: Link[];
 }) => {
   const theme = useTheme();
@@ -41,7 +43,6 @@ const ProfileLinks = ({
 
                 "&:hover": {
                   transform: "scale(1.2) translate(0, -2px)",
-
                   transition: "transform 0.5s ease-in-out",
                 },
               }}
@@ -50,9 +51,16 @@ const ProfileLinks = ({
               <Box fontSize={"40px"}>{icon}</Box>
             </IconButton>
           ) : (
-            <ArrowButton backgroundColor={theme.palette.primary.main}>
+            <ArrowButton
+              isLarge={largeButtons}
+
+            >
               {icon && icon}
-              <Typography fontSize={"14px"} fontWeight={500}>
+              <Typography
+                fontSize={"inherit"}
+                fontWeight={500}
+                sx={{ color: "white" }}
+              >
                 {title}
               </Typography>
             </ArrowButton>

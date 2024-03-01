@@ -18,9 +18,10 @@ const font = Inter({
 
 const textColors = {
   primary: "#121619",
-  secondary: "#000000;",
+  secondary: "#000000",
   tertiary: '#555',
-  headingHighlight: "hsl(143.9deg 75.46% 31.96%)",
+  headingHighlight: '#1976d2'
+  // headingHighlight: "hsl(143.9deg 75.46% 31.96%)",
   // secondary: "hsl(228deg 85.29% 50.31%);",
 };
 
@@ -81,9 +82,10 @@ const themeOptions: ThemeOptions = {
   palette: {
     // mode: "dark",
     primary: {
-      main: "hsl(143.9deg 75.46% 31.96%)",
-      light: "#FFF",
-      dark: "#000",
+      main: '#0073e7',
+  light: 'hsl(210.13deg 100% 45.29% / 40%)',
+  dark: '#1565c0',
+  contrastText: '#fff',
     },
     secondary: {
       main: "hsl(143.9deg 75.46% 31.96%)",
@@ -105,7 +107,7 @@ const themeOptions: ThemeOptions = {
           borderRadius: "1.5em",
           gap: "3px",
           boxShadow: "none",
-          fontSize: "14px",
+          fontSize: "16px",
           textTransform: "none",
           color: "white",
           padding: "6px 6px 6px 12px",
