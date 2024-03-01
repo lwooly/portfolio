@@ -4,7 +4,4 @@ export const blockStyles = {
   backgroundColor: "white",
   marginY: "1em",
   overflow:'hidden',
-  "&:hover": {
-    borderColor: "black",
-  },
 };

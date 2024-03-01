@@ -13,6 +13,7 @@ const AboutMeBlock = ({ statement }: { statement: Statement }) => {
         width: "80%",
         padding: "1.5em",
         ...blockStyles
+        
       }}
     >
       <Box>

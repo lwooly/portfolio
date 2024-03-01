@@ -23,7 +23,7 @@ interface Props {
 }
 
 const drawerWidth = "100%";
-const navItems = ["home", "about", "projects", "contact"];
+const navItems = ["Home", "About", "Projects", "Contact"];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -68,7 +68,15 @@ export default function DrawerAppBar(props: Props) {
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar
+        component="nav"
+        sx={{
+          boxShadow: "none",
+          borderBottom: "1px solid #dde1e6",
+          position: "static",
+          backgroundColor:'white'
+        }}
+      >
         <Toolbar sx={{ zIndex: 2, justifyContent: { xs: "end", sm: "none" } }}>
           <IconButton
             color="inherit"
@@ -79,22 +87,29 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Link href='/' style={{marginRight:'auto', textDecoration:'none'}}><Typography
-            variant="h3"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
-              margin: 0,
-            }}
+          <Link
+            href="/"
+            style={{ marginRight: "auto", textDecoration: "none" }}
           >
-            lwooly.dev
-          </Typography></Link>
-          
+            <Typography
+              variant="h3"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", sm: "block" },
+                margin: 0,
+              }}
+            >
+              lwooly.dev
+            </Typography>
+          </Link>
+
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Link key={item} href={`#${item}`}>
-                <Button sx={{ color: "#3c3c3c" }}>{item}</Button>
+                <Button sx={{ color: "#3c3c3c", textTransform: "none", marginLeft:'3em' }}>
+                  <Typography variant="body1" sx={{fontSize:'14px'}}>{item}</Typography>
+                </Button>
               </Link>
             ))}
           </Box>

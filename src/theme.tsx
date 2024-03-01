@@ -87,7 +87,7 @@ const themeOptions: ThemeOptions = {
   palette: {
     // mode: "dark",
     primary: {
-      main: "#FFF",
+      main: "hsl(143.9deg 75.46% 31.96%)",
       light: "#FFF",
       dark: "#000",
     },

@@ -6,25 +6,38 @@ const ProfileImage = () => {
   return (
     <Box
       sx={{
-        width: {xs: '250px', md: '300px'},
-        minWidth: {xs: '250px', md: '300px'},
-        height:{xs: '250px', md: '300px'},
-        minHeight:{xs: '250px', md: '300px'},
-        position: "relative",
-        ...blockStyles
+        width: { xs: "250px", md: "300px" },
+        height: { xs: "250px", md: "300px" },
       }}
     >
-      <Image
-        alt="Lloyd Woolacott profile image"
-        src={"/profileimage.png"}
-        priority
-        fill
-        sizes="50%"
-        style={{
-          objectFit: "cover",
-          objectPosition: "center",
+      <Box
+        sx={{
+          width: { xs: "250px", md: "300px" },
+          height: { xs: "250px", md: "300px" },
+          position: "relative",
+          ...blockStyles,
+          backgroundImage:'white',
+          "&:hover": {
+            scaleY: "90%",
+            backgroundImage:
+            "linear-gradient(128deg, rgba(191,233,255,0.5676864495798319) 35%, rgba(255,110,127,0.13631390056022408) 92%)",
+            transition: '0.35s',
+            height: { xs: "240px", md: "290px" },
+          },
         }}
-      />
+      >
+        <Image
+          alt="Lloyd Woolacott profile image"
+          src={"/profileimage.png"}
+          priority
+          fill
+          sizes="50%"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+      </Box>
     </Box>
   );
 };
