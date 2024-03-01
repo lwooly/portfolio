@@ -19,17 +19,20 @@ import ProfileLinks from "./ProfileLinks";
 import ProjectImages from "./ProjectImage";
 import TextBlock from "./TextBlock";
 import { useTheme } from "@mui/material";
+import ProjectStack from "./ProjectStack";
 
 export interface ProjectSummaryProps {
   projectInfo: ProjectInfo;
+  index: number;
 }
 
-const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
+const backgroundColors = ["#ecf3ff", " #effdee", "#fff9e9", "#ffebea" ]
+
+
+const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
   const theme = useTheme();
   const { title, description, techStack, gitHubLink, liveDemoLink } =
     projectInfo;
-
-  console.log(title);
 
   const projectLinks = [];
   if (gitHubLink) {
@@ -48,68 +51,55 @@ const ProjectSummary = ({ projectInfo }: ProjectSummaryProps) => {
       component={"article"}
       sx={{
         ...blockStyles,
+        display: "grid",
+        gridTemplateColumns: "6fr 4fr",
         paddingBottom: "2rem",
-        paddingTop: "1rem",
+        paddingTop: "2rem",
         marginBottom: "10rem",
-        alignItems: "center",
-        flexDirection: { xs: "column", md: "row" },
         gap: "2rem",
         "&:hover": {
-          backgroundColor: "#ecf3ff",
+          backgroundColor: backgroundColors[index],
         },
       }}
     >
-      <Box sx={{ flex: 2, minWidth: "60%", position: "relative" }}>
+      <Box
+        sx={{
+          height: "100%",
+          minWidth: "60%",
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "start",
+          gap:'1rem'
+        }}
+      >
         <ProjectImages projectInfo={projectInfo} />
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
-          {techStack.map((software) => (
-            <Typography
-              key={software}
-              variant="body1"
-              component="p"
-              sx={{
-                mb: 1,
-                mx: 0.5,
-                fontWeight: "bold",
-                borderRadius: "1em",
-                padding: "0.5em 0.75em",
-                lineHeight: "1em ",
-                backgroundColor: "black", //theme.palette.primary.light,
-                color: "white",
-                boxShadow: " 0 0 20px lightgrey",
-                margin: "3px, 3px",
-                transition:'0.3s',
-              }}
-            >
-              {software}
-            </Typography>
-          ))}
-        </Box>
+        <ProjectStack techStack={techStack} />
       </Box>
       {/* </Box> */}
       <Box
         sx={{
           flex: 3,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "start",
         }}
       >
-        <Typography variant="h1" component="h3" sx={{ mb: "0.6em" }}>
+        <Typography variant="h1" component="h3" sx={{ mb: "0.3em", flex:1}}>
           {title}
         </Typography>
-        <Box sx={{ mb: "1.5em" }}>
-          <Typography variant="h5" component={"h5"} color={"black"}>
+        <Box sx={{ mb: "1em", flex:1 }}>
+          <Typography variant="h5" component={"h5"} color={"black"} >
             Details:
           </Typography>
           <Typography variant="body1" component={"p"}>
             {description}
           </Typography>
         </Box>
-        <ProfileLinks links={projectLinks} largeButtons={true} />
+        <Box sx={{ display:'flex', alignItems:'center', flex:1 }}>
+          <ProfileLinks links={projectLinks} largeButtons={true} />
+        </Box>
       </Box>
     </ListItem>
   );

@@ -110,7 +110,11 @@ export default function DrawerAppBar(props: Props) {
               if (item === "Contact me") {
                 return (
                   <Link key={item} href={`#${item}`}>
-                    <ArrowButton sx={{ marginLeft: "3em" }}>{item}</ArrowButton>
+                    <ArrowButton sx={{ marginLeft: "3em" }}>
+                      <Typography variant="body1" sx={{ fontSize: "14px", color:'white' }}>
+                        {item}
+                      </Typography>
+                    </ArrowButton>
                   </Link>
                 );
               }

@@ -7,7 +7,6 @@ function ProjectImages({ projectInfo }: ProjectSummaryProps) {
   const {
     title,
     projectImage: { url: homePageImageSrc },
-
   } = projectInfo;
 
   return (
@@ -16,7 +15,8 @@ function ProjectImages({ projectInfo }: ProjectSummaryProps) {
         position: "relative",
         paddingBottom: "min(400px, 100%)", // Equal to width for a square aspect ratio
         ...blockStyles,
-        
+        marginY: "0em",
+        boxShadow:'6'
       }}
     >
       <Image

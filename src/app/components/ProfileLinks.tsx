@@ -24,7 +24,9 @@ const ProfileLinks = ({
       sx={{
         display: "flex",
         gap: "1em",
-        justifyContent: { xs: "center", md: "start" },
+        justifyContent: { xs: "center", sm: "start" },
+        flexShrink: 0,
+        flexWrap: 'wrap',
       }}
     >
       {links.map(({ link, title, icon }) => (
@@ -57,7 +59,7 @@ const ProfileLinks = ({
             >
               {icon && icon}
               <Typography
-                fontSize={"inherit"}
+                fontSize={"body1"}
                 fontWeight={500}
                 sx={{ color: "white" }}
               >

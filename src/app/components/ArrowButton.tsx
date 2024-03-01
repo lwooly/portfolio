@@ -8,7 +8,7 @@ import EastIcon from "@mui/icons-material/East";
 // Extend the ButtonProps to include any custom props
 interface ArrowButtonProps extends ButtonProps {
   children: ReactNode;
-  isLarge: boolean;
+  isLarge?: boolean;
 }
 
 function ArrowButton({
@@ -18,9 +18,7 @@ function ArrowButton({
 }: ArrowButtonProps) {
   const [isHover, setIsHover] = useState(false);
 
-  // Apply btn styles based on size input
-  console.log(isLarge)
-
+  // Apply button styles based on isLarge prop
   const buttonSizeStyle = isLarge
   ? {
     // large btn styles
@@ -42,10 +40,9 @@ function ArrowButton({
       backgroundColor: "#1976d2", //backgroundColor={theme.palette.primary.main}
       color: "white",
       "&:hover": {
-        backgroundColor: "black",
+        backgroundColor: "black !important",
       },
     };
-    console.log(buttonSizeStyle)
 
   const buttonStyle = {
     display:'flex',

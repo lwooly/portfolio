@@ -25,7 +25,7 @@ const ProjectsList = async () => {
   const projectsSummaryArr = projectsInfoArray.map(
     (projectInfo: ProjectInfo, index: number) => (
       //slides at md breakpoint
-        <ProjectSummary key={index} projectInfo={projectInfo} />
+        <ProjectSummary key={index} projectInfo={projectInfo} index={index} />
     ),
   );
 
@@ -36,7 +36,7 @@ const ProjectsList = async () => {
           Watch this space!
         </Typography>
       ) : (
-        <List sx={{'> :nth-child(2n)': {
+        <List sx={{'> :nth-child(2n + 1)': {
           flexDirection:'row-reverse'
         } }}>
           {projectsSummaryArr}
