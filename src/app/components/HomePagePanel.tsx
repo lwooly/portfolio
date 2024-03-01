@@ -26,7 +26,7 @@ const HomePagePanel = ({
         // textAlign: "center",
       
 
-        ":nth-child(2n)": { backgroundColor: "white" },
+        ":nth-child(2n)": { backgroundColor: "#f5f5f5" },
         //set 0 x padding for scroll container
         ":nth-child(n+2)": {
           height: { md: "auto" },

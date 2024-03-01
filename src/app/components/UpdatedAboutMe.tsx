@@ -3,19 +3,19 @@ import Image from "next/image";
 import AboutMeImage from "@/src/app/components/AboutMeImage";
 import AboutMeBlock from "./AboutMeBlock";
 import {
-    QueryStats, // For "Analysis"
-    BusinessCenter, // For "Management"
-    Engineering, // For "Technicality"
-    GroupWork, // For "Collaboration"
-    Chat, // For "Communication"
-    Visibility, // For "Interpretation"
-    Autorenew, // Suggested for "Adaptability"
-    Assessment, // For "Evaluation"
-    FolderSpecial, // For "Organisation"
-    EmojiEvents, // Suggested for "Leadership"
-    Calculate, // For "Maths"
-    FormatListBulleted, // Suggested for "Detail"
-  } from '@mui/icons-material';
+  QueryStats, // For "Analysis"
+  BusinessCenter, // For "Management"
+  Engineering, // For "Technicality"
+  GroupWork, // For "Collaboration"
+  Chat, // For "Communication"
+  Visibility, // For "Interpretation"
+  Autorenew, // Suggested for "Adaptability"
+  Assessment, // For "Evaluation"
+  FolderSpecial, // For "Organisation"
+  EmojiEvents, // Suggested for "Leadership"
+  Calculate, // For "Maths"
+  FormatListBulleted, // Suggested for "Detail"
+} from "@mui/icons-material";
 
 export interface Statement {
   title: string;
@@ -36,22 +36,22 @@ const statements: Statement[] = [
     text: "Creating innovative tech solutions that bridge the gap between engineering theory and user-centric applications.",
   },
 ];
-  
+
 const skills = [
-    { title: "Analysis", icon: <QueryStats /> },
-    { title: "Management", icon: <BusinessCenter /> },
-    { title: "Technicality", icon: <Engineering /> },
-    { title: "Collaboration", icon: <GroupWork /> },
-    // { title: "Communication", icon: <Chat /> },
-    // { title: "Interpretation", icon: <Visibility /> },
-    // { title: "Adaptability", icon: <Autorenew /> },
-    // { title: "Evaluation", icon: <Assessment /> },
-    // { title: "Organisation", icon: <FolderSpecial /> },
-    // { title: "Leadership", icon: <EmojiEvents /> },
-    // { title: "Maths", icon: <Calculate /> },
-    // { title: "Detail", icon: <FormatListBulleted /> },
-  ];
-  
+  { title: "Analysis", icon: <QueryStats /> },
+  { title: "Management", icon: <BusinessCenter /> },
+  { title: "Technicality", icon: <Engineering /> },
+  { title: "Collaboration", icon: <GroupWork /> },
+  // { title: "Communication", icon: <Chat /> },
+  // { title: "Interpretation", icon: <Visibility /> },
+  // { title: "Adaptability", icon: <Autorenew /> },
+  // { title: "Evaluation", icon: <Assessment /> },
+  // { title: "Organisation", icon: <FolderSpecial /> },
+  // { title: "Leadership", icon: <EmojiEvents /> },
+  // { title: "Maths", icon: <Calculate /> },
+  // { title: "Detail", icon: <FormatListBulleted /> },
+];
+
 const UpdatedAboutMe = () => {
   return (
     <Box>
@@ -88,7 +88,7 @@ const UpdatedAboutMe = () => {
               <ListItem
                 key={skill.title}
                 sx={{
-                display:'flex',
+                  display: "flex",
                   flexBasis: "15%",
                   borderRadius: "1em",
                   padding: "0.5em",
@@ -101,14 +101,18 @@ const UpdatedAboutMe = () => {
                   boxShadow: " 0 0 20px #eee",
 
                   "&:hover": {
-                    backgroundPosition: 'right center',
+                    backgroundPosition: "right center",
                     color: "#fff",
                     textDecoration: "none",
                   },
                 }}
               >
                 {skill.icon}
-                <Typography variant="h6" component="p" sx={{marginLeft: '1em'}}>
+                <Typography
+                  variant="h6"
+                  component="p"
+                  sx={{ marginLeft: "1em" }}
+                >
                   {skill.title}
                 </Typography>
               </ListItem>
@@ -124,7 +128,7 @@ const UpdatedAboutMe = () => {
             },
           }}
         >
-          {statements.map((statement) => (
+          {statements.reverse().map((statement) => (
             <AboutMeBlock key={statement.title} statement={statement} />
           ))}
         </Box>

@@ -97,7 +97,7 @@ const themeOptions: ThemeOptions = {
       dark: "hsl(143.9deg 75.46% 31.96%)",
     },
     background: {
-      default: "#f5f5f5",
+      default: 'white',
     },
     text: {
       primary: textColors.primary,

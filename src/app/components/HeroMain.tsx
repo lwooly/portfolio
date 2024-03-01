@@ -15,40 +15,54 @@ const HeroMain = () => {
           paddingTop: { xs: "1em", sm: "2em", md: "2em", lg: "4em" },
           marginBottom: "4em",
           height: "100%",
-          maxWidth:{lg:'80%'},
-          marginX: "auto"
+          maxWidth: { lg: "80%" },
+          marginX: "auto",
+          textAlign: {xs:'center', md: 'left'},
         }}
       >
         <ProfileImage />
         <Box
           sx={{
-            // height: "100%",
             display: { md: "flex" },
             flexDirection: { md: "column" },
-            justifyContent: { md: "start" },
+            justifyContent: 'center',
             height: { md: "300px" },
-            textAlign: { md: "left" },
           }}
         >
           <Typography
             variant="h1"
-            my={"0.3em"}
-            sx={{ fontSize: { md: "3.5rem" } }}
+            component="h1"
+            my={"0.75em"}
+            // sx={{ fontSize: { md: "3.5rem" } }}
           >
             Lloyd Woolacott
           </Typography>
           <Typography
             variant="body1"
-            sx={{width:{sm: '80%', md:'100%'}, marginx:{sm: 'auto', md:'none'}, fontSize:'18px',}}
-            // fontWeight={"bold"}
+            sx={{
+              width: { sm: "80%", md: "100%" },
+              // marginx: { sm: "auto", md: "none" },
+              fontSize: "18px",
+
+            }}
+            fontWeight={"bold"}
           >
-            Full Stack Developer<br/> (<span style={{fontWeight:'bold'}}>TypeScript, React, Redux, & Next.js</span>)  <br/>
-            Structural Engineering & Computational Analysis background
+            Full Stack Developer | Chartered Structural Engineer
           </Typography>
-          
-          <Box sx={{ marginTop: { md: "auto" } }}>
+          <Typography
+            variant="body1"
+            sx={{
+              width: { sm: "80%", md: "100%" },
+              // marginx: { sm: "auto", md: "none" },
+              fontSize: "18px",
+            }}
+            // fontWeight={"bold"}
+          >(TypeScript, React, Redux, Next.js, MongoDB, SQL)
+          </Typography>
+
+          <Box sx={{marginTop:'auto'}}>
             <ProfileLinks color="" />
-          </Box>
+          </Box>  
         </Box>
       </Box>
     </div>
