@@ -1,5 +1,5 @@
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
-import { Statement } from "./UpdatedAboutMe";
+import { Statement } from "./AboutMe";
 import { blockStyles } from "../styles/styles";
 
 const AboutMeBlock = ({ statement }: { statement: Statement }) => {
@@ -8,7 +8,8 @@ const AboutMeBlock = ({ statement }: { statement: Statement }) => {
     <Box
       sx={{
         display: "flex",
-        width: "80%",
+        width: {xs:'100%', lg:"80%"},
+        textAlign:'left',
         padding: "1.5em",
         ...blockStyles,
         '&:hover':

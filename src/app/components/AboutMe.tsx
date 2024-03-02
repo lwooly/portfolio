@@ -1,56 +1,135 @@
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
-import Image from "next/image";
-import AboutMeImage from "@/src/app/components/AboutMeImage";
+import AboutMeBlock from "./AboutMeBlock";
+
+import {
+  QueryStats, // For "Analysis"
+  BusinessCenter, // For "Management"
+  Engineering, // For "Technicality"
+  GroupWork, // For "Collaboration"
+  Chat, // For "Communication"
+  Visibility, // For "Interpretation"
+  Autorenew, // Suggested for "Adaptability"
+  Assessment, // For "Evaluation"
+  FolderSpecial, // For "Organisation"
+  EmojiEvents, // Suggested for "Leadership"
+  Calculate, // For "Maths"
+  FormatListBulleted, // Suggested for "Detail"
+} from "@mui/icons-material";
+
+export interface Statement {
+  title: string;
+  text: string;
+}
+
+const statements: Statement[] = [
+  {
+    title: "Background",
+    text: "Proven track record leading and sucessfully delivering significant and complex engineering projects in the UK Civil Nuclear sector.",
+  },
+  {
+    title: "Skills",
+    text: "Full-stack software development integrated effectively with engineering problem-solving and mathematical ability.",
+  },
+  {
+    title: "Future Focus",
+    text: "Creating innovative tech solutions that bridge the gap between engineering theory and user-centric applications.",
+  },
+];
+
+const skills = [
+  { title: "Analysis", icon: <QueryStats /> },
+  { title: "Management", icon: <BusinessCenter /> },
+  { title: "Technicality", icon: <Engineering /> },
+  { title: "Collaboration", icon: <GroupWork /> },
+  // { title: "Communication", icon: <Chat /> },
+  // { title: "Interpretation", icon: <Visibility /> },
+  // { title: "Adaptability", icon: <Autorenew /> },
+  // { title: "Evaluation", icon: <Assessment /> },
+  // { title: "Organisation", icon: <FolderSpecial /> },
+  // { title: "Leadership", icon: <EmojiEvents /> },
+  // { title: "Maths", icon: <Calculate /> },
+  // { title: "Detail", icon: <FormatListBulleted /> },
+];
 
 const AboutMe = () => {
   return (
     <Box>
       <Typography variant="h3">About Me</Typography>
-      <Typography variant="h4">Chartered Engineer & Full-Stack Dev</Typography>
       <Box
         sx={{
-          display: "flex",
-          flexDirection: {
-            xs: "column",
-            md: "row",
-          },
-          gap: "3rem",
-          marginTop: "3rem",
-          marginBottom: "8rem",
-          alignItems:'center'
+          display: {xs: 'block', sm:"flex"},
+          textAlign: {xs: 'center', sm:"left"},
+          flexDirection: "row-reverse",
+          gap: "2em",
+          width: "100%",
         }}
       >
-        <AboutMeImage />
-        <Box sx={{ textAlign: "left" }}>
-          <Typography variant="h5" component={"h5"}>
-            Hi, I&apos;m Lloyd,
+        <Box
+          sx={{
+            flex: 2,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h1" component="h3" sx={{}}>
+            Full-stack Developer and Chartered Structural Engineer
           </Typography>
-          <Typography variant="body1" component={"p"}>
-            A Chartered Structural Engineer specialising in full-stack
-            development.
+          <Typography
+            variant="h4"
+            component="h4"
+            sx={{ lineHeight: "1.5em", fontWeight: 400 }}
+          >
+            Building on a strong analytical and mathematical background for
+            technological innovation.
           </Typography>
-          <List sx={{ listStyle: "disc", paddingLeft: "1em" }}>
-            <ListItem sx={{ display: "list-item", paddingRight: 0 }}>
-              <Typography variant="body1" sx={{ textAlign: "justify" }}>
-                <span style={{ fontWeight: "bold" }}>Background: </span>Proven
-                track record leading and sucessfully delivering significant and
-                complex engineering projects in the UK Civil Nuclear sector.
-              </Typography>
-            </ListItem>
-            <ListItem sx={{ display: "list-item", paddingRight: 0 }}>
-              <Typography variant="body1" sx={{ textAlign: "justify" }}>
-                <span style={{ fontWeight: "bold" }}>Skills: </span>Full-stack
-                software development, integrated with my engineering
-                problem-solving and mathematical ability.
-              </Typography>
-            </ListItem>
-            <ListItem sx={{ display: "list-item", paddingRight: 0 }}>
-              <Typography variant="body1" sx={{ textAlign: "justify" }}>
-                <span style={{ fontWeight: "bold" }}>Focus: </span>Creating innovative tech solutions that bridge the gap
-                between engineering theory and user-centric applications.
-              </Typography>
-            </ListItem>
+          <List sx={{ display: "flex", gap: "1em", flexWrap: "wrap" }}>
+            {skills.map((skill) => (
+              <ListItem
+                key={skill.title}
+                sx={{
+                  display: "flex",
+                  flexBasis: "15%",
+                  borderRadius: "1em",
+                  padding: "0.5em",
+                  lineHeight: "1em",
+                  backgroundImage:
+                    "linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%)",
+                  transition: "0.5s",
+                  backgroundSize: "200% auto",
+                  boxShadow: " 0 0 20px #eee",
+
+                  "&:hover": {
+                    backgroundPosition: "right center",
+                    color: "#fff",
+                    textDecoration: "none",
+                  },
+                }}
+              >
+                {skill.icon}
+                <Typography
+                  variant="h6"
+                  component="p"
+                  sx={{ marginLeft: "0.5em" }}
+                >
+                  {skill.title}
+                </Typography>
+              </ListItem>
+            ))}
           </List>
+        </Box>
+        <Box
+          sx={{
+            minWidth: "45%",
+            flex: 1,
+            "> :nth-child(2)": {
+              float: { lg: "right" },
+            },
+          }}
+        >
+          {statements.reverse().map((statement) => (
+            <AboutMeBlock key={statement.title} statement={statement} />
+          ))}
         </Box>
       </Box>
     </Box>

@@ -38,7 +38,8 @@ const ProjectsList = async () => {
       ) : (
         <List sx={{'> :nth-child(2n + 1)': {
           flexDirection:'row-reverse'
-        } }}>
+        },
+        }}>
           {projectsSummaryArr}
         </List>
         

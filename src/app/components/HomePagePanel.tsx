@@ -24,10 +24,10 @@ const HomePagePanel = ({
             maxWidth: "67.3125rem",
             width: "90%",
             margin: "auto",
-            paddingY: "7.5rem",
+            paddingY: { xs: "4rem", lg: "7.5rem"},
           }}
         >
-        {children}
+        {children} 
       </Box>
     </Box>
   );

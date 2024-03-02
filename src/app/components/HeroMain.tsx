@@ -56,7 +56,7 @@ const HeroMain = () => {
             variant="body1"
             sx={{
               width: { sm: "80%", md: "100%" },
-              // marginx: { sm: "auto", md: "none" },
+              mb: '1rem',
               fontSize: "18px",
             }}
             // fontWeight={"bold"}

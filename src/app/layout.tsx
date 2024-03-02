@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className} style={{overscrollBehavior:'none'}}>
+      <body className={inter.className} style={{overscrollBehavior:'none', paddingRight:'0'}}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />

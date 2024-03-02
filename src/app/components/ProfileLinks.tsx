@@ -28,7 +28,7 @@ const ProfileLinks = ({
         gap: "1em",
         justifyContent: { xs: "center", sm: "start" },
         flexShrink: 0,
-        flexWrap: "wrap",
+        flexWrap: {xs: "no-wrap", sm: "wrap"},
       }}
     >
       {links.map(({ link, title, icon }) => (

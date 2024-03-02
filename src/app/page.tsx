@@ -4,7 +4,7 @@ import StackIconSection from "./components/StackIconSection";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import Projects from "./components/Projects";
-import UpdatedAboutMe from "./components/UpdatedAboutMe";
+import UpdatedAboutMe from "./components/AboutMe";
 // import TypographyTest from "./components/TypographyTest";
 
 export default function Home() {

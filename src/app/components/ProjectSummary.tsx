@@ -51,11 +51,11 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
       component={"article"}
       sx={{
         ...blockStyles,
-        display: "grid",
+        display: {xs:'block', sm: "grid"},
         gridTemplateColumns: "6fr 4fr",
         paddingBottom: "2rem",
         paddingTop: "2rem",
-        marginBottom: "10rem",
+        marginBottom: {xs: '3rem' , sm: "10rem"},
         gap: "2rem",
         "&:hover": {
           backgroundColor: backgroundColors[index],

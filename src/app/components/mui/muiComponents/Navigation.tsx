@@ -81,7 +81,6 @@ export default function DrawerAppBar(props: Props) {
       >
         <Toolbar sx={{ zIndex: 2, justifyContent: { xs: "end", sm: "none" } }}>
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
