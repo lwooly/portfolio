@@ -1,8 +1,12 @@
-import { Box } from "@mui/material";
+'use client'
+import { Box, useTheme } from "@mui/material";
 import Image from "next/image";
 import { blockStyles } from "../styles/styles";
 
 const ProfileImage = () => {
+  const theme = useTheme();
+
+  const hoverBackground = `radial-gradient(circle, ${theme.palette.primary.light} 0%, rgba(255,255,255,0.7357536764705883) 100%);`
   return (
     <Box
       sx={{
@@ -19,8 +23,8 @@ const ProfileImage = () => {
           backgroundImage:'white',
           "&:hover": {
             scaleY: "90%",
-            backgroundImage:
-            "radial-gradient(circle, rgba(191,233,255,0.8814119397759104) 0%, rgba(191,233,255,0.42482930672268904) 72%, rgba(255,255,255,0.7357536764705883) 100%);",
+            backgroundImage: hoverBackground,
+            
             transition: '0.35s',
             height: { xs: "240px", md: "290px" },
           },

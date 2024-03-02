@@ -37,7 +37,7 @@ const ProfileLinks = ({
           href={link}
           rel="noopener noreferrer"
           target="_blank"
-          tabIndex="-1"
+          tabIndex={-1}
           style={{ textDecoration: "none" }}
         >
           {isFooter ? (
