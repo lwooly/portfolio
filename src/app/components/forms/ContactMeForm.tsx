@@ -11,7 +11,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
 import { sendEmail } from "../../lib/api-functions/client";
-import { Email } from "@mui/icons-material";
+import ArrowButton from "../ArrowButton";
+import SubmitButton from "../SubmitButton";
 
 export interface EmailValues {
   name: string;
@@ -87,7 +88,7 @@ const ContactMeForm = () => {
           render={({ field }) => (
             <TextField
               {...field}
-              variant="filled"
+              variant="outlined"
               placeholder="Name"
               fullWidth
               autoComplete="off"
@@ -103,7 +104,7 @@ const ContactMeForm = () => {
           render={({ field }) => (
             <TextField
               {...field}
-              variant="filled"
+              variant="outlined"
               placeholder="Email"
               fullWidth
               autoComplete="off"
@@ -118,7 +119,7 @@ const ContactMeForm = () => {
           render={({ field }) => (
             <TextField
               {...field}
-              variant="filled"
+              variant="outlined"
               placeholder="Message"
               fullWidth
               multiline
@@ -130,41 +131,22 @@ const ContactMeForm = () => {
           )}
         />
         <Stack direction={"column"} sx={{ minHeight: "5rem" }} gap={1}>
-          {!isSending && !isSent && (
-            <Button
-              type="submit"
-              variant="contained"
-              disabled={isSubmitting || !isDirty || (isDirty && !isValid)}
-              sx={{
-                maxWidth: "15rem",
-                height: "2.5rem",
-                backgroundColor: "hsl(143.9deg 75.46% 31.96%)",
-                color: theme.palette.common.white,
-                alignSelf: "center",
-                "&:hover": {
-                  backgroundColor: "hsl(143.9deg 75.46% 25%)",
-                  borderShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
-                },
-              }}
-            >
-              Submit
-            </Button>
-          )}
-          {isSending && !isSent && !isSendingError && (
-            <Typography variant="body2" sx={{ textAlign: "center" }}>
-              Sending...
-            </Typography>
-          )}
-          {isSent && !isSending && !isSendingError && (
-            <Typography variant="body2" sx={{ textAlign: "center" }}>
-              Message Sent!
-            </Typography>
-          )}
-          {!isSent && !isSending && isSendingError && (
-            <Typography variant="body2" sx={{ textAlign: "center" }}>
-              Message not sent! Please try again!
-            </Typography>
-          )}
+          <SubmitButton
+            isSending={isSending}
+            isSent={isSent}
+            isSendingError={isSendingError}
+            type="submit"
+            disabled={isSubmitting}
+            sx={{
+              margin:'auto',
+              backgroundColor: theme.palette.primary.main,
+              border: "1px solid",
+              borderColor: theme.palette.primary.main,
+              "&:hover": {
+                border: "1px solid black",
+              },
+            }}
+          />
         </Stack>
       </Stack>
     </form>

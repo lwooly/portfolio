@@ -18,6 +18,7 @@ import Button from "@mui/material/Button";
 import Link from "next/link";
 import { capitalizeFirstLetter } from "@/src/app/utils";
 import ArrowButton from "../../ArrowButton";
+import ArrowButtonTest from "../../ArrowButtonTest";
 
 interface Props {
   window?: () => Window;
@@ -104,33 +105,38 @@ export default function DrawerAppBar(props: Props) {
               lwooly.dev
             </Typography>
           </Link>
-
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             {navItems.map((item) => {
-              if (item === "Contact me") {
-                return (
-                  <Link key={item} href={`#${item}`}>
-                    <ArrowButton sx={{ marginLeft: "3em" }}>
-                      <Typography variant="body1" sx={{ fontSize: "14px", color:'white' }}>
-                        {item}
-                      </Typography>
-                    </ArrowButton>
-                  </Link>
-                );
-              }
+              const linkTextColor = (item === "Contact me") ? 'white': 'black';
+              const linkText = (
+                <Typography
+                  variant="body1"
+                  sx={{ fontSize: "14px", color: linkTextColor }}
+                >
+                  {item}
+                </Typography>
+              );
               return (
-                <Link key={item} href={`#${item}`}>
-                  <Button
-                    sx={{
-                      color: "#3c3c3c",
-                      textTransform: "none",
-                      marginLeft: "3em",
-                    }}
-                  >
-                    <Typography variant="body1" sx={{ fontSize: "14px" }}>
-                      {item}
-                    </Typography>
-                  </Button>
+                <Link
+                  key={item}
+                  href={`#${item}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  {item === "Contact me" ? (
+                    <ArrowButtonTest sx={{ marginLeft: "3em" }}>
+                      {linkText}
+                    </ArrowButtonTest>
+                  ) : (
+                    <Button
+                      sx={{
+                        color: "#3c3c3c",
+                        textTransform: "none",
+                        marginLeft: "3em",
+                      }}
+                    >
+                      {linkText}
+                    </Button>
+                  )}
                 </Link>
               );
             })}

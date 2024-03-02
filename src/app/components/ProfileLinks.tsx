@@ -1,6 +1,7 @@
 "use client";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import ArrowButton from "./ArrowButton";
+// import ArrowButton from "./ArrowButton";
+import ArrowButtonTest from "./ArrowButtonTest";
 
 interface Link {
   link: string;
@@ -53,7 +54,7 @@ const ProfileLinks = ({
               <Box fontSize={"40px"}>{icon}</Box>
             </IconButton>
           ) : (
-            <ArrowButton
+            <ArrowButtonTest
               isLarge={largeButtons}
 
             >
@@ -65,7 +66,7 @@ const ProfileLinks = ({
               >
                 {title}
               </Typography>
-            </ArrowButton>
+            </ArrowButtonTest>
           )}
         </a>
       ))}
