@@ -121,6 +121,7 @@ export default function DrawerAppBar(props: Props) {
                   key={item}
                   href={`#${item}`}
                   style={{ textDecoration: "none" }}
+                  tabIndex={'-1'}
                 >
                   {item === "Contact me" ? (
                     <ArrowButtonTest sx={{ marginLeft: "3em" }}>

@@ -2,6 +2,7 @@
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 // import ArrowButton from "./ArrowButton";
 import ArrowButtonTest from "./ArrowButtonTest";
+import Link from "next/link";
 
 interface Link {
   link: string;
@@ -27,15 +28,16 @@ const ProfileLinks = ({
         gap: "1em",
         justifyContent: { xs: "center", sm: "start" },
         flexShrink: 0,
-        flexWrap: 'wrap',
+        flexWrap: "wrap",
       }}
     >
       {links.map(({ link, title, icon }) => (
-        <a
+        <Link
           key={title}
           href={link}
           rel="noopener noreferrer"
           target="_blank"
+          tabIndex="-1"
           style={{ textDecoration: "none" }}
         >
           {isFooter ? (
@@ -43,7 +45,6 @@ const ProfileLinks = ({
               sx={{
                 color: "white",
                 fontSize: "40px",
-
                 "&:hover": {
                   transform: "scale(1.2) translate(0, -2px)",
                   transition: "transform 0.5s ease-in-out",
@@ -54,10 +55,7 @@ const ProfileLinks = ({
               <Box fontSize={"40px"}>{icon}</Box>
             </IconButton>
           ) : (
-            <ArrowButtonTest
-              isLarge={largeButtons}
-
-            >
+            <ArrowButtonTest isLarge={largeButtons}>
               {icon && icon}
               <Typography
                 fontSize={"body1"}
@@ -68,7 +66,7 @@ const ProfileLinks = ({
               </Typography>
             </ArrowButtonTest>
           )}
-        </a>
+        </Link>
       ))}
     </Box>
   );
