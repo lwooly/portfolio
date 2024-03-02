@@ -6,7 +6,6 @@ import {
   ThemeOptions,
 } from "@mui/material/styles";
 import { Inter } from "next/font/google";
-import { text } from "stream/consumers";
 
 const font = Inter({
   weight: ["300", "400", "500", "700"],
@@ -14,13 +13,23 @@ const font = Inter({
   subsets: ["latin"],
 });
 
-const textColors = {
-  primary: "#121619",
-  secondary: "#000000",
-  tertiary: "#555",
-  headingHighlight: "#1976d2",
-  // headingHighlight: "hsl(143.9deg 75.46% 31.96%)",
-  // secondary: "hsl(228deg 85.29% 50.31%);",
+// Define color variables
+const colorVariables = {
+  primaryText: "#121619", // Charcoal
+  secondaryText: "#000000", // Black
+  tertiaryText: "#555", // Dark Grey
+  headingHighlight: "#1976d2", // Bright Blue
+  primaryMain: "#0073e7", // Vivid Blue
+  primaryLight: "hsl(210.13deg 100% 45.29% / 40%)", // Light Blue (with transparency)
+  primaryDark: "#1565c0", // Dark Blue
+  secondaryMain: "hsl(143.9deg 75.46% 31.96%)", // Vivid Greenish-Blue
+  secondaryLight: "hsl(143.9deg 75.46% 31.96% / 40%)", // Light Greenish-Blue (with transparency)
+  secondaryDark: "hsl(143.9deg 75.46% 31.96%)", // Dark Greenish-Blue
+  buttonBackground: "#1976d2", // Bright Blue (Same as headingHighlight)
+  buttonHover: "black", // Black
+  largeButtonBackground: "black", // Black
+  largeButtonHoverBackground: "white", // White
+  largeButtonHoverText: "black", // Black
 };
 
 const themeOptions: ThemeOptions = {
@@ -30,113 +39,117 @@ const themeOptions: ThemeOptions = {
     h1: {
       fontSize: "56px",
       fontWeight: 700,
-      color: textColors.primary,
+      color: colorVariables.primaryText,
     },
     h2: {
       fontSize: "46px",
       fontWeight: 700,
-      color: textColors.primary,
+      color: colorVariables.primaryText,
+      marginBottom: "2rem",
     },
-    h3: {
+    h3: { 
       fontSize: "1.2rem",
       fontWeight: 700,
-      color: textColors.headingHighlight,
+      color: colorVariables.headingHighlight,
       textAlign: "center",
       marginBottom: "2em",
-      // marginTop: "1.2rem",
     },
     h4: {
       fontWeight: 700,
-      color: textColors.primary,
+      color: colorVariables.primaryText,
       marginTop: "0.7rem",
       marginBottom: "1rem",
     },
     h5: {
       fontSize: "1.57rem",
       fontWeight: 700,
-      color: textColors.tertiary,
+      color: colorVariables.tertiaryText,
       marginBottom: "0.7rem",
-      // marginTop: "1.2rem"
     },
     h6: {
       fontWeight: 500,
-      color: textColors.primary,
+      color: colorVariables.primaryText,
     },
     body1: {
       fontSize: "1rem",
-      color: textColors.secondary,
+      color: colorVariables.secondaryText,
     },
     body2: {
       fontSize: "1rem",
-      color: textColors.tertiary,
+      color: colorVariables.tertiaryText,
       textAlign: "justify",
     },
     subtitle1: {
       fontSize: "1.2rem",
-      color: textColors.primary,
+      color: colorVariables.primaryText,
       textAlign: "justify",
     },
   },
   palette: {
-    // mode: "dark",
     primary: {
-      main: "#0073e7",
-      light: "hsl(210.13deg 100% 45.29% / 40%)",
-      dark: "#1565c0",
+      main: colorVariables.primaryMain,
+      light: colorVariables.primaryLight,
+      dark: colorVariables.primaryDark,
       contrastText: "#fff",
     },
     secondary: {
-      main: "hsl(143.9deg 75.46% 31.96%)",
-      light: "hsl(143.9deg 75.46% 31.96%)",
-      dark: "hsl(143.9deg 75.46% 31.96%)",
+      main: colorVariables.secondaryMain,
+      light: colorVariables.secondaryLight,
+      dark: colorVariables.secondaryDark,
     },
     background: {
       default: "white",
     },
     text: {
-      primary: textColors.primary,
-      secondary: textColors.secondary,
+      primary: colorVariables.primaryText,
+      secondary: colorVariables.secondaryText,
     },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          width: 'fit-content',
-          borderRadius: "1.5em", 
+          // Common button styles
+          width: "fit-content",
+          borderRadius: "1.5em",
           boxShadow: "none",
           textTransform: "none",
           color: "white",
-          padding: "6px 6px 6px 12px", 
+          padding: "6px 6px 6px 12px",
           display: "flex",
-          gap: "0.7em", 
-          minHeight: '2em',
-          textDecoration:'none',
+          gap: "0.7em",
+          minHeight: "2em",
+          textDecoration: "none",
         },
-        
         small: {
-          backgroundColor: "#1976d2",
+          backgroundColor: colorVariables.buttonBackground,
           "&:hover": {
-            backgroundColor: "black !important",
+            backgroundColor: colorVariables.buttonHover,
           },
         },
-        
         large: {
+          // Large button specific styles
           height: "3rem",
           padding: "2rem 1rem",
           marginX: "0.5rem",
           borderRadius: "6px",
           border: "1px solid black",
-          backgroundColor: "black", 
+          backgroundColor: colorVariables.largeButtonBackground,
           fontSize: "1.2rem",
           "&:hover": {
-            backgroundColor: "white",
+            backgroundColor: colorVariables.largeButtonHoverBackground,
             "& *": {
-              color: "black !important",
+              color: colorVariables.largeButtonHoverText,
             },
           },
         },
-        
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white",
+        },
       },
     },
   },
