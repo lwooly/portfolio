@@ -135,7 +135,7 @@ const themeOptions: ThemeOptions = {
           borderRadius: "6px",
           border: "1px solid black",
           backgroundColor: colorVariables.largeButtonBackground,
-          fontSize: { xs: "0.8rem", sm: "1.2rem" },
+          fontSize:"0.8rem",
           "&:hover": {
             backgroundColor: colorVariables.largeButtonHoverBackground,
             "& *": {
