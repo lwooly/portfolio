@@ -24,7 +24,7 @@ export interface Statement {
 const statements: Statement[] = [
   {
     title: "Background",
-    text: "Proven track record leading and sucessfully delivering significant and complex engineering projects in the UK Civil Nuclear sector.",
+    text: "A proven track record of 8 years, leading and sucessfully delivering significant and complex engineering projects in the UK Civil Nuclear sector.",
   },
   {
     title: "Skills",
