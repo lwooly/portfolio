@@ -17,6 +17,9 @@ function ProjectImages({ projectInfo }: ProjectSummaryProps) {
         ...blockStyles,
         marginY: "0em",
         boxShadow: "6",
+        '&:hover': {
+          border:'1px solid black'
+        }
       }}
     >
       <Image

@@ -56,7 +56,7 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
         marginBottom: { xs: "3rem", sm: "10rem" },
         marginTop: "none",
         gap: "2rem",
-        backgroundColor: { xs: backgroundColors[index], sm: "none" },
+        backgroundColor: { xs: backgroundColors[index], sm: "white" },
         "&:hover": {
           backgroundColor: backgroundColors[index],
         },
