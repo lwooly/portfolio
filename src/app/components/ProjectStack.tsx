@@ -9,6 +9,7 @@ function ProjectStack({ techStack }: { techStack: string[] }) {
         justifyContent: "center",
         flex: 1,
         alignItems: "center",
+        mb: "0.7rem",
       }}
     >
       {techStack.map((software) => (
@@ -24,9 +25,9 @@ function ProjectStack({ techStack }: { techStack: string[] }) {
             boxShadow: " 0 0 20px lightgrey",
             margin: "3px, 3px",
             transition: "0.3s",
-            '&:hover':{
-                boxShadow: 4,
-            }
+            "&:hover": {
+              boxShadow: 4,
+            },
           }}
         >
           <Typography
@@ -36,7 +37,7 @@ function ProjectStack({ techStack }: { techStack: string[] }) {
               fontWeight: "bold",
               lineHeight: "1em ",
               color: "white",
-              fontSize:{xs: '12px', sm: '16px'}
+              fontSize: { xs: "12px", sm: "16px" },
             }}
           >
             {software}

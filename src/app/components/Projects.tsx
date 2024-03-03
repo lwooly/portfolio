@@ -10,12 +10,12 @@ const Projects = () => {
   return (
     <>
       {/* <HorizontalScroll title={<ProjectsTitle />}> */}
-        <ProjectsTitle />
-        <ErrorBoundary fallback={<p>Something went wrong</p>}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <ProjectsList />
-          </Suspense>
-        </ErrorBoundary>
+      <ProjectsTitle />
+      <ErrorBoundary fallback={<p>Something went wrong</p>}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProjectsList />
+        </Suspense>
+      </ErrorBoundary>
       {/* </HorizontalScroll> */}
     </>
   );

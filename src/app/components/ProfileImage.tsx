@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Box, useTheme } from "@mui/material";
 import Image from "next/image";
 import { blockStyles } from "../styles/styles";
@@ -6,7 +6,7 @@ import { blockStyles } from "../styles/styles";
 const ProfileImage = () => {
   const theme = useTheme();
 
-  const hoverBackground = `radial-gradient(circle, ${theme.palette.primary.light} 0%, rgba(255,255,255,0.7357536764705883) 100%);`
+  const hoverBackground = `radial-gradient(circle, ${theme.palette.primary.light} 0%, rgba(255,255,255,0.7357536764705883) 100%);`;
   return (
     <Box
       sx={{
@@ -20,12 +20,12 @@ const ProfileImage = () => {
           height: { xs: "250px", md: "300px" },
           position: "relative",
           ...blockStyles,
-          backgroundImage:'white',
+          backgroundImage: "white",
           "&:hover": {
             scaleY: "90%",
             backgroundImage: hoverBackground,
-            
-            transition: '0.35s',
+
+            transition: "0.35s",
             height: { xs: "240px", md: "290px" },
           },
         }}

@@ -1,7 +1,7 @@
 "use client";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 // import ArrowButton from "./ArrowButton";
-import ArrowButtonTest from "./ArrowButtonTest";
+import ArrowButtonTest from "./ArrowButton";
 import Link from "next/link";
 
 interface Link {
@@ -24,13 +24,14 @@ const ProfileLinks = ({
   return (
     <Box
       sx={{
-        width:'100%',
-        maxWidth:'100%',
+        width: "100%",
+        maxWidth: "100%",
         display: "flex",
         gap: { xs: "0.5em", sm: "1em" },
-        justifyContent: { xs: "center", sm: "start" },
+        justifyContent: { xs: "center", md: isFooter ? "center" : "start" },
         flexShrink: 0,
-        flexWrap: {xs: "nowrap", sm: "nowrap"},
+        flexWrap: { xs: "nowrap", sm: "nowrap" },
+        margin: "auto",
       }}
     >
       {links.map(({ link, title, icon }) => (
@@ -60,9 +61,11 @@ const ProfileLinks = ({
             <ArrowButtonTest isLarge={largeButtons}>
               {icon && icon}
               <Typography
-                fontSize={"body1"}
+                variant={"body1"}
                 fontWeight={500}
-                sx={{ color: "white" }}
+                sx={{
+                  color: "white",
+                }}
               >
                 {title}
               </Typography>

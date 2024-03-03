@@ -121,21 +121,21 @@ const themeOptions: ThemeOptions = {
           minHeight: "2em",
           textDecoration: "none",
         },
-        small: {
+        sizeSmall: {
           backgroundColor: colorVariables.buttonBackground,
           "&:hover": {
             backgroundColor: colorVariables.buttonHover,
           },
         },
-        large: {
+        sizeLarge: {
           // Large button specific styles
-          height: "5em",  
-          padding: {xs: "1.2em 0.7em" , sm:"1.5em 0.8em"},
+          height: "5em",
+          padding: "1.2em 0.7em",
           marginX: "0.5rem",
           borderRadius: "6px",
           border: "1px solid black",
           backgroundColor: colorVariables.largeButtonBackground,
-          fontSize: {xs: '0.8rem', sm: '1.2rem'},
+          fontSize: { xs: "0.8rem", sm: "1.2rem" },
           "&:hover": {
             backgroundColor: colorVariables.largeButtonHoverBackground,
             "& *": {
@@ -157,7 +157,5 @@ const themeOptions: ThemeOptions = {
 
 let theme = createTheme(themeOptions);
 theme = responsiveFontSizes(theme);
-
-console.log(theme);
 
 export default theme;

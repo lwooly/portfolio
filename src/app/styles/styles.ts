@@ -3,5 +3,5 @@ export const blockStyles = {
   borderRadius: "0.7em",
   backgroundColor: "white",
   marginY: "1em",
-  overflow:'hidden',
+  overflow: "hidden",
 };

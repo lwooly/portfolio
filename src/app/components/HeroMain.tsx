@@ -13,6 +13,7 @@ const HeroMain = () => {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
+          justifyContent: "center",
           alignItems: "center",
           gap: "2em",
           paddingTop: { xs: "1em", sm: "2em" },
@@ -45,8 +46,9 @@ const HeroMain = () => {
             variant="h5"
             sx={{
               width: { sm: "80%", md: "100%" },
-              // marginx: { sm: "auto", md: "none" },
-              fontSize: "18px", color: 'black',
+              fontSize: "18px",
+              color: "black",
+              marginX: { sm: "auto" },
             }}
             fontWeight={"bold"}
           >
@@ -56,8 +58,9 @@ const HeroMain = () => {
             variant="body1"
             sx={{
               width: { sm: "80%", md: "100%" },
-              mb: '1rem',
+              mb: "1rem",
               fontSize: "18px",
+              marginX: { sm: "auto" },
             }}
             // fontWeight={"bold"}
           >
@@ -65,7 +68,7 @@ const HeroMain = () => {
           </Typography>
 
           <Box sx={{ marginTop: "auto" }}>
-            <ProfileLinks links={createProfileLinks({isFooter:false})} />
+            <ProfileLinks links={createProfileLinks({ isFooter: false })} />
           </Box>
         </Box>
       </Box>

@@ -3,7 +3,9 @@
 TheFull Stack Portfolio Website serves as a platform to showcase a range of projects and skills. It offers insights into some of my work, elaborates on various projects, and provides a direct communication channel via an integrated contact form.
 
 Link: [Portfolio](https://portfolio-chi-seven-84.vercel.app/)
+
 ## Tech Stack
+
 - Next.js
 - React
 - Sendgrid
@@ -11,6 +13,7 @@ Link: [Portfolio](https://portfolio-chi-seven-84.vercel.app/)
 - MUI (Material-UI)
 
 ## Features
+
 - **Project Showcase**: Presents a variety of projects with detailed descriptions, technical insights, and media elements.
 - **Communication**: Incorporates a contact form enabling visitors to send messages directly through the website.
 - **Content Management**: Utilises a headless CMS for simple content updates and portfolio administration.

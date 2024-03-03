@@ -3,7 +3,6 @@ import React from "react";
 import ProfileLinks from "./ProfileLinks";
 import { createProfileLinks } from "../utils/links";
 
-
 const Footer = () => {
   return (
     <Box
@@ -15,11 +14,11 @@ const Footer = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginTop:'auto',
-        overflowY: 'visible'
+        marginTop: "auto",
+        overflowY: "visible",
       }}
     >
-      <ProfileLinks isFooter links={createProfileLinks({isFooter:true})}/>
+      <ProfileLinks isFooter links={createProfileLinks({ isFooter: true })} />
     </Box>
   );
 };

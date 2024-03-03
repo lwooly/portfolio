@@ -16,7 +16,7 @@ function ProjectImages({ projectInfo }: ProjectSummaryProps) {
         paddingBottom: "min(400px, 100%)", // Equal to width for a square aspect ratio
         ...blockStyles,
         marginY: "0em",
-        boxShadow:'6'
+        boxShadow: "6",
       }}
     >
       <Image

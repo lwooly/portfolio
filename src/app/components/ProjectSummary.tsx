@@ -26,8 +26,7 @@ export interface ProjectSummaryProps {
   index: number;
 }
 
-const backgroundColors = ["#ecf3ff", " #effdee", "#fff9e9", "#ffebea" ]
-
+const backgroundColors = ["#ecf3ff", " #effdee", "#fff9e9", "#ffebea"];
 
 const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
   const theme = useTheme();
@@ -51,13 +50,13 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
       component={"article"}
       sx={{
         ...blockStyles,
-        display: {xs:'block', sm: "grid"},
+        display: { xs: "block", md: "grid" },
         gridTemplateColumns: "6fr 4fr",
-        padding: {xs:'1rem 0.5rem', sm: '2rem 1rem', },
-        marginBottom: {xs: '3rem' , sm: "10rem"},
-        marginTop:'none',
+        padding: { xs: "1rem 0.5rem", sm: "2rem 1rem" },
+        marginBottom: { xs: "3rem", sm: "10rem" },
+        marginTop: "none",
         gap: "2rem",
-        backgroundColor:{xs: backgroundColors[index], sm: 'none'},
+        backgroundColor: { xs: backgroundColors[index], sm: "none" },
         "&:hover": {
           backgroundColor: backgroundColors[index],
         },
@@ -71,10 +70,10 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "start",
-          gap:'1rem',
+          gap: "1rem",
         }}
       >
-        <ProjectImages projectInfo={projectInfo} />
+        <ProjectImages projectInfo={projectInfo} index={index} />
         <ProjectStack techStack={techStack} />
       </Box>
       {/* </Box> */}
@@ -87,18 +86,18 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
           justifyContent: "start",
         }}
       >
-        <Typography variant="h1" component="h3" sx={{ mb: "0.3em", flex:1}}>
+        <Typography variant="h1" component="h3" sx={{ mb: "0.3em", flex: 1 }}>
           {title}
         </Typography>
-        <Box sx={{ mb: "1em", flex:1 }}>
-          <Typography variant="h5" component={"h5"} color={"black"} >
+        <Box sx={{ mb: "1em", flex: 1 }}>
+          <Typography variant="h5" component={"h5"} color={"black"}>
             Details:
           </Typography>
           <Typography variant="body1" component={"p"}>
             {description}
           </Typography>
         </Box>
-        <Box sx={{ display:'flex', alignItems:'center', flex:1 }}>
+        <Box sx={{ display: "flex", alignItems: "center", flex: 1 }}>
           <ProfileLinks links={projectLinks} largeButtons={true} />
         </Box>
       </Box>

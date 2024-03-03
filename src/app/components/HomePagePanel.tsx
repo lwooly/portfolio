@@ -20,14 +20,13 @@ const HomePagePanel = ({
     >
       <Box
         sx={{
-
-            maxWidth: "67.3125rem",
-            width: "90%",
-            margin: "auto",
-            paddingY: { xs: "4rem", lg: "7.5rem"},
-          }}
-        >
-        {children} 
+          maxWidth: "67.3125rem",
+          width: "90%",
+          margin: "auto",
+          paddingY: { xs: "4rem", lg: "7.5rem" },
+        }}
+      >
+        {children}
       </Box>
     </Box>
   );

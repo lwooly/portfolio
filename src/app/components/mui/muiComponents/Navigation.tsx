@@ -17,8 +17,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import { capitalizeFirstLetter } from "@/src/app/utils";
-import ArrowButton from "../../ArrowButton";
-import ArrowButtonTest from "../../ArrowButtonTest";
+import ArrowButtonTest from "../../ArrowButton";
+import { useTheme } from "@mui/material";
 
 interface Props {
   window?: () => Window;
@@ -28,6 +28,7 @@ const drawerWidth = "100%";
 const navItems = ["Home", "About", "Projects", "Contact me"];
 
 export default function DrawerAppBar(props: Props) {
+  const theme = useTheme();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -36,11 +37,11 @@ export default function DrawerAppBar(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h3" sx={{ my: 2 }}>
-        lwooly.dev
-      </Typography>
-      <Divider />
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", zIndex: 0, px: 0 }}
+    >
+      <Toolbar />
       <List>
         {navItems.map((item) => (
           <ListItem
@@ -48,7 +49,7 @@ export default function DrawerAppBar(props: Props) {
             disablePadding
             sx={{ justifyContent: "center", width: "100%" }}
           >
-            <Link href={`#${item}`} passHref>
+            <Link href={`#${item}`} passHref style={{ textDecoration: "none" }}>
               <ListItemButton
                 sx={{ justifyContent: "flex-end", width: "100%" }}
               >
@@ -68,45 +69,60 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Toolbar
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        width: "100%",
+        borderBottom: "1px solid #dde1e6",
+        px: 0,
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+      }}
+    >
       <CssBaseline />
       <AppBar
         component="nav"
         sx={{
+          width: "100%",
           boxShadow: "none",
-          borderBottom: "1px solid #dde1e6",
           position: "static",
           backgroundColor: "white",
         }}
       >
-        <Toolbar sx={{ zIndex: 2, justifyContent: { xs: "end", sm: "none" } }}>
+        <Toolbar sx={{ zIndex: 2 }}>
           <IconButton
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ mr: { xs: 0, sm: 2 }, display: { sm: "none" } }}
+            sx={{ px: 0, mr: 0, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
-          <Link
-            href="/"
-            style={{ marginRight: "auto", textDecoration: "none" }}
+
+          <Box
+            sx={{
+              marginLeft: { xs: "auto", sm: 0 },
+              marginRight: { xs: "none", sm: "auto" },
+            }}
           >
-            <Typography
-              variant="h3"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", sm: "block" },
-                margin: 0,
-              }}
-            >
-              lwooly.dev
-            </Typography>
-          </Link>
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <Typography
+                variant="h3"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  display: "block",
+                  margin: 0,
+                  textAlign: "left",
+                }}
+              >
+                lwooly.dev
+              </Typography>
+            </Link>
+          </Box>
           <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             {navItems.map((item) => {
-              const linkTextColor = (item === "Contact me") ? 'white': 'black';
+              const linkTextColor = item === "Contact me" ? "white" : "black";
               const linkText = (
                 <Typography
                   variant="body1"
@@ -155,9 +171,7 @@ export default function DrawerAppBar(props: Props) {
           }}
           sx={{
             display: { xs: "block", sm: "none" },
-            zIndex: 1,
             "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
               width: drawerWidth,
             },
           }}
@@ -165,7 +179,6 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Toolbar />
-    </Box>
+    </Toolbar>
   );
 }

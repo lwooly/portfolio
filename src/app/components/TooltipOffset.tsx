@@ -7,7 +7,7 @@ export default function TooltipOffset({
   children,
   title,
   placement,
-  offset = [0,0],
+  offset = [0, 0],
 }: {
   children: React.ReactElement;
   title: string;
@@ -25,7 +25,7 @@ export default function TooltipOffset({
     | "top-end"
     | "top-start"
     | undefined;
-    offset?: [number, number]
+  offset?: [number, number];
 }) {
   return (
     <Tooltip

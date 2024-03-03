@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import { Button, ButtonProps, styled } from "@mui/material";
+import { Button, ButtonProps, styled, useTheme } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import EastIcon from "@mui/icons-material/East";
 
@@ -16,19 +16,27 @@ export const StyledButton = styled(Button, {
   slot: "Root",
   overridesResolver: (props, styles) => [
     styles.root,
-    props.isLarge && styles.large,
-    !props.isLarge && styles.small,
+    props.isLarge && styles.sizeLarge,
+    !props.isLarge && styles.sizeSmall,
   ],
 })<ArrowButtonProps>(({ theme, isLarge }) => ({
-  ...(isLarge ? theme?.components?.MuiButton?.styleOverrides?.large : theme?.components?.MuiButton?.styleOverrides?.small),
+  ...(isLarge
+    ? ((theme?.components?.MuiButton?.styleOverrides?.sizeLarge ||
+        {}) as object)
+    : ((theme?.components?.MuiButton?.styleOverrides?.sizeSmall ||
+        {}) as object)),
 }));
 
-function ArrowButtonTest({
+function ArrowButton({
   children,
   isLarge = false,
   ...props
 }: ArrowButtonProps) {
   const [isHover, setIsHover] = useState(false);
+
+  const theme = useTheme();
+
+  theme.components?.MuiButton?.styleOverrides?.sizeLarge;
 
   return (
     <StyledButton
@@ -40,10 +48,13 @@ function ArrowButtonTest({
       {...props}
     >
       {children}
-      {isHover ? <EastIcon sx={{ marginLeft: "5px" }} /> : <ChevronRightIcon sx={{ marginRight: "5px" }} />}
+      {isHover ? (
+        <EastIcon sx={{ marginLeft: "5px" }} />
+      ) : (
+        <ChevronRightIcon sx={{ marginRight: "5px" }} />
+      )}
     </StyledButton>
   );
 }
 
-
-export default ArrowButtonTest
+export default ArrowButton;

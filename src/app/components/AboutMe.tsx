@@ -41,6 +41,8 @@ const skills = [
   { title: "Management", icon: <BusinessCenter /> },
   { title: "Technicality", icon: <Engineering /> },
   { title: "Collaboration", icon: <GroupWork /> },
+  { title: "Mathematics", icon: <Calculate /> },
+
   // { title: "Communication", icon: <Chat /> },
   // { title: "Interpretation", icon: <Visibility /> },
   // { title: "Adaptability", icon: <Autorenew /> },
@@ -57,8 +59,8 @@ const AboutMe = () => {
       <Typography variant="h3">About Me</Typography>
       <Box
         sx={{
-          display: {xs: 'block', sm:"flex"},
-          textAlign: {xs: 'center', sm:"left"},
+          display: { xs: "block", sm: "flex" },
+          textAlign: { xs: "center", sm: "left" },
           flexDirection: "row-reverse",
           gap: "2em",
           width: "100%",

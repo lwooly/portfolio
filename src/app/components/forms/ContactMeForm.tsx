@@ -110,7 +110,7 @@ const ContactMeForm = () => {
               autoComplete="off"
               error={!!errors.email}
               helperText={errors.email?.message}
-              sx={{backgroundColor:'white'}}
+              sx={{ backgroundColor: "white" }}
             />
           )}
         />
@@ -139,7 +139,7 @@ const ContactMeForm = () => {
             type="submit"
             disabled={isSubmitting}
             sx={{
-              margin:'auto',
+              margin: "auto",
               backgroundColor: theme.palette.primary.main,
               border: "1px solid",
               borderColor: theme.palette.primary.main,
