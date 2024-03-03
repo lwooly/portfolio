@@ -21,6 +21,8 @@ const StackImgList = () => {
     { title: "Redux", src: "redux.svg" },
     { title: "Node.js", src: "NodeJS-Dark.svg" },
     { title: "Next.js", src: "nextjs.svg" },
+    {title: "MongoDB", src: "mongodb.svg"},
+    {title:"SQL", src: "PostgreSQL-Dark.svg"}
   ];
 
   // map icon src to directory location
@@ -34,10 +36,10 @@ const StackImgList = () => {
       sx={{
         width: "100%",
         display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr 1fr",
+        gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
         justifyContent: "center",
         [theme.breakpoints.up("sm")]: {
-          gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
+          gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
         },
       }}
     >

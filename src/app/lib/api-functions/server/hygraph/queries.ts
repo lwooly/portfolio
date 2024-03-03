@@ -1,6 +1,6 @@
 export const allProjectsQuery = `
 query Projects {
-    projects(orderBy: publishedAt_ASC)  {
+    projects (orderBy: order_ASC) {
       description
       gitHubLink
       id
