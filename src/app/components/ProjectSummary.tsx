@@ -53,10 +53,11 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
         ...blockStyles,
         display: {xs:'block', sm: "grid"},
         gridTemplateColumns: "6fr 4fr",
-        paddingBottom: "2rem",
-        paddingTop: "2rem",
+        padding: {xs:'1rem 0.5rem', sm: '2rem 1rem', },
         marginBottom: {xs: '3rem' , sm: "10rem"},
+        marginTop:'none',
         gap: "2rem",
+        backgroundColor:{xs: backgroundColors[index], sm: 'none'},
         "&:hover": {
           backgroundColor: backgroundColors[index],
         },
@@ -70,7 +71,7 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "start",
-          gap:'1rem'
+          gap:'1rem',
         }}
       >
         <ProjectImages projectInfo={projectInfo} />

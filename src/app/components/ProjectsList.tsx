@@ -32,16 +32,22 @@ const ProjectsList = async () => {
   return (
     <>
       {!projectsInfoArray ? (
-        <Typography variant="h4" component={"h2"}>
+        <Typography variant="h4" component={"h2"} sx={{xs: '1rem', sm: '2rem'}}>
           Watch this space!
         </Typography>
       ) : (
-        <List sx={{'> :nth-child(2n + 1)': {
-          flexDirection:'row-reverse'
-        },
-        }}>
-          {projectsSummaryArr}
-        </List>
+        <List
+  sx={{
+    '> :nth-child(2n + 1)': {
+      flexDirection: 'row-reverse',
+    },
+    '> :last-child': {
+      mb: 0,  // Remove bottom margin
+    },
+  }}
+>
+  {projectsSummaryArr}
+</List>
         
       )}
     </>

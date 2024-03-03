@@ -36,6 +36,7 @@ function ProjectStack({ techStack }: { techStack: string[] }) {
               fontWeight: "bold",
               lineHeight: "1em ",
               color: "white",
+              fontSize:{xs: '12px', sm: '16px'}
             }}
           >
             {software}

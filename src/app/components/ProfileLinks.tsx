@@ -24,11 +24,13 @@ const ProfileLinks = ({
   return (
     <Box
       sx={{
+        width:'100%',
+        maxWidth:'100%',
         display: "flex",
-        gap: "1em",
+        gap: { xs: "0.5em", sm: "1em" },
         justifyContent: { xs: "center", sm: "start" },
         flexShrink: 0,
-        flexWrap: {xs: "no-wrap", sm: "wrap"},
+        flexWrap: {xs: "nowrap", sm: "nowrap"},
       }}
     >
       {links.map(({ link, title, icon }) => (

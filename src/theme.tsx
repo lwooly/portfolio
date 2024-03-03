@@ -45,9 +45,9 @@ const themeOptions: ThemeOptions = {
       fontSize: "46px",
       fontWeight: 700,
       color: colorVariables.primaryText,
-      marginBottom: "2rem",
+      marginBottom: "1rem",
     },
-    h3: { 
+    h3: {
       fontSize: "1.2rem",
       fontWeight: 700,
       color: colorVariables.headingHighlight,
@@ -129,13 +129,13 @@ const themeOptions: ThemeOptions = {
         },
         large: {
           // Large button specific styles
-          height: "3rem",
-          padding: "2rem 1rem",
+          height: "5em",  
+          padding: {xs: "1.2em 0.7em" , sm:"1.5em 0.8em"},
           marginX: "0.5rem",
           borderRadius: "6px",
           border: "1px solid black",
           backgroundColor: colorVariables.largeButtonBackground,
-          fontSize: "1.2rem",
+          fontSize: {xs: '0.8rem', sm: '1.2rem'},
           "&:hover": {
             backgroundColor: colorVariables.largeButtonHoverBackground,
             "& *": {
