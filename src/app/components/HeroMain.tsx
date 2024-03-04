@@ -52,7 +52,7 @@ const HeroMain = () => {
             }}
             fontWeight={"bold"}
           >
-            Full Stack Developer | Chartered Engineer
+            Software Developer | Chartered Engineer
           </Typography>
           <Typography
             variant="body1"

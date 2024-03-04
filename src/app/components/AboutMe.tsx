@@ -75,7 +75,7 @@ const AboutMe = () => {
           }}
         >
           <Typography variant="h1" component="h3" sx={{}}>
-            Full-stack Developer and Chartered Structural Engineer
+          Software Developer and Chartered Structural Engineer
           </Typography>
           <Typography
             variant="h4"
