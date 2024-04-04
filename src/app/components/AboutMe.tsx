@@ -24,7 +24,7 @@ export interface Statement {
 const statements: Statement[] = [
   {
     title: "Background",
-    text: "A proven track record of 8 years, leading and sucessfully delivering significant and complex engineering projects in the UK Civil Nuclear sector.",
+    text: "A Chartered Engineer with a proven track record of 8 years, leading and sucessfully delivering significant and complex engineering projects in the UK Civil Nuclear sector.",
   },
   {
     title: "Skills",
@@ -75,7 +75,7 @@ const AboutMe = () => {
           }}
         >
           <Typography variant="h1" component="h3" sx={{}}>
-          Software Developer and Chartered Structural Engineer
+          Software Engineer
           </Typography>
           <Typography
             variant="h4"
@@ -126,6 +126,7 @@ const AboutMe = () => {
             flex: 1,
             "> :nth-child(2)": {
               float: { lg: "right" },
+              mt: 0,
             },
           }}
         >
