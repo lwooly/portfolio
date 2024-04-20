@@ -32,7 +32,7 @@ const ProfileImage = () => {
       >
         <Image
           alt="Lloyd Woolacott profile image"
-          src={"/profileimage.png"}
+          src={"/lwoolyprofile.jpg"}
           priority
           fill
           sizes="50%"
