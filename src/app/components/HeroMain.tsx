@@ -64,7 +64,7 @@ const HeroMain = () => {
             }}
             // fontWeight={"bold"}
           >
-            (TypeScript, React, Redux, Next.js, MongoDB, SQL)
+            (TypeScript, React, Node.js, Next.js, MongoDB, SQL)
           </Typography>
 
           <Box sx={{ marginTop: "auto" }}>
