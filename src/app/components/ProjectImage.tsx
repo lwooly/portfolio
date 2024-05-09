@@ -30,7 +30,6 @@ function ProjectImages({ projectInfo }: ProjectSummaryProps) {
         priority
         style={{
           objectFit: "cover",
-          objectPosition: "25% 50%",
         }}
       />
     </Box>
