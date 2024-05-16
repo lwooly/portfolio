@@ -3,8 +3,6 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -25,7 +23,7 @@ interface Props {
 }
 
 const drawerWidth = "100%";
-const navItems = ["Home", "About", "Projects", "Contact me"];
+const navItems = ["Home", "About", "Portfolio", "Contact me"];
 
 export default function DrawerAppBar(props: Props) {
   const theme = useTheme();
