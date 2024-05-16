@@ -57,7 +57,7 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
       sx={{
         display: { xs: "block", md: "grid" },
         gridTemplateColumns: "6fr 4fr",
-        padding: { xs: "2rem 0.5rem", sm: "6rem 2rem" },
+        padding: { xs: "2rem 0.69rem", sm: "6rem 2rem" },
         marginBottom: { xs: "8rem", sm: "10rem" },
         marginTop: "none",
         gap: "4rem",
