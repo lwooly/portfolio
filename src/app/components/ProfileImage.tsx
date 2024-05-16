@@ -10,14 +10,14 @@ const ProfileImage = () => {
   return (
     <Box
       sx={{
-        width: { xs: "250px", md: "300px" },
-        height: { xs: "250px", md: "300px" },
+        width: { xs: "300px", md: "300px" },
+        height: { xs: "300px", md: "300px" },
       }}
     >
       <Box
         sx={{
-          width: { xs: "250px", md: "300px" },
-          height: { xs: "250px", md: "300px" },
+          width: { xs: "300px", md: "300px" },
+          height: { xs: "300px", md: "300px" },
           position: "relative",
           ...blockStyles,
           backgroundImage: "white",

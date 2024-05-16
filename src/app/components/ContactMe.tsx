@@ -7,7 +7,7 @@ import ContactMeForm from "./forms/ContactMeForm";
 
 const ContactMe = () => {
   return (
-    <Stack direction={"column"} sx={{ textAlign: "center" }}>
+    <Stack direction={"column"} sx={{ textAlign: "center", maxWidth: "67.3125rem", width: "90%", marginX: "auto"  }} >
       <Typography variant="h3">Contact Me</Typography>
       <Typography variant="h2">Get In Touch</Typography>
       <ContactMeForm />

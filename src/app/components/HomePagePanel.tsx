@@ -15,20 +15,16 @@ const HomePagePanel = ({
       component={"section"}
       sx={{
         width: "100%",
+        paddingTop: { xs: "4rem", lg: "5rem" },
+        paddingBottom: { xs: "4rem", lg: "7.5rem" },
+        marginBottom:"6rem",
+        ":last-child":{
+          marginBottom: 0
+        },
         ":nth-child(2n)": { backgroundColor: "#f5f5f5" },
       }}
     >
-      <Box
-        sx={{
-          maxWidth: "67.3125rem",
-          width: "90%",
-          margin: "auto",
-          paddingTop: { xs: "4rem", lg: "5rem" },
-          paddingBottom: { xs: "4rem", lg: "7.5rem" },
-        }}
-      >
-        {children}
-      </Box>
+    {children}
     </Box>
   );
 };

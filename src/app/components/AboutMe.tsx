@@ -55,13 +55,13 @@ const skills = [
 
 const AboutMe = () => {
   return (
-    <Box>
+    <Box sx={{ maxWidth: "67.3125rem", width: "90%", marginX: "auto" }}>
       <Typography variant="h3">About Me</Typography>
       <Box
         sx={{
           display: { xs: "block", sm: "flex" },
           textAlign: { xs: "center", sm: "left" },
-          flexDirection: "row-reverse",
+          flexDirection: "row",
           gap: "2em",
           width: "100%",
         }}
@@ -75,7 +75,7 @@ const AboutMe = () => {
           }}
         >
           <Typography variant="h1" component="h3" sx={{}}>
-          Software Engineer
+            Software Engineer
           </Typography>
           <Typography
             variant="h4"
@@ -85,7 +85,14 @@ const AboutMe = () => {
             Building on a strong analytical and mathematical background for
             technological innovation.
           </Typography>
-          <List sx={{ display: "flex", gap: "1em", flexWrap: "wrap" }}>
+          <List
+            sx={{
+              display: "flex",
+              gap: "1em",
+              flexWrap: "wrap",
+              justifyContent: { xs: "center", sm: "start" },
+            }}
+          >
             {skills.map((skill) => (
               <ListItem
                 key={skill.title}
@@ -112,7 +119,10 @@ const AboutMe = () => {
                 <Typography
                   variant="h6"
                   component="p"
-                  sx={{ marginLeft: "0.5em" }}
+                  sx={{
+                    marginLeft: "0.5em",
+                    fontSize: { xs: "0.8rem", sm: "unset" },
+                  }}
                 >
                   {skill.title}
                 </Typography>
@@ -130,7 +140,7 @@ const AboutMe = () => {
             },
           }}
         >
-          {statements.reverse().map((statement) => (
+          {statements.map((statement) => (
             <AboutMeBlock key={statement.title} statement={statement} />
           ))}
         </Box>

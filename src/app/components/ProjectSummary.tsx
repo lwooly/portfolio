@@ -26,7 +26,13 @@ export interface ProjectSummaryProps {
   index: number;
 }
 
-const backgroundColors = ["#ecf3ff", " #effdee", "#fff9e9", "#ffebea"];
+const backgroundColors = [
+  "#ecf3ff",
+  "#ecf3ff",
+  " #effdee",
+  "#fff9e9",
+  "#ffebea",
+];
 
 const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
   const theme = useTheme();
@@ -49,19 +55,36 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
     <ListItem
       component={"article"}
       sx={{
-        ...blockStyles,
         display: { xs: "block", md: "grid" },
         gridTemplateColumns: "6fr 4fr",
-        padding: { xs: "1rem 0.5rem", sm: "2rem 1rem" },
-        marginBottom: { xs: "3rem", sm: "10rem" },
+        padding: { xs: "2rem 0.5rem", sm: "6rem 2rem" },
+        marginBottom: { xs: "8rem", sm: "10rem" },
         marginTop: "none",
-        gap: "2rem",
+        gap: "4rem",
         backgroundColor: { xs: backgroundColors[index], sm: "white" },
+        borderTop: "1px solid #dde1e6",
+        borderBottom: "1px solid #dde1e6",
+        borderLeft: { xs: "none", sm: "1px solid #dde1e6" },
+        borderRight: { xs: "none", sm: "1px solid #dde1e6" },
+        borderRadius: { xs: "none", sm: "0.7em" },
+        marginY: "1em",
+        overflow: "hidden",
         "&:hover": {
           backgroundColor: backgroundColors[index],
         },
       }}
     >
+      <Typography
+        variant="h1"
+        component="h3"
+        sx={{
+          mb: "1rem",
+          textAlign: "center",
+          display: { xs: "block", md: "none" },
+        }}
+      >
+        {title}
+      </Typography>
       <Box
         sx={{
           height: "100%",
@@ -70,7 +93,7 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "start",
-          gap: "1rem",
+          gap: "1.5rem",
         }}
       >
         <ProjectImages projectInfo={projectInfo} index={index} />
@@ -83,17 +106,30 @@ const ProjectSummary = ({ projectInfo, index }: ProjectSummaryProps) => {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "start",
+          justifyContent: { xs: "center", sm: "start" },
         }}
       >
-        <Typography variant="h1" component="h3" sx={{ mb: "0.3em", flex: 1 }}>
+        <Typography
+          variant="h1"
+          component="h3"
+          sx={{
+            mb: "1rem",
+            textAlign: { xs: "center", sm: "start" },
+            display: { xs: "none", md: "block" },
+          }}
+        >
           {title}
         </Typography>
         <Box sx={{ mb: "1em", flex: 1 }}>
-          <Typography variant="h5" component={"h5"} color={"black"}>
-            Details:
-          </Typography>
-          <Typography variant="body1" component={"p"}>
+          <Typography
+            variant="body1"
+            component={"p"}
+            sx={{
+              mb: "1rem",
+              pt: "1rem",
+              textAlign: { xs: "center", md: "start" },
+            }}
+          >
             {description}
           </Typography>
         </Box>
