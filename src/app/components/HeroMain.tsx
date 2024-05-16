@@ -8,7 +8,7 @@ import { createProfileLinks } from "../utils/links";
 
 const HeroMain = () => {
   return (
-    <div>
+    <Box sx={{ maxWidth: "67.3125rem", width: "90%", marginX: "auto" }}>
       <Box
         sx={{
           display: "flex",
@@ -58,13 +58,13 @@ const HeroMain = () => {
             variant="body1"
             sx={{
               width: { sm: "80%", md: "100%" },
-              mb: "1rem",
+              mb: "1.5rem",
               fontSize: "18px",
               marginX: { sm: "auto" },
             }}
             // fontWeight={"bold"}
           >
-            (TypeScript, React, Node.js, Next.js, MongoDB, SQL)
+            TypeScript, React, Node.js, Next.js, MongoDB, SQL
           </Typography>
 
           <Box sx={{ marginTop: "auto" }}>
@@ -72,7 +72,7 @@ const HeroMain = () => {
           </Box>
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 };
 
