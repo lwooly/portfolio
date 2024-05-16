@@ -76,10 +76,10 @@ export default function DrawerAppBar(props: Props) {
         width: "100%",
         borderBottom: "1px solid #dde1e6",
         px: 0,
+        position: 'fixed',
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
     >
-      <CssBaseline />
       <AppBar
         component="nav"
         sx={{
