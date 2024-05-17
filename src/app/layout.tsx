@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import { Analytics } from "@vercel/analytics/react"
 import DrawerAppBar from "@/src/app/components/mui/muiComponents/Navigation";
 import ThemeRegistry from "@/src/theme";
 import Footer from "./components/Footer";
@@ -26,6 +27,7 @@ export default function RootLayout({
         className={inter.className}
         style={{ overscrollBehavior: "none", scrollBehavior: "smooth" }}
       >
+        <Analytics/>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />

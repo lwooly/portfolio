@@ -20,6 +20,7 @@
     "@mui/material": "^5.15.5",
     "@mui/material-nextjs": "^5.15.5",
     "@sendgrid/mail": "^8.1.0",
+    "@vercel/analytics": "^1.2.2",
     "gsap": "^3.12.4",
     "next": "14.1.0",
     "react": "^18",
