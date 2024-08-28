@@ -23,7 +23,7 @@ interface Props {
 }
 
 const drawerWidth = "100%";
-const navItems = ["Home", "About", "Portfolio", "Contact me"];
+const navItems = ["Home", "About", "Projects", "Contact me"];
 
 export default function DrawerAppBar(props: Props) {
   const theme = useTheme();
